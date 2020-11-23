@@ -1,0 +1,13 @@
+[debug] [2020-11-20T08:16:46.121Z] ----------------------------------------------------------------------
+[debug] [2020-11-20T08:16:46.123Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login
+[debug] [2020-11-20T08:16:46.123Z] CLI Version:   8.16.2
+[debug] [2020-11-20T08:16:46.123Z] Platform:      darwin
+[debug] [2020-11-20T08:16:46.123Z] Node Version:  v15.2.1
+[debug] [2020-11-20T08:16:46.131Z] Time:          Fri Nov 20 2020 09:16:46 GMT+0100 (centraleuropeisk normaltid)
+[debug] [2020-11-20T08:16:46.131Z] ----------------------------------------------------------------------
+[debug] [2020-11-20T08:16:46.131Z] 
+[debug] [2020-11-20T08:16:46.132Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[debug] [2020-11-20T08:16:46.715Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2020-11-20T08:16:46.716Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
