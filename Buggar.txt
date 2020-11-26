@@ -1,0 +1,5 @@
+Man måste välja type eller byta type för första gången, annars söker den på null
+
+Man ska inte behöva logga in igen när vi refreshar sidan
+
+Man kan bara söka på ett ord (%20)

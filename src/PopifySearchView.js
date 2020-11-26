@@ -3,6 +3,7 @@ import React from "react";
 //Here we create the buttons to search on songs
 
 function PopifySearchView({onSearch}){
+    console.log(onSearch)
     const [text, setText]= React.useState("");
     const [type, setType]= React.useState("");
 
