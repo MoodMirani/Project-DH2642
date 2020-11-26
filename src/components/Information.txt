@@ -1,0 +1,2 @@
+Här har vi exempelvis search bar, knappar eller 
+andra komponenter vi behöver.

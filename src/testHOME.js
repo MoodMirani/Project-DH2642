@@ -1,11 +1,14 @@
 //testHOME.js
 
 import React from "react";
-import "./testHOME";
-
+import PopifySearch from "./PopifySearch";
 
 function TestPlayer({ spotify }) {
-  return (<h1>Hello :D</h1>
+  return (
+    <div>
+      <PopifySearch/>
+    </div>
+ 
   );
 }
 
