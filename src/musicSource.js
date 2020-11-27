@@ -18,16 +18,16 @@ const  MusicSource={
             //return (fetch("https://api.spotify.com/v1"+ "/search?q="+text+"&type="+type, 
             //{”method” : ”GET”,”headers”: 
             //{	”Authorization”: token	} }
-        console.log(type, text, token)
+        console.log(type, text, token) // fetch returnerar en promise
              return fetch("https://api.spotify.com/v1"+ "/search?q="+text+"&type="+type, {
                 "method": "GET",
                 "headers": {
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
              }
         })   
-                .then(data=>data.results);         
-        },
-
+                .then(data=>data.json()).then(d => console.log(d.artists.items));         
+        }
  };
 
  export default MusicSource;
