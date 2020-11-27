@@ -6,11 +6,12 @@ export const initialState = {
     playlists: [],
     playing: false,
     item: null,
+    searchResult: [],
   };
   
   const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
     // to shoot out data whenever needed and to save data to the wall(data layer)
-  
+  console.log("action här: ", state)
     switch (action.type) { // switch is used to perform different actions based on different conditions
       case "SET_USER":
         return {
@@ -32,8 +33,18 @@ export const initialState = {
           ...state,
           discover_weekly: action.discover_weekly,
         };
+
+      case "SET_SEARCHRESULT":
+        return {
+          ...state,
+          searchResult: action.searchResult,
+        }
+
       default:
         return state;
+
+
+        
     }
   };
   
