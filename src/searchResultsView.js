@@ -1,13 +1,17 @@
+
 import React from "react";
 
 const SearchResultsView=({searchResult})=>
-    
-    <div class="resultsContainer">{ 
-    searchResult.map(result=>
-        <span key={result.id} class="searchResult" >
-            <div class="result-title" >{result.title}</div> 
-            This is a result
-        </span>)
-  } </div>
-
-  export default SearchResultsView;
+    <div className="resultsContainer">{
+        searchResult.map(result=>
+            <span key={result.id} className="searchResult" >
+                <div className="result-title" >
+                    {result.name}  
+                    
+                </div> 
+                {/* <img src ={result.images[0].url} alt=""/>  */}
+                {/* {result.genres[1]}   */}
+                
+            </span>)
+    }</div>
+export default SearchResultsView;
