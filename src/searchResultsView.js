@@ -7,13 +7,13 @@ const SearchResultsView=({searchResult, set_currentTrack})=>
             <span key={result.id} className="searchResult" >
                 
                 <div className="result-title" >
-                    <span onClick = { () => {set_currentTrack(result)}}> {result.name} </span>
+                    <span> {result.name} </span>
                     
-                    {result.type==="track" ? <div><img src = {result.album.images[0]&&
-                            result.album.images[0].url } alt="" height = "50px"/> </div>:
+                    {result.type==="track" ? <div><img onClick = { () => {set_currentTrack(result)}} src = {result.album.images[0] &&
+                            result.album.images[0].url } alt="" height = "100px"/> </div>:
      
                             <div><img src = {result.images[0]&&
-                                result.images[0].url } alt="" height = "50px"/> </div>
+                                result.images[0].url } alt="" height = "100px"/> </div>
                             }
                     
                 </div> 

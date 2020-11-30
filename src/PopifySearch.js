@@ -9,7 +9,6 @@ import usePromise from './usePromise'
 function PopifySearch(){
     const [{},dispatch] = useDataLayerValue();
     function set_currentTrack(result) {
-        debugger;
         dispatch({
             type: "SET_CURRENTTRACK",
             currentTrack: result,
