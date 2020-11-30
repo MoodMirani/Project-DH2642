@@ -9,7 +9,6 @@ import usePromise from './usePromise'
 function PopifySearch(){
     const [{},dispatch] = useDataLayerValue();
     function set_currentTrack(result) {
-        debugger;
         dispatch({
             type: "SET_CURRENTTRACK",
             currentTrack: result,
@@ -27,7 +26,7 @@ function PopifySearch(){
             <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.SearchArtists({type, text, token}))}
  />
             {promiseNoData(promise, data, error) || <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack}/>}
-        </Fragment>
+        </Fragment> 
     )
 }
 
