@@ -5,6 +5,7 @@ export const initialState = {
   playlists: [],
   playing: false,
   item: null,
+  currentTrack: null,
 };
 
 const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
@@ -30,7 +31,11 @@ const reducer = (state, action) => { //A special function called reducer is impl
         ...state,
         discover_weekly: action.discover_weekly,
       };
-
+    case "SET_CURRENTTRACK":
+      return {
+        ...state,
+        currentTrack: action.currentTrack,
+      }
     default:
       return state;
   }

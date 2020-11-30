@@ -7,6 +7,16 @@ import SearchResultsView from './searchResultsView'
 import usePromise from './usePromise'
 
 function PopifySearch(){
+    const [{},dispatch] = useDataLayerValue();
+    function set_currentTrack(result) {
+        debugger;
+        dispatch({
+            type: "SET_CURRENTTRACK",
+            currentTrack: result,
+        });
+    }
+    const [{currentTrack}] = useDataLayerValue();
+    console.log({currentTrack})
     const [{token}] = useDataLayerValue();
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
@@ -14,8 +24,9 @@ function PopifySearch(){
 
     return (
         <Fragment>
-            <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.SearchArtists({type, text, token}))} />
-            {promiseNoData(promise, data, error) || <SearchResultsView searchResult={data}/>}
+            <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.SearchArtists({type, text, token}))}
+ />
+            {promiseNoData(promise, data, error) || <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack}/>}
         </Fragment>
     )
 }
