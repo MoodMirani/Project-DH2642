@@ -17,4 +17,4 @@ function PopifySearchView({onSearch}){
     )
 }
 
-export default PopifySearchView
+export default PopifySearchView 

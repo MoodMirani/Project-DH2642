@@ -4,7 +4,7 @@ export const initialState = {
   token: null,
   playlists: [],
   playing: false,
-  item: null
+  item: null,
 };
 
 const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
@@ -30,9 +30,10 @@ const reducer = (state, action) => { //A special function called reducer is impl
         ...state,
         discover_weekly: action.discover_weekly,
       };
+
     default:
       return state;
   }
 };
 
-export default reducer;
+export default reducer; 
