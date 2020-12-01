@@ -1,15 +1,14 @@
-//testHOME.js
-
 import React from "react";
 import PopifySearch from "./PopifySearch";
-
-function TestPlayer({ spotify }) {
+import LyricsSource from "./lyricsSource"
+function Main({ spotify }) {
   return (
     <div>
       <PopifySearch/>
+      {LyricsSource.findLyric()}
     </div>
  
   );
 }
 
-export default TestPlayer;
+export default Main;

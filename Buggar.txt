@@ -3,3 +3,5 @@ Man måste välja type eller byta type för första gången, annars söker den p
 Man ska inte behöva logga in igen när vi refreshar sidan
 
 Man kan bara söka på ett ord (%20)
+
+popifysearch körs 6 ggr när programmet startar
