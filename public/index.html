@@ -27,6 +27,26 @@
     <title>React App</title>
   </head>
   <body>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+
+    <script>
+   
+      window.onSpotifyWebPlaybackSDKReady = () => {
+      const token = 'BQAJ5Ow9xEJBpkdJJjHYLDnTaxjxaONrRgpCXsTHPfGAgD5J73WKKVSSrv6R4GoouKHRRhRR_puQ0h18OSfJ9CPEVO0QO0MigqG2uXkCg3tBXh7lWUpeY1f-DUEAM56w_rOHMAwjW_eRWxNoFAiX3Ig3npFjjHj-1SE';
+      const player = new Spotify.Player({
+        name: 'Player',
+        getOAuthToken: cb => { cb(token); }
+      });
+
+      player.connect().then(success => {
+      if (success) {
+        console.log('The Web Playback SDK successfully connected to Spotify!');
+          }
+        })
+    }
+
+      </script>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

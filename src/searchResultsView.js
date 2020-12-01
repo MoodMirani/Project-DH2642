@@ -1,10 +1,11 @@
 import React from "react";
 
+
 const SearchResultsView=({searchResult, set_currentTrack})=>
-    <div className="resultsContainer">{
+    <div className="searchResult">{
         
         searchResult.map(result=>
-            <span key={result.id} className="searchResult" >
+            <span key={result.id}  >
                 
                 <div className="result-title" >
                     <span onClick = { () => {set_currentTrack(result)}}> {result.name} </span>
