@@ -1,4 +1,5 @@
 import React from "react";
+import LyricsSource from "./lyricsSource";
 
 const SearchResultsView=({searchResult, set_currentTrack})=>
     <div className="resultsContainer">{
@@ -11,7 +12,7 @@ const SearchResultsView=({searchResult, set_currentTrack})=>
                     
                     {result.type==="track" ? <div><img src = {result.album.images[0]&&
                             result.album.images[0].url } alt="" height = "50px" 
-                            onClick = { () => {set_currentTrack(result)}}/> </div>:
+                            onClick = { () => {set_currentTrack(result); LyricsSource.findLyrics()}}/> </div>:
      
                             <div><img src = {result.images[0]&&
                                 result.images[0].url } alt="" height = "50px"/> </div>
