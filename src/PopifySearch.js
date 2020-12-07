@@ -9,18 +9,19 @@ import usePromise from './usePromise'
 function PopifySearch(){
     const [{},dispatch] = useDataLayerValue();
     function set_currentTrack(result) {
-
         dispatch({
             type: "SET_CURRENTTRACK",
             currentTrack: result,
         });
+        console.log(result)
     }
-    const [{currentTrack}] = useDataLayerValue();
-    console.log({currentTrack})
+
+    //const [{currentTrack}] = useDataLayerValue();
     const [{token}] = useDataLayerValue();
+    
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
-    React.useEffect(() => setPromise(MusicSource.SearchArtists({type: "artist", text: "Justin", token})), [token]);
+    React.useEffect(() => setPromise(MusicSource.SearchArtists({type: "artist", text: "A", token})), [token]);
 
     return (
         <Fragment>
