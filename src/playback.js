@@ -7,8 +7,9 @@ import { useDataLayerValue } from "./DataLayer";
 function Playback() {
 
     const [{currentTrack}] = useDataLayerValue();
+  
 
-    return (<div> {currentTrack.name}, {currentTrack.id} </div>
+    return (<div>  {currentTrack.name}, {currentTrack.id} </div>
    
     );
   }

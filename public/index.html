@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -24,29 +25,65 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+
+    <title>Popify! </title>
   </head>
   <body>
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    
+    <!-- Load the Spotify Web Playback SDK -->
+<script src="https://sdk.scdn.co/spotify-player.js"></script>
 
-    <script>
-   
-      window.onSpotifyWebPlaybackSDKReady = () => {
-      const token = 'BQAJ5Ow9xEJBpkdJJjHYLDnTaxjxaONrRgpCXsTHPfGAgD5J73WKKVSSrv6R4GoouKHRRhRR_puQ0h18OSfJ9CPEVO0QO0MigqG2uXkCg3tBXh7lWUpeY1f-DUEAM56w_rOHMAwjW_eRWxNoFAiX3Ig3npFjjHj-1SE';
-      const player = new Spotify.Player({
-        name: 'Player',
-        getOAuthToken: cb => { cb(token); }
-      });
+<script>
+  // Called when the Spotify Web Playback SDK is ready to use
+  window.onSpotifyWebPlaybackSDKReady = () => {
 
-      player.connect().then(success => {
-      if (success) {
-        console.log('The Web Playback SDK successfully connected to Spotify!');
+    // Define the Spotify Connect device, getOAuthToken has an actual token 
+    // hardcoded for the sake of simplicity
+    var player = new Spotify.Player({
+      name: 'Amandas player',
+      getOAuthToken: callback => {
+        callback('BQA0fON9IQBSvOl8v-orKYgtCpXS7w2i_6xXlOCNCykwUu6lWHg2gW5RtB-2esO5GCSuLnj5QXC2x2nb5OqIkw0Im9waIR5gubBydew9Bf4mzFoAwMpr4ZFSTyZz_DWfmlCvda_28_HLoxl6GZEz1pAKLL6-uLIolZE');
+      },
+      volume: 0.1
+    });
+
+    // Called when connected to the player created beforehand successfully
+    player.addListener('ready', ({ device_id }) => {
+      console.log('Ready with Device ID', device_id);
+
+      const play = ({
+        spotify_uri,
+        playerInstance: {
+          _options: {
+            getOAuthToken,
+            id
           }
-        })
-    }
+        }
+      }) => {
+        getOAuthToken(access_token => {
+          fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({ uris: [spotify_uri] }),
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${access_token}`
+            },
+          });
+        });
+      };
 
-      </script>
+      play({
+        playerInstance: player,
+        spotify_uri: 'spotify:track:6CSLNGruNhqpb5zhfs5n3i',
+      });
+    });
 
+    // Connect to the player created beforehand, this is equivalent to 
+    // creating a new device which will be visible for Spotify Connect
+    player.connect();
+  };
+</script>
+    
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -60,4 +97,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+
 </html>
