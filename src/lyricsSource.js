@@ -1,4 +1,7 @@
 // import cheerio from 'cheerio'
+
+import lyricsScraper from "./presenter/lyricsScraper"
+
 const LyricsSource = {
     findLyrics(artist, song){
         /*
@@ -30,6 +33,7 @@ const LyricsSource = {
         ).then(response => response.response.hits.find(element=>
             element.result.full_title.includes(artist) === true))
         .then(result => console.log(result.result.url))
+        
      
         .catch(err => 
             console.error(err)
@@ -40,6 +44,7 @@ const LyricsSource = {
   
 export default LyricsSource;
   // parse.js
+  // //*[@id="application"]/main/div[2]/div[3]/div[1]
 
   /*
   function parseSongHTML(htmlText) {
