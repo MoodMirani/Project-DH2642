@@ -10,6 +10,7 @@ import TestPlayer from "./testHOME";
 const spotify = new SpotifyWebApi();
 
 
+
 function App() {
   
   const [{ user, token }, dispatch] = useDataLayerValue();
@@ -46,7 +47,10 @@ function App() {
       });
     }
   }, []);
+
+
 //if user exists we want the user to see the website otherwise login page
+
 
   return (
     <div className="App">

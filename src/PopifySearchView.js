@@ -1,5 +1,4 @@
 import React from "react";
-import "./Header.css";
 
 //Here we create the buttons to search on songs
 

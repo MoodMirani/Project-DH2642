@@ -3,6 +3,7 @@
     display:inline-block;
     height: 250px;
     width:250px;
+    padding: 20px;
     vertical-align: top;
 
 }
@@ -11,7 +12,8 @@
     text-align: center;
     overflow: scroll;
     color: rgb(0, 0, 0);
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', 
+  'Courier New', Courier, monospace;
   font-size: 20px;
 }
 
