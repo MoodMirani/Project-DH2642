@@ -1,3 +1,21 @@
 .searchResult {
-    overflow:scroll;
+    text-align:center;
+    display:inline-block;
+    height: 250px;
+    width:250px;
+    vertical-align: top;
+
+}
+
+.searchName {
+    text-align: center;
+    overflow: scroll;
+    color: rgb(0, 0, 0);
+  font-family: 'Montserrat';
+  font-size: 20px;
+}
+
+
+.searchPic{
+    height: 200px;     
 }

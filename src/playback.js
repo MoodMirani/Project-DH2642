@@ -18,7 +18,7 @@ function Playback() {
     var player = new window.Spotify.Player({
       name: 'Amandas player',
       getOAuthToken: callback => {
-        callback('BQAxKsrKH_Z5rwc7TLgbT7d93P0ddw0MFwS1VblJxsQRF044u77_NA6n19zKx4GL6Ym8TOZgSufQxZ5RmDA9Cxj2XjWQjyF97pTsAkiCSOHmeIBuUAtSUuTykwZQJs-v4sspmNmaCZFjZEHWMQOoydu8wNjn-K2N-rk');
+        callback('BQBGWbYy6klGeR85njNbfVR8wzrAhXPM7dfEofImU9meDq-T2HmvkboxB-BrmYZA9QW52yYYwdoojc_Fglkf1SPSiXuG0zo1Rak-7p2qT1BjmbW17wcPy_X-NXGoFw0XgHhZjYBOMcnG8MRf7071FC-MQEsZ-2UovCk');
       },
       volume: 0.1
     });
@@ -46,13 +46,16 @@ function Playback() {
               'Authorization': `Bearer ${access_token}`
             },
           });
-        });
-
-        
+        });   
       };
 
-      console.log("id på låten",currentTrack.uri)
+      console.log("id på låten", currentTrack.uri)
+      console.log("id på låten", currentTrack)
+      play({
+        playerInstance: player,
+        spotify_uri: "spotify:track:4SS4YfDAEQG0fZAe1xfgn3",
 
+      });
   
     });
 

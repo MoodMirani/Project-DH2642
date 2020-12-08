@@ -1,32 +1,25 @@
 import React from "react";
-import Playback from "./playback";
+import Playback from "./playback"
+import "./searchResult.css"
 
 const SearchResultsView=({searchResult, set_currentTrack})=>{
 
     return <div>{
         searchResult.map(result=>
-            <span key={result.id} className="searchResult" >            
-                    {result.type==="track" ? <img onClick = { () => {
-                    
-                    (Playback.play({
-                        playerInstance: Playback.player,
-                        spotify_uri: set_currentTrack(result).uri,
+            <span key={result.id} className="searchResult" >    
+      
+            <div className="searchName"><b>{result.name}</b></div> 
 
-                      })) }
-                      
-                
-                } 
-                
-                
-                src = {result.album.images[0]&&
-                            result.album.images[0].url } alt="" height = "200px"/>:
+            {result.type==="track" ?
+             
+            <img className="searchPic" onClick = { () => { set_currentTrack(result) && Playback() } } 
+            src = {result.album.images[0] && result.album.images[0].url } alt="" />:
     
-                            <img src = {result.images[0]&&
-                                result.images[0].url } alt="" height = "200px"/> //visa en annan bild när bild ej existerar
+                            <img className="searchPic" src = {result.images[0]&&
+                                result.images[0].url } alt="" />
                     }
+                    
 
-
-                <div> {result.name}</div>
     
                 </span>)
         } </div>
