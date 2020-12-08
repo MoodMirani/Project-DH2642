@@ -9,13 +9,13 @@ function Playback() {
   
   const [{ currentTrack }, dispatch] = useDataLayerValue();
 
-  React.useEffect(()=>{loadScript("https://sdk.scdn.co/spotify-player.js", () => console.log("hej"))
+  React.useEffect(()=>{loadScript("https://sdk.scdn.co/spotify-player.js")
     
     window.onSpotifyWebPlaybackSDKReady = () => {
       let player = new window.Spotify.Player({
         name: 'Amandas player',
         getOAuthToken: callback => {
-          callback('BQATtn7D7Yzvpx-WNiGXyWwVqeYTRaawfqfm4DVXMEXjZPlh-4HDD6MdJN4nH5--whCVR4Ob4hLhdqDZ-F1rdz5N9Wx--Jjl_TfJlOnHNaJ8YzbYjeS7b3eUnyNuSSQJpvVXiF__2iBY1BAiHWhCu_0L9uBEMJ6m2Ta9vesOJT5_ZL7lC8PFpEY');
+          callback('BQDDGgEOXviOFuU67boduOG80Aw-FFrhMIkvSGNxMfN0EsmvgsQHCjgK92varsCvKMT0bUTtQV2kNDUsjD5xIzmiTp7e3KN1Ga2KmsEe0Sjv0qB2mqiZfcIXH14sZWXzQJA81gnLBU9XlaDgVpPG_WW46FdcS_e7rhVLl7czQM4D4CNUWhCIyio');
         },
         volume: 0.1
       })

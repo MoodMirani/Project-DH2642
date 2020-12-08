@@ -9,22 +9,20 @@ import Play from "./play"
 
 function PopifySearch(){
     
-    const [{player, currentTrack},dispatch] = useDataLayerValue();
+    const [{ player, token }, dispatch] = useDataLayerValue();
     
     function set_currentTrack(result) {
+        
         dispatch({
             type: "SET_CURRENTTRACK",
             currentTrack: result,
         });
-        console.log(result)
-    Play({
-        playerInstance: player,
-        spotify_uri: currentTrack.uri,
-      }) //calling playing-function after setting current object instead of using then in serachresultview
-    }
 
-    //const [{currentTrack}] = useDataLayerValue();
-    const [{token}] = useDataLayerValue();
+        Play({ //calling playing-function after setting current object instead of using then in serachresultview
+            playerInstance: player,
+            spotify_uri: result.uri,
+        })
+    }
     
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
