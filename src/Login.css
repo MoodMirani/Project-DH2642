@@ -3,7 +3,8 @@
     grid-row-gap: 0px;
     place-items: center;
     height: 100vh;
-    background-color: black;
+    
+    background: linear-gradient(rgb(0, 0, 0) 80%, rgb(40, 1, 85)) 20%;
   }
   
   .login > img {

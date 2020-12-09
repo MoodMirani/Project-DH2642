@@ -6,6 +6,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 //import Player from "./Player";
 import { useDataLayerValue } from "./DataLayer";
 import TestPlayer from "./testHOME";
+import "./App.css"
 
 const spotify = new SpotifyWebApi();
 

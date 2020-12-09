@@ -11,11 +11,6 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      <img
-        className="sidebar__logo"
-        src="https://i.ibb.co/XzsFywk/popify-Clean.png"
-        alt="Spotify logo"
-      />
 
       <SidebarOption title="Home" Icon={HomeIcon} />
       <SidebarOption title="Search" Icon={SearchIcon} />
