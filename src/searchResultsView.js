@@ -1,5 +1,6 @@
 import React from "react";
 import LyricsSource from "./lyricsSource";
+import scrapeLyrics from "./presenter/lyricsScraper";
 
 const SearchResultsView=({searchResult, set_currentTrack})=>
     <div className="resultsContainer">{
@@ -12,7 +13,8 @@ const SearchResultsView=({searchResult, set_currentTrack})=>
                     
                     {result.type==="track" ? <div><img src = {result.album.images[0]&&
                             result.album.images[0].url } alt="" height = "50px" 
-                            onClick = { () => {set_currentTrack(result); console.log(result.artists[0].name, result.name); LyricsSource.findLyrics(result.artists[0].name, result.name)}}/> </div>:
+                            onClick = { () => {set_currentTrack(result); console.log(result.artists[0].name, result.name); 
+                                LyricsSource.findLyrics(result.artists[0].name, result.name)}}/> </div>:
      
                             <div><img src = {result.images[0]&&
                                 result.images[0].url } alt="" height = "50px"/> </div>
