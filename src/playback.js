@@ -15,7 +15,7 @@ function Playback() {
       let player = new window.Spotify.Player({
         name: 'Amandas player',
         getOAuthToken: callback => {
-          callback('BQAxeCJvJnETLXKwx7K_qEBzu6VSkcf_7I_QbktPyuOvitzIHT0YjpRRnr5LQQ7IVaXH4zlftx5rCQao1SEjsPBPA40z7H4hBNa4bAsXBU7ju-2rn9v2ikEJxYCp9Wf_H5e4liK6utbDLVsdbnv-EK6ELAtJmXaQ4Zc');
+          callback('BQByzqPb7s5bIcwjnpYFqNfr83SQuQpiXsSPH08CBdOOIQKxJjgnlTK3sFOEhouQeTF7FUPXK6aOAs1EA8cDmlsY_KFc7Ln_8DjWq_j4FbVA9EEEaBB_X27EwpG3ZW99qQCk0NaLegbUutTDpuHFQrDiSRieCCquyaYxOWyGzFrUkWz7ifTr47w');
         },
         volume: 0.1
       })

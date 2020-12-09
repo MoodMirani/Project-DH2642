@@ -1,17 +1,17 @@
 import React from "react";
 import "./popify.css"
 import { useDataLayerValue } from "./DataLayer";
-import Hello from "./testHOME"
+
 
 
 function PopifySearchView({onSearch}){
+
+    const [{ user }] = useDataLayerValue();
+
     const [text, setText]= React.useState("");
     const [type, setType]= React.useState("");
 
-
-    // const [{ user }, dispatch] = useDataLayerValue();
-    // var username = user.id
-    // var hello = "Hello " + username + ", what do you want to listen to?"
+    const message = `Hello ${user.display_name} what do you want to listen to?`;
    
     return(
         <React.Fragment>
@@ -21,7 +21,7 @@ function PopifySearchView({onSearch}){
         height="100px"
       />
 
-            <input className="searchbar" placeholder="Hello NAME, what do you want to listen to?"  onChange={(e) => setText(e.target.value)}/>
+            <input className="searchbar" placeholder= {message}  onChange={(e) => setText(e.target.value)}/>
                 <select className="options" onChange={(e) => setType(e.target.value)}>
                     {["album", "artist", "track"].map(k=> <option key={k} value={k}>{k}</option>) }
                 </select>    
