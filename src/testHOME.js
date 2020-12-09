@@ -3,7 +3,7 @@
 import React from "react";
 import Playback from "./playback";
 import PopifySearch from "./PopifySearch";
-import { useDataLayerValue } from "./DataLayer";
+import Details from "./details"
 
 
 
@@ -12,13 +12,8 @@ function TestPlayer({ spotify }) {
   return (
     
     <div>
-
-    
       <PopifySearch/>
       <Playback/>
-
-
-
     </div>
  
   );
@@ -26,3 +21,7 @@ function TestPlayer({ spotify }) {
 }
 
 export default TestPlayer;
+
+
+//<PopifySearch/>
+//<Playback/>

@@ -14,6 +14,7 @@ transition: 200ms color ease-in;
 
 .searchName {
 text-align: center;
+height:50px;
 overflow: scroll;
 color: rgb(255, 255, 255);
 font-size: 20px;
@@ -26,7 +27,7 @@ transition: 200ms color ease-in;
 }
 
 .searchName:hover {
-    color: rgb(73, 49, 111);
+    color: rgb(103, 103, 103);
     font-size: 20px;
   }
 
