@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useDataLayerValue } from "./DataLayer";
-import loadScript from "./playbacktest";
+import loadScript from "./loadscript";
 
 
 function Playback() {
@@ -16,11 +16,9 @@ function Playback() {
         name: 'Amandas player',
         getOAuthToken: callback => {
           callback(token);
-        console.log(token)
         },
         volume: 0.1
       })
-
     // Called when connected to the player created beforehand successfully
     player.addListener('ready', ({ device_id }) => {
       console.log('Ready with Device ID', device_id);
@@ -41,7 +39,7 @@ function Playback() {
 
 },[])
 
-    return (<div className="footer">  {currentTrack.name}, {currentTrack.id} </div>);
+    return ""
   }
   
   export default Playback;

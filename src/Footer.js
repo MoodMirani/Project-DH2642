@@ -10,19 +10,24 @@ import {
   VolumeDown,
 } from "@material-ui/icons";
 import { Grid, Slider } from "@material-ui/core";
+import { useDataLayerValue } from "./DataLayer";
+
+
 
 function Footer() {
-  return (
-    <div className="footer">
+
+const [{currentTrack}] = useDataLayerValue()
+
+  return (  
+    <div className="footer__play">
       <div className="footer__left">
         <img
-          src="https://i.pinimg.com/originals/8d/c7/52/8dc752834195102e4cb630a53221255e.jpg"
+          src= {currentTrack.album === undefined || currentTrack.album === null ? "https://i.ibb.co/rsCJb8L/popify-Logo.png" : currentTrack.album.images[0].url }
           alt=""
           className="footer__albumLogo"
         />
         <div className="footer__songInfo">
-          <h4>My fav song</h4>
-          <p>Atharva</p>
+        <h4>{currentTrack.name}</h4>
         </div>
       </div>
       <div className="footer__center">

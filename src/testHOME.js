@@ -3,6 +3,7 @@
 import React from "react";
 import Playback from "./playback";
 import PopifySearch from "./PopifySearch";
+import Footer from "./Footer"
 
 
 
@@ -13,6 +14,7 @@ function TestPlayer({ spotify }) {
     <div>
       <PopifySearch/>
       <Playback/>
+      <Footer/>
     </div>
  
   );

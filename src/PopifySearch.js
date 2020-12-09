@@ -6,6 +6,7 @@ import promiseNoData from './promiseNoData'
 import SearchResultsView from './searchResultsView'
 import usePromise from './usePromise'
 import Play from "./play"
+import Footer from "./Footer"
 
 function PopifySearch(){
     
@@ -17,7 +18,6 @@ function PopifySearch(){
             type: "SET_CURRENTTRACK",
             currentTrack: result,
         });
-
         Play({ //calling playing-function after setting current object instead of using then in serachresultview
             playerInstance: player,
             spotify_uri: result.uri,

@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import "./searchResult.css"
 
 
@@ -16,7 +17,7 @@ const SearchResultsView=({searchResult, set_currentTrack})=>{
             {result.type==="track" ?
              
             <img className="searchPic" onClick = { () => { set_currentTrack(result) } } 
-            src = {result.album.images[0] && result.album.images[0].url } alt="" />:
+            src = { result.album.images[0] && result.album.images[0].url } alt="" />:
     
                             <img className="searchPic" src = {result.images[0]&&
                                 result.images[0].url } alt="" />
