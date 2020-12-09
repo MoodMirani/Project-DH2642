@@ -14,7 +14,7 @@ function Play({
         body: JSON.stringify({ uris: [spotify_uri] }),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${access_token}`
+          'Authorization': 'Bearer ' + access_token
         },
       });
     });

@@ -1,17 +1,14 @@
 import React from "react";
 import "./popify.css"
-import { useDataLayerValue } from "./DataLayer";
 
 
 
 function PopifySearchView({onSearch}){
 
-    const [{ user }] = useDataLayerValue();
-
     const [text, setText]= React.useState("");
     const [type, setType]= React.useState("");
 
-    const message = `Hello ${user.display_name} what do you want to listen to?`;
+    const message = `What do you want to listen to?`;
    
     return(
         <React.Fragment>

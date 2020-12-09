@@ -5,11 +5,9 @@ const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"; // will be used 
 const REDIRECT_URL = "http://localhost:3000/";          // will be the URL where you want the user to be redirected once the user is authorized successfully.                                
 const CLIENT_ID = "0ce6ae9e52b0477a86e4b06d7135b5d2"; 
 const SCOPES = [                                
-    "user-read-currently-playing",
-    "user-read-recently-played",
-    "user-read-playback-state",
-    "user-top-read",
-    "user-modify-playback-state",
+    "streaming", 
+    "user-read-email", 
+    "user-read-private"
 ];
 
 export const BASE_URL = "https://api.spotify.com/v1";

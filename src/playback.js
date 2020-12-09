@@ -7,7 +7,7 @@ import loadScript from "./playbacktest";
 
 function Playback() {
   
-  const [{ currentTrack }, dispatch] = useDataLayerValue();
+  const [{ currentTrack, token }, dispatch] = useDataLayerValue();
 
   React.useEffect(()=>{loadScript("https://sdk.scdn.co/spotify-player.js")
     
@@ -15,7 +15,8 @@ function Playback() {
       let player = new window.Spotify.Player({
         name: 'Amandas player',
         getOAuthToken: callback => {
-          callback('BQByzqPb7s5bIcwjnpYFqNfr83SQuQpiXsSPH08CBdOOIQKxJjgnlTK3sFOEhouQeTF7FUPXK6aOAs1EA8cDmlsY_KFc7Ln_8DjWq_j4FbVA9EEEaBB_X27EwpG3ZW99qQCk0NaLegbUutTDpuHFQrDiSRieCCquyaYxOWyGzFrUkWz7ifTr47w');
+          callback(token);
+        console.log(token)
         },
         volume: 0.1
       })
