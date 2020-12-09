@@ -3,7 +3,6 @@
 import React from "react";
 import Playback from "./playback";
 import PopifySearch from "./PopifySearch";
-import Details from "./details"
 
 
 
@@ -22,6 +21,3 @@ function TestPlayer({ spotify }) {
 
 export default TestPlayer;
 
-
-//<PopifySearch/>
-//<Playback/>

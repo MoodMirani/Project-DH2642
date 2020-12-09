@@ -40,7 +40,7 @@ function Playback() {
 
 },[])
 
-    return (<div>  {currentTrack.name}, {currentTrack.id} </div>);
+    return (<div className="footer">  {currentTrack.name}, {currentTrack.id} </div>);
   }
   
   export default Playback;

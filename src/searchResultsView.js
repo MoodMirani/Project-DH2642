@@ -6,7 +6,7 @@ import "./searchResult.css"
 const SearchResultsView=({searchResult, set_currentTrack})=>{
 
 
-    return <div>{
+    return <div  className="searchMODE">{
         searchResult.map(result=>
             <span key={result.id} className="searchResult" >    
         

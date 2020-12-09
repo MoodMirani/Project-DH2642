@@ -65,5 +65,15 @@ display: block;
 
 height: 140px;
 
+}
 
+.footer{
+
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  background: linear-gradient( rgb(40, 39, 46),rgb(11, 9, 9));
+  color: white;
 }

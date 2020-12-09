@@ -1,5 +1,10 @@
 
+.searchMODE{
+  overflow:scroll;
+  height: 450px;
+}
 .searchResult {
+
 text-align:center;
 display:inline-block;
 height: 250px;
@@ -32,7 +37,7 @@ transition: 200ms color ease-in;
   }
 
 .searchPic{
-    height: 200px;  
+    height: 190px;  
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(91, 143, 220, 0.5);
 }
