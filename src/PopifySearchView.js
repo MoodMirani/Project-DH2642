@@ -21,7 +21,7 @@ function PopifySearchView({onSearch}){
         height="100px"
       />
 
-            <input className="searchbar" placeholder=""  onChange={(e) => setText(e.target.value)}/>
+            <input className="searchbar" placeholder="Hello NAME, what do you want to listen to?"  onChange={(e) => setText(e.target.value)}/>
                 <select className="options" onChange={(e) => setType(e.target.value)}>
                     {["album", "artist", "track"].map(k=> <option key={k} value={k}>{k}</option>) }
                 </select>    
