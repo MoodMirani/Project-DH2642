@@ -6,7 +6,6 @@ import promiseNoData from './promiseNoData'
 import SearchResultsView from './searchResultsView'
 import usePromise from './usePromise'
 import Play from "./play"
-import Footer from "./Footer"
 
 function PopifySearch(){
     

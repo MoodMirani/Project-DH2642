@@ -7,7 +7,7 @@ import loadScript from "./loadscript";
 
 function Playback() {
   
-  const [{ currentTrack, token }, dispatch] = useDataLayerValue();
+  const [{ token }, dispatch] = useDataLayerValue();
 
   React.useEffect(()=>{loadScript("https://sdk.scdn.co/spotify-player.js")
     
