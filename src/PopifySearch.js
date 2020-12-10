@@ -5,21 +5,27 @@ import { useDataLayerValue } from "./DataLayer";
 import promiseNoData from './promiseNoData'
 import SearchResultsView from './searchResultsView'
 import usePromise from './usePromise'
+import Play from "./play"
 
 function PopifySearch(){
-    const [{},dispatch] = useDataLayerValue();
+    
+    const [{ player, token }, dispatch] = useDataLayerValue();
+    
     function set_currentTrack(result) {
+        
         dispatch({
             type: "SET_CURRENTTRACK",
             currentTrack: result,
         });
+        Play({ //calling playing-function after setting current object instead of using then in serachresultview
+            playerInstance: player,
+            spotify_uri: result.uri,
+        })
     }
-    const [{currentTrack}] = useDataLayerValue();
-    console.log({currentTrack})
-    const [{token}] = useDataLayerValue();
+    
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
-    React.useEffect(() => setPromise(MusicSource.SearchArtists({type: "artist", text: "Justin", token})), [token]);
+    React.useEffect(() => setPromise(MusicSource.SearchArtists({type: "artist", text: "A", token})), [token]);
 
     return (
         <Fragment>

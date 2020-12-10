@@ -1,18 +1,19 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Login from "./Login";
-import "./App.css";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
-//import Player from "./Player";
 import { useDataLayerValue } from "./DataLayer";
 import TestPlayer from "./testHOME";
+import "./App.css"
 
 const spotify = new SpotifyWebApi();
 
 
+
 function App() {
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  
+  const [{ token }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -46,7 +47,10 @@ function App() {
       });
     }
   }, []);
+
+
 //if user exists we want the user to see the website otherwise login page
+
 
   return (
     <div className="App">

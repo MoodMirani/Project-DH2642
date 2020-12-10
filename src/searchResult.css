@@ -1,0 +1,51 @@
+
+.searchMODE{
+  overflow:scroll;
+  height: 450px;
+}
+.searchResult {
+
+text-align:center;
+display:inline-block;
+height: 250px;
+width:250px;
+padding: 20px;
+vertical-align: top;
+align-items: center;
+cursor: pointer;
+transition: 200ms color ease-in;
+
+}
+
+.searchName {
+text-align: center;
+height:50px;
+color: rgb(255, 255, 255);
+font-size: 20px;
+font:  small-caps bold 22px/50px Georgia, serif;
+margin-bottom: 10px;
+margin-top:10px;
+cursor: pointer;
+transition: 200ms color ease-in;
+overflow: hidden;
+
+}
+
+.searchName:hover {
+    color: rgb(103, 103, 103);
+    font-size: 20px;
+  }
+
+.searchPic{
+    height: 190px;  
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(91, 143, 220, 0.5);
+}
+
+.searchPic:hover {
+
+  box-shadow: 0 4px 20px rgba(191, 23, 191, 0.5);
+  height: 220px;
+
+}
+
