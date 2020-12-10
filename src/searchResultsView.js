@@ -3,9 +3,8 @@ import Footer from "./Footer";
 import "./searchResult.css"
 import LyricsSource from "./lyricsSource";
 import scrapeLyrics from "./presenter/lyricsScraper";
-
-
-
+import "./popify.css"
+import "./App.css"
 const SearchResultsView=({searchResult, set_currentTrack})=>{
 
 
