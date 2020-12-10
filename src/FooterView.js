@@ -10,13 +10,9 @@ import {
   VolumeDown,
 } from "@material-ui/icons";
 import { Grid, Slider } from "@material-ui/core";
-import { useDataLayerValue } from "./DataLayer";
 
 
-
-function Footer() {
-
-const [{currentTrack}] = useDataLayerValue() // detta är en view så får ej importera på detta sätt
+function FooterView(currentTrack) {
 
   return (  
     <div className="footer__play">
@@ -54,4 +50,4 @@ const [{currentTrack}] = useDataLayerValue() // detta är en view så får ej im
   );
 }
 
-export default Footer;
+export default FooterView;

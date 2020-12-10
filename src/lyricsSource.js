@@ -2,6 +2,8 @@
 //import axios from "axios";
 // import lyricsScraper from "./presenter/lyricsScraper"
 
+//ISSUES - too many requests (error 429), unexpected token
+
 const key = "df5661c198e8ac1b5dba0f079f8458ff"
 
 const LyricsSource = {
