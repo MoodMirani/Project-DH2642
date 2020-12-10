@@ -1,12 +1,7 @@
 import { BASE_URL, requestHeader } from "./spotify"
 
 const MusicSource = {
-    apiCall(params) {
-        // from headers to response data
-        return fetch(BASE_URL+params, {"method": "GET"})
-            .then(response => response.json())   ;
-    }, 
-    SearchArtists({type, text, token}) { 
+    search({type, text, token}) { 
         if(type==null){type=""} 
         if(text==null){text=""}
 
