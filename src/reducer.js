@@ -7,6 +7,7 @@ export const initialState = {
   item: null,
   currentTrack: "",
   player: null,
+  currentUser: null,
 };
 
 const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
@@ -41,6 +42,12 @@ const reducer = (state, action) => { //A special function called reducer is impl
         return {
           ...state,
           player: action.player,
+        };
+
+      case "SET_CURRENTUSER":
+        return {
+          ...state,
+          currentUser: action.currentUser,
         };
 
     default:

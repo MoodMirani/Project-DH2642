@@ -5,6 +5,7 @@ import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useDataLayerValue } from "./DataLayer";
 import Main from "./Main";
+import User from "./model/UserModel"
 
 const spotify = new SpotifyWebApi();
 
@@ -12,7 +13,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   
-  const [{ token }, dispatch] = useDataLayerValue();
+  const [{ token, user }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -44,8 +45,13 @@ function App() {
           discover_weekly: playlist,
         });
       });
+      console.log("i if satsen", user)
+      const currentUser = new User(user.id)
     }
   }, []);
+  
+  // const [{user}] = useDataLayerValue();
+  // const currentUser = new User(user.id)
 
 
 //if user exists we want the user to see the website otherwise login page

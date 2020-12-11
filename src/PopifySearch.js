@@ -9,7 +9,7 @@ import Play from "./play"
 
 function PopifySearch(){
     
-    const [{ player, token }, dispatch] = useDataLayerValue();
+    const [{ player, token, user }, dispatch] = useDataLayerValue();
     
     function set_currentTrack(result) {
         
@@ -22,7 +22,7 @@ function PopifySearch(){
             spotify_uri: result.uri,
         })
     }
-    
+    console.log("här",user)
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
     React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "Justin", token})), [token]);
