@@ -25,12 +25,11 @@ function PopifySearch(){
     
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
-    React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "Justin", token})), [token]);
+    React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "A", token})), [token]);
 
     return (
         <Fragment>
-            <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.search({type, text, token}))}
- />
+            <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.search({type, text, token}))}/>
             {promiseNoData(promise, data, error) || <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack}/>}
         </Fragment> 
     )

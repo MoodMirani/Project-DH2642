@@ -18,7 +18,10 @@ const SearchResultsView=({searchResult, set_currentTrack})=>{
             {result.type==="track" ?
              
             <img className="searchPic" onClick = { () => { set_currentTrack(result); 
-                LyricsSource.findLyrics(result.artists[0].name, result.name) } } 
+               
+                //LyricsSource.findLyrics(result.artists[0].name, result.name); 
+
+                 }} 
             src = { result.album.images[0] && result.album.images[0].url } alt="" />:
     
                             <img className="searchPic" src = {result.images[0]&&
