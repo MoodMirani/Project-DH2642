@@ -5,7 +5,7 @@ export const initialState = {
   playlists: [],
   playing: false,
   item: null,
-  currentTrack: "",
+  currentTrack: null,
   player: null,
 };
 
