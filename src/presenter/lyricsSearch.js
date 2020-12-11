@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import TrackDetailsView from "../view/trackDetailsView";
+import TrackDetailsNoLyricsView from "../view/trackDetailsNoLyricsView";
 import LyricsSource from "../lyricsSource";
 import { useDataLayerValue } from "../DataLayer";
 import promiseNoData from '../promiseNoData'
@@ -22,15 +23,27 @@ function LyricsSearch(){
 
     //const data = "testdata";
     const [data, error] = usePromise(promise);
+    console.log("data", data)
   
   
 
     return (
         <Fragment>
-           {data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data.lyrics_body} />}
+            {(currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>)}
         </Fragment>
     )
 }
 
 export default LyricsSearch; 
+
+
+/*
+
+To FIX: some kind of alternte rendering pending on if data = defined eller undefined
+Update heroku path for cors handeling (need to mearch branches with main to do that)
+
+( (data === "undefined") && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> )
+            
+            
+            ||*/
 

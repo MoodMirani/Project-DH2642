@@ -15,18 +15,12 @@ const SearchResultsView=({searchResult, set_currentTrack})=>{
        
         <div className="searchName"><b>{result.name}</b> {result.artist} </div>
 
-            {result.type==="track" ?
-             
-            <img className="searchPic" onClick = { () => { set_currentTrack(result); 
-               
-                //LyricsSource.findLyrics(result.artists[0].name, result.name); 
-
-                 }} 
-            src = { result.album.images[0] && result.album.images[0].url } alt="" />:
+            {result.type==="track" ? 
+                <img className="searchPic" onClick = { () => set_currentTrack(result)} 
+                 src = { result.album.images[0] && result.album.images[0].url } alt="" />:
     
-                            <img className="searchPic" src = {result.images[0]&&
-                                result.images[0].url } alt="" />
-                    }
+                <img className="searchPic" src = {result.images[0]&&result.images[0].url } alt="" />
+            }
 
                 </span>)
         

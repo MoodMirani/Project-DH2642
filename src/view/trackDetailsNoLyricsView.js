@@ -1,7 +1,7 @@
 import React from "react";
 import "../TrackDetailsView.css"
 
-const TrackDetailsView =({spotifyObject, lyricsData})=>
+const TrackDetailsNoLyricsView =({spotifyObject})=>
    <div className="flexboxWrapper">
       <div className="row">
 
@@ -18,7 +18,7 @@ const TrackDetailsView =({spotifyObject, lyricsData})=>
                   <span className="artistTitle">{spotifyObject.artists[0].name}</span>
                   <span className="trackTitle">{spotifyObject.name}</span>
                </p>
-               <p className="lyricsStyle" style={{whiteSpace: 'pre-line'}}>{lyricsData.lyrics_body}</p>
+               <p className="lyricsStyle" style={{whiteSpace: 'pre-line'}}>There is no lyrics avaible for this track</p>
             </div>
          </div>
 
@@ -26,6 +26,5 @@ const TrackDetailsView =({spotifyObject, lyricsData})=>
    </div>
    
 
-export default TrackDetailsView; 
-
+export default TrackDetailsNoLyricsView; 
 
