@@ -4,7 +4,9 @@ const LyricsSource = {
     getId(artist, song){
         //console.log("getId", artist, song)
         return fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_artist=${encodeURI(artist)}&q_track=${encodeURI(song)}&apikey=${key}`, {
+            
             "method": "GET",
+         
           
         })
         .then(response => response.json())
@@ -18,6 +20,7 @@ const LyricsSource = {
         //console.log("get lyrics", id);     
         return fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${id}&apikey=${key}`, {
             "method": "GET",
+            
            
         })
     .then(res => res.json())

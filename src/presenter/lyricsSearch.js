@@ -8,7 +8,7 @@ import ShowLyrics from "../view/lyricsButton"
 
 function LyricsSearch(){
     const [{currentTrack}] = useDataLayerValue();
-    //console.log("currentTrack: ", currentTrack);
+    console.log("currentTrack: ", currentTrack);
     const [promise, setPromise] = React.useState();
 
     
