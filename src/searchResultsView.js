@@ -24,7 +24,7 @@ const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist})=>{
 
             <img className="searchPic" onClick = { () => { set_currentArtist(result) } } 
     
-            src = { result.images[0].url } alt="" />:(
+            src = { result.images[0]? result.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG" } alt="" />:(
             result.type==="track" ?
              
             <img className="searchPic" onClick = { () => { set_currentTrack(result); 
