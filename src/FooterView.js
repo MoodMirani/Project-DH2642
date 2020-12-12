@@ -11,10 +11,12 @@ import {
 } from "@material-ui/icons";
 import { Grid, Slider } from "@material-ui/core";
 import Pause from "./pause"
+// import HeartButton from "./components/heart"
+import Likes from "./model/firebase-manager"
 
 
-function FooterView({currentTrack, player}) {
-
+function FooterView({currentTrack, player, user}) {
+  
   return (  
     
     <div className="footer__play">
@@ -42,6 +44,8 @@ function FooterView({currentTrack, player}) {
         <PauseCircleOutline fontSize="large" className="footer__icon"  
         onClick = { () => { Pause({ playerInstance: player}) } }
         />
+        <button onClick = {()=>{console.log("footerview", currentTrack.name, user);
+        Likes(currentTrack.name, user.id)}}></button>
         
         <SkipNext className="footer__icon" /> {/*Not working, only for the look} */}
         <Repeat className="footer__green" /> {/*Not working, only for the look} */}

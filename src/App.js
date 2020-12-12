@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
-import { useDataLayerValue } from "./DataLayer";
+import { useDataLayerValue, dispatch } from "./DataLayer";
 import Main from "./Main";
 
 
@@ -14,8 +14,6 @@ const spotify = new SpotifyWebApi();
 function App() {
   
   const [{ token }, dispatch] = useDataLayerValue();
-
-
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";

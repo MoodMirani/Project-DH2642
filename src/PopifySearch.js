@@ -34,7 +34,8 @@ function PopifySearch(){
  />
             { promiseNoData(promise, data, error) || 
             <Fragment> 
-                (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack}/><FooterView currentTrack={currentTrack} player={player}/>) 
+                (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack}/>
+                <FooterView currentTrack={currentTrack} player={player} user={user}/>) 
             </Fragment>  }
         </Fragment> 
     )
