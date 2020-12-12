@@ -5,7 +5,7 @@ import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useDataLayerValue } from "./DataLayer";
 import Main from "./Main";
-import User from "./model/UserModel"
+
 
 const spotify = new SpotifyWebApi();
 
@@ -13,7 +13,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   
-  const [{ token, user }, dispatch] = useDataLayerValue();
+  const [{ token }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -45,8 +45,7 @@ function App() {
           discover_weekly: playlist,
         });
       });
-      console.log("i if satsen", user)
-      const currentUser = new User(user.id)
+      
     }
   }, []);
   
