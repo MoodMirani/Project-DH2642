@@ -19,12 +19,15 @@ const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist})=>{
         <div className="searchName"><b>{result.name}</b> {result.artist} </div>
 
  
-        <Link to="/artist">
+        
             {result.type === "artist" ? 
+            <Link to="/artist">
 
             <img className="searchPic" onClick = { () => { set_currentArtist(result) } } 
     
-            src = { result.images[0]? result.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG" } alt="" />:(
+            src = { result.images[0]? result.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG" } alt="" />
+            </Link>
+            :(
             result.type==="track" ?
              
             <img className="searchPic" onClick = { () => { set_currentTrack(result); 
@@ -34,7 +37,7 @@ const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist})=>{
                             <img className="searchPic" src = {result.images[0]&&
                                 result.images[0].url } alt="" />)
             }
-        </Link>
+        
                    
             </span>)
         
