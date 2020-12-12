@@ -6,10 +6,11 @@ import promiseNoData from './promiseNoData'
 import SearchResultsView from './searchResultsView'
 import usePromise from './usePromise'
 import Play from "./play"
+import FooterView from "./FooterView"
 
 function PopifySearch(){
     
-    const [{ player, token, user }, dispatch] = useDataLayerValue();
+    const [{ player, token, currentTrack, user }, dispatch] = useDataLayerValue();
     
     function set_currentTrack(result) {
         
@@ -25,13 +26,16 @@ function PopifySearch(){
     console.log("här",user)
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
-    React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "Justin", token})), [token]);
+    React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "A", token})), [token]);
 
     return (
         <Fragment>
             <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.search({type, text, token}))}
  />
-            {promiseNoData(promise, data, error) || <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack}/>}
+            { promiseNoData(promise, data, error) || 
+            <Fragment> 
+                (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack}/><FooterView currentTrack={currentTrack} player={player}/>) 
+            </Fragment>  }
         </Fragment> 
     )
 }
