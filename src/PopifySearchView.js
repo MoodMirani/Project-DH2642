@@ -13,7 +13,7 @@ function PopifySearchView({onSearch}){
     return(
         <React.Fragment>
         <img className="logo"
-        src="https://i.ibb.co/CnH7TMS/popify-Clean-1.png" 
+        src="https://i.ibb.co/283SGvS/popi-Trans.png" 
         alt="Popify logo"
         height="100px"
       />
