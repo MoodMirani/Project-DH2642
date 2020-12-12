@@ -6,11 +6,12 @@ export const initialState = {
   playing: false,
   item: null,
   currentTrack: "",
+  currentArtist: "",
   player: null,
 };
 
 const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
-  console.log("action: ", action)// to shoot out data whenever needed and to save data to the wall(data layer)
+  //console.log("action: ", action)// to shoot out data whenever needed and to save data to the wall(data layer)
   switch (action.type) { // switch is used to perform different actions based on different conditions
     case "SET_USER":
       return {
@@ -37,11 +38,16 @@ const reducer = (state, action) => { //A special function called reducer is impl
         ...state,
         currentTrack: action.currentTrack,
       }
-      case "SET_PLAYER":
-        return {
-          ...state,
-          player: action.player,
-        };
+    case "SET_CURRENTARTIST":
+      return {
+        ...state,
+        currentArtist: action.currentArtist, 
+      }
+    case "SET_PLAYER":
+      return {
+        ...state,
+        player: action.player,
+      };
 
     default:
       return state;

@@ -1,5 +1,5 @@
 import React from "react";
-import "./popify.css"
+import "./popify.css";
 
 
 

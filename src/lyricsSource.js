@@ -6,8 +6,8 @@ const key = "df5661c198e8ac1b5dba0f079f8458ff"
 
 const LyricsSource = {
     findLyrics(artist, song){
-        console.log(artist)
-        console.log(song)
+        // console.log(artist)
+        // console.log(song)
 
         return fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_artist=${encodeURI(artist)}&q_track=${encodeURI(song)}&apikey=${key}`, {
             "method": "GET",
@@ -16,7 +16,7 @@ const LyricsSource = {
         .then(response => response.json())
         .then(res => (res.message.body.track_list[0]))
         .then(track => {
-            console.log(track)
+            //console.log(track)
             const trackId = track.track.track_id;
             const commonId = track.track.commontrack_id;
             console.log(trackId, commonId)

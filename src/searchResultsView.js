@@ -5,7 +5,10 @@ import LyricsSource from "./lyricsSource";
 import scrapeLyrics from "./presenter/lyricsScraper";
 import "./popify.css"
 import "./App.css"
-const SearchResultsView=({searchResult, set_currentTrack})=>{
+import {Link} from "react-router-dom";
+
+
+const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist})=>{
 
 
     return <div  className="searchMODE">{
@@ -15,18 +18,28 @@ const SearchResultsView=({searchResult, set_currentTrack})=>{
        
         <div className="searchName"><b>{result.name}</b> {result.artist} </div>
 
-            {result.type==="track" ?
+ 
+        <Link to="/artist">
+            {result.type === "artist" ? 
+
+            <img className="searchPic" onClick = { () => { set_currentArtist(result) } } 
+    
+            src = { result.images[0].url } alt="" />:(
+            result.type==="track" ?
              
             <img className="searchPic" onClick = { () => { set_currentTrack(result); 
                 LyricsSource.findLyrics(result.artists[0].name, result.name) } } 
             src = { result.album.images[0] && result.album.images[0].url } alt="" />:
     
                             <img className="searchPic" src = {result.images[0]&&
-                                result.images[0].url } alt="" />
-                    }
-
-                </span>)
+                                result.images[0].url } alt="" />)
+            }
+        </Link>
+                   
+            </span>)
         
         } </div>
+ 
     }
+
 export default SearchResultsView;

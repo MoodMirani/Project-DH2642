@@ -22,7 +22,7 @@ const [{currentTrack}] = useDataLayerValue() // detta är en view så får ej im
     <div className="footer__play">
       <div className="footer__left">
         <img
-          src= {currentTrack.album === undefined || currentTrack.album === null ? "https://i.ibb.co/rsCJb8L/popify-Logo.png" : currentTrack.album.images[0].url }
+          src= {currentTrack.album === undefined || currentTrack.album === null ? "https://i.ibb.co/CnH7TMS/popify-Clean-1.png" : currentTrack.album.images[0].url }
           alt=""
           className="footer__albumLogo"
         />
