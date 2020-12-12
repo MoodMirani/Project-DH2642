@@ -15,8 +15,7 @@ function PopifySearchView({onSearch}){
         <img className="logo"
         src="https://i.ibb.co/CnH7TMS/popify-Clean-1.png" 
         alt="Popify logo"
-        height="100px"
-      />
+        height="100px"/>
 
             <input className="searchbar" placeholder= {message}  onChange={(e) => setText(e.target.value)}/>
                 <select className="options" onChange={(e) => setType(e.target.value)}>

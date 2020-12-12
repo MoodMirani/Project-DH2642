@@ -2,21 +2,24 @@ import React from "react";
 import "./Footer.css";
 import {
   PauseCircleOutline,
-  SkipPrevious,
-  SkipNext,
-  PlaylistPlay,
-  Shuffle,
-  Repeat,
+  PlayCircleOutline,
   VolumeDown,
 } from "@material-ui/icons";
 import { Grid, Slider } from "@material-ui/core";
-import Pause from "./pause"
 
 
 function FooterView({currentTrack, player}) {
+  
+  const [value, setValue] = React.useState(30);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    player.setVolume(value/100)
+  };
+
 
   return (  
-    
+  
     <div className="footer__play">
       <div className="footer__left">
 
@@ -29,37 +32,30 @@ function FooterView({currentTrack, player}) {
         src= {currentTrack.type === "track" ? currentTrack.album.images[0].url : "" } />  
 
       }
-
         <div className="footer__songInfo">
-        <h4>{ currentTrack !== null ? currentTrack.name : "welcome"}</h4>
+          <h4>{ currentTrack !== null ? currentTrack.name : "Welcome!"}</h4>
+        <div className="grey_name" >
+          <h5>{ currentTrack !== null ? currentTrack.artists[0].name : ""}</h5></div>
         </div>
       </div>
       
       <div className="footer__center">
-        <Shuffle className="footer__green" /> {/*Not working, only for the look} */}
-        <SkipPrevious className="footer__icon" /> {/*Not working, only for the look} */}
-        
-        <PauseCircleOutline fontSize="large" className="footer__icon"  
-        onClick = { () => { Pause({ playerInstance: player}) } }
-        />
-        
-        <SkipNext className="footer__icon" /> {/*Not working, only for the look} */}
-        <Repeat className="footer__green" /> {/*Not working, only for the look} */}
+       
+        <PlayCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.resume()} /> 
+        <PauseCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.pause()}/> 
       </div>
-     
+
       <div className="footer__right">
         <Grid container spacing={2}>
-          <Grid item>
-            <PlaylistPlay />
-          </Grid>
           <Grid item>
             <VolumeDown />
           </Grid>
           <Grid item xs>
-            <Slider />
+            <Slider value={value} onChange={handleChange} valueLabelDisplay="auto"/>
           </Grid>
         </Grid>
       </div>
+     
     </div>
   );
 }

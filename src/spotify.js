@@ -7,7 +7,8 @@ const CLIENT_ID = "0ce6ae9e52b0477a86e4b06d7135b5d2";
 const SCOPES = [                                
     "streaming", 
     "user-read-email", 
-    "user-read-private"
+    "user-read-private",
+    "user-modify-playback-state"
 ];
 
 export const BASE_URL = "https://api.spotify.com/v1";

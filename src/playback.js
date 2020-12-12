@@ -4,7 +4,6 @@ import React from "react";
 import { useDataLayerValue } from "./DataLayer";
 import loadScript from "./loadscript";
 
-
 function Playback() {
   
   const [{ token }, dispatch] = useDataLayerValue();

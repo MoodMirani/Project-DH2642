@@ -20,8 +20,9 @@ function PopifySearch(){
         });
         Play({ //calling playing-function after setting current object instead of using then in serachresultview
             playerInstance: player,
-            spotify_uri: result.uri,
+            spotify_uri: result.uri
         })
+
     }
     
     const [promise, setPromise] = React.useState(null);
