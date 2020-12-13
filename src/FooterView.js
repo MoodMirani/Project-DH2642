@@ -12,7 +12,6 @@ import HeartCheckbox from 'react-heart-checkbox';
 import {Link} from "react-router-dom";
 
 function FooterView({currentTrack, player, user}) {
-  
   const [value, setValue] = React.useState(30);
 
   const handleChange = (event, newValue) => {
