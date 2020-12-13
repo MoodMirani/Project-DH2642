@@ -1,5 +1,4 @@
 .flexboxWrapper {
-  margin: 20px;
   /*background-color: red;*/
   display: flex;
   flex-direction: row;
@@ -17,6 +16,7 @@
   width: 100%;
   height: 100%;
   margin: 20px;
+  margin-top: 20px;
 }
 
 .column {
@@ -31,7 +31,7 @@
 }
 
 .trackPic {
-  margin-top:150px;
+  margin-top: 150px;
   width: 350px;
   border-radius: 10px;
   margin-left: 200px;
@@ -71,4 +71,10 @@
 .lyricsCopy {
   margin-top: 10px;
   font-size: x-small;
+}
+
+.nullButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -50,7 +50,10 @@ function FooterView({currentTrack, player, user}) {
 
         <Link to="/lyrics">
           <Grid item>
-              <MusicNote disabled={currentTrack === null} fontSize="large" className="footer__icon" style={{fill: "white"}}/>
+          {(currentTrack === null)? 
+              <MusicNote  style={{fill: "gray"}} fontSize="large" className="footer__icon" /> :
+              <MusicNote  style={{fill: "white"}} fontSize="large" className="footer__icon" />}
+
           </Grid>
         </Link>
 

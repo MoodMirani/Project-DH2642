@@ -5,6 +5,7 @@ import LyricsSource from "../lyricsSource";
 import { useDataLayerValue } from "../DataLayer";
 import usePromise from '../usePromise'
 import FooterView from "../FooterView"
+import TrackDetailsNullView from "../view/trackDetailsNullView";
 
 
 
@@ -33,6 +34,7 @@ function LyricsSearch(){
         <Fragment>
             {currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>}
             {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> }
+            {(data === null) && (currentTrack == null) && <TrackDetailsNullView spotifyObject={currentTrack} /> }
             <FooterView currentTrack={currentTrack} player={player} user={user}/>
         </Fragment>
     )
