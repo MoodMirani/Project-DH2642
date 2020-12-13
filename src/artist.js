@@ -6,10 +6,11 @@ import "./artist.css"
 import "./searchResult.css"
 import {Link} from "react-router-dom";
 import "./popify.css"
+import FooterView from "./FooterView";
 
 function ArtistInfo(){
     
-    const [{currentArtist}] = useDataLayerValue();
+    const [{currentArtist, currentTrack, player, user}] = useDataLayerValue();
    
     return (
         <Fragment>
@@ -25,6 +26,7 @@ function ArtistInfo(){
             <div className="artistInfo">Genre: {currentArtist.genres[0]} </div>
             <div className="artistInfo">Popularity: {currentArtist.popularity} </div>
            </div>
+        <FooterView currentTrack={currentTrack} player={player} user={user}/>
     
         </Fragment> 
     )

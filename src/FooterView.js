@@ -9,6 +9,7 @@ import { Grid, Slider } from "@material-ui/core";
 // import HeartButton from "./components/heart"
 import Likes from "./model/firebase-manager"
 import HeartCheckbox from 'react-heart-checkbox';
+import {Link} from "react-router-dom";
 
 function FooterView({currentTrack, player, user}) {
   
@@ -50,9 +51,14 @@ function FooterView({currentTrack, player, user}) {
         <button onClick = {()=>{console.log("footerview", currentTrack.name, user);
         Likes(currentTrack.name, user.id)}}></button>
 
-   
 
       </div>
+
+      <Link to="/lyrics">
+        <button className ="button">LYRICS</button>
+      </Link>
+
+      
 
       <div className="footer__right">
         <Grid container spacing={2}>

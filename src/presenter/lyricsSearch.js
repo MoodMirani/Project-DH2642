@@ -6,9 +6,10 @@ import { useDataLayerValue } from "../DataLayer";
 import promiseNoData from '../promiseNoData'
 import usePromise from '../usePromise'
 import ShowLyrics from "../view/lyricsButton"
+import FooterView from "../FooterView"
 
 function LyricsSearch(){
-    const [{currentTrack}] = useDataLayerValue();
+    const [{currentTrack, player, user}] = useDataLayerValue();
     console.log("currentTrack: ", currentTrack);
     const [promise, setPromise] = React.useState();
 
@@ -30,6 +31,8 @@ function LyricsSearch(){
     return (
         <Fragment>
             {(currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>)}
+
+            <FooterView currentTrack={currentTrack} player={player} user={user}/>
         </Fragment>
     )
 }

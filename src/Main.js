@@ -12,7 +12,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-//import LyricsSearch from 
 
 
 function Main({ spotify }) {
@@ -20,15 +19,16 @@ function Main({ spotify }) {
   return (
     <Router>
         <Switch>
+        <Route path="/lyrics">
+          <LyricsSearch/>
+          </Route>
           <Route path="/artist">
             <ArtistInfo/>
           </Route>
           <Route path="/">
             <PopifySearch/>
           </Route>
-          <Route path="/track">
-          <LyricsSearch/>
-          </Route>
+          
       </Switch>
       <Playback/>
   </Router>
