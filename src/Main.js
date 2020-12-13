@@ -31,8 +31,17 @@ function Main({ spotify }) {
           
       </Switch>
       <Playback/>
+     
   </Router>
   );
 }
 
 export default Main;
+
+
+/*
+
+          <Route path="/track">
+          <LyricsSearch/>
+          </Route>
+          */

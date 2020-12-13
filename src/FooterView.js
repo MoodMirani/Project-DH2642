@@ -6,9 +6,7 @@ import {
   VolumeDown,
 } from "@material-ui/icons";
 import { Grid, Slider } from "@material-ui/core";
-// import HeartButton from "./components/heart"
 import Likes from "./model/firebase-manager"
-import HeartCheckbox from 'react-heart-checkbox';
 import {Link} from "react-router-dom";
 
 function FooterView({currentTrack, player, user}) {
