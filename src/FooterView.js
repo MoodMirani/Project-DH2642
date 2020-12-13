@@ -50,7 +50,7 @@ function FooterView({currentTrack, player, user}) {
 
         <Link to="/lyrics">
           <Grid item>
-              <MusicNote fontSize="large" className="footer__icon" style={{fill: "white"}}/>
+              <MusicNote disabled={currentTrack === null} fontSize="large" className="footer__icon" style={{fill: "white"}}/>
           </Grid>
         </Link>
 
@@ -68,6 +68,12 @@ function FooterView({currentTrack, player, user}) {
         </Link>
 
       </div>
+      {/*
+      <Link to="/lyrics">
+        <button className ="lyricsButton" disabled={currentTrack === null}>LYRICS</button>
+      </Link>*/}
+
+      
 
       <div className="footer__right">
         <Grid container spacing={2}>

@@ -70,3 +70,21 @@
   height: 10px;
   width: 10px;
 }
+
+.lyricsButton {
+  background-color: #061465;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.lyricsButton:disabled {
+  background-color: gray;
+}

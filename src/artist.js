@@ -7,6 +7,7 @@ import "./searchResult.css"
 import {Link} from "react-router-dom";
 import "./popify.css"
 import FooterView from "./FooterView";
+import ArtistView from "./artistView";
 
 function ArtistInfo(){
     
@@ -14,17 +15,9 @@ function ArtistInfo(){
    
     return (
         <Fragment>
-            <div className="style">
-                <Link to="/">
-                    <button className ="button">Back to search</button>
-                </Link>
-                    <div className="artistName">{currentArtist.name} </div>
-                    <img className="artistPic" src = {currentArtist.images[0].url} />
-                    <div className="artistInfo">Followers: {currentArtist.followers.total} </div>
-                    <div className="artistInfo">Genre: {currentArtist.genres[0]} </div>
-                    <div className="artistInfo">Popularity: {currentArtist.popularity} </div>
-            </div>
-            <FooterView currentTrack={currentTrack} player={player} user={user}/>
+        <ArtistView currentArtist={currentArtist}/>
+        <FooterView currentTrack={currentTrack} player={player} user={user}/>
+    
         </Fragment> 
     )
 }

@@ -58,7 +58,7 @@
 
 .trackTitle {
   font-size: x-large;
-  font-weight: 100;
+  font-weight: 150;
   font-variant: normal;
   margin-left: 10px;
 }
@@ -66,4 +66,9 @@
 .lyricsStyle {
   margin-top: 10px;
   font-size: medium;
+}
+
+.lyricsCopy {
+  margin-top: 10px;
+  font-size: x-small;
 }

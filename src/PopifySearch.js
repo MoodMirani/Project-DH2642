@@ -23,7 +23,7 @@ function PopifySearch(){
     const [{ player, token, currentTrack, user }, dispatch] = useDataLayerValue();
     
     function set_currentTrack(result) {
-        
+
         dispatch({
             type: "SET_CURRENTTRACK",
             currentTrack: result,
@@ -36,21 +36,16 @@ function PopifySearch(){
     }
 
     function set_currentArtist(result) {
- 
-       
         dispatch({
             type: "SET_CURRENTARTIST",
             currentArtist: result,
-            
         })
-        console.log(result);
-        <Switch> 
-        <Route path="/artist">
-            <ArtistInfo/>
-        </Route>
-        </Switch>
-        
        }
+
+      
+
+
+
 
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
