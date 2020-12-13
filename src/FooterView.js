@@ -1,13 +1,18 @@
 import React from "react";
+import { Grid, Slider } from "@material-ui/core";
+import Likes from "./model/firebase-manager"
+import {Link} from "react-router-dom";
+
+import "./popify.css";
 import "./Footer.css";
+
 import {
   PauseCircleOutline,
   PlayCircleOutline,
   VolumeDown,
+  FavoriteBorder,
+  List,
 } from "@material-ui/icons";
-import { Grid, Slider } from "@material-ui/core";
-import Likes from "./model/firebase-manager"
-import {Link} from "react-router-dom";
 
 function FooterView({currentTrack, player, user}) {
   const [value, setValue] = React.useState(30);
@@ -25,7 +30,7 @@ function FooterView({currentTrack, player, user}) {
 
       {currentTrack === null ?
 
-        <img alt="" className="footer__albumLogo" src= {"https://i.ibb.co/rsCJb8L/popify-Logo.png"} /> :
+        <img alt=""/> :
 
         <img alt=""
         className="footer__albumLogo"
@@ -44,10 +49,16 @@ function FooterView({currentTrack, player, user}) {
         <PlayCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.resume()} /> 
         <PauseCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.pause()}/> 
         
-        
-        <button onClick = {()=>{console.log("footerview", currentTrack.name, user);
-        Likes(currentTrack.name, user.id)}}></button>
+        <Grid item>
+          <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{console.log("footerview", currentTrack.name, user);
+          Likes(currentTrack.name, user.id)}}></FavoriteBorder>
+        </Grid>
 
+        <Link to="/liked">
+          <Grid item>
+            <List fontSize="large" className="footer__icon"/>
+          </Grid>
+        </Link>
 
       </div>
 

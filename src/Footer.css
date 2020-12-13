@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: space-between;
   color: white;
+  margin-left: 10px;
 }
 
 .footer__center {
@@ -52,13 +53,17 @@
   color: grey;
 }
 
+.heart{
+  height: 200px;
+}
+
 .footer__icon:hover,
 .footer__green:hover {
   transition: transform 0.2 ease-in;
   transform: scale(1.2) !important;
 }
 .footer__right * .MuiSlider-root {
-  color: #1ed15e;
+  color: #4d30dc;
 }
 
 .heartB {

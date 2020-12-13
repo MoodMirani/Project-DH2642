@@ -10,7 +10,8 @@
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(119, 106, 154, 0.5);
   font-size: 15px;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
   
     
 }
@@ -27,7 +28,8 @@ margin: 20px;
 border-radius: 10px;
 width: 80px;
 font-size: 15px;
-font-family: "Lucida Console", "Courier New", monospace;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 
 }
 
@@ -41,7 +43,8 @@ background: black;
 height: 40px;
 width: 80px;
 font-size: 15px;
-font-family: "Lucida Console", "Courier New", monospace;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 color:white;
 border-radius: 10px;
 cursor: pointer;
@@ -77,15 +80,17 @@ height: 120px;
 }
 
 .button {
-  background-color: #061465;
+  background-color: #1d0035;
   border: none;
   color: white;
   padding: 8px 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
-  font-family: "Lucida Console", "Courier New", monospace;
+
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
   margin-top: 20px;
   border-radius: 10px;
 }
