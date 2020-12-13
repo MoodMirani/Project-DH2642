@@ -11,7 +11,9 @@ import {
   PlayCircleOutline,
   VolumeDown,
   FavoriteBorder,
-  List,
+  LibraryMusic,
+  FormatQuote,
+
 } from "@material-ui/icons";
 
 function FooterView({currentTrack, player, user}) {
@@ -28,9 +30,7 @@ function FooterView({currentTrack, player, user}) {
     <div className="footer__play">
       <div className="footer__left">
 
-      {currentTrack === null ?
-
-        <img alt=""/> :
+      {currentTrack === null ? <img alt=""/> :
 
         <img alt=""
         className="footer__albumLogo"
@@ -42,31 +42,32 @@ function FooterView({currentTrack, player, user}) {
         <div className="grey_name" >
           <h5>{ currentTrack !== null ? currentTrack.artists[0].name : ""}</h5></div>
         </div>
+
+        <Grid item>
+          <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{console.log("footerview", currentTrack.name, user);
+          Likes(currentTrack.name, user.id)}}></FavoriteBorder>
+        </Grid>
+
+        <Link to="/lyrics">
+          <Grid item>
+              <FormatQuote fontSize="large"/>
+          </Grid>
+        </Link>
+
       </div>
       
       <div className="footer__center">
        
         <PlayCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.resume()} /> 
         <PauseCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.pause()}/> 
-        
-        <Grid item>
-          <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{console.log("footerview", currentTrack.name, user);
-          Likes(currentTrack.name, user.id)}}></FavoriteBorder>
-        </Grid>
 
         <Link to="/liked">
           <Grid item>
-            <List fontSize="large" className="footer__icon"/>
+            <LibraryMusic fontSize="large" className="footer__icon"/>
           </Grid>
         </Link>
 
       </div>
-
-      <Link to="/lyrics">
-        <button className ="button">LYRICS</button>
-      </Link>
-
-      
 
       <div className="footer__right">
         <Grid container spacing={2}>
