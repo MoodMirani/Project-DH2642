@@ -7,8 +7,12 @@ import {
 } from "@material-ui/icons";
 import { Grid, Slider } from "@material-ui/core";
 
+import Pause from "./pause"
+// import HeartButton from "./components/heart"
+import Likes from "./model/firebase-manager"
+import HeartCheckbox from 'react-heart-checkbox';
 
-function FooterView({currentTrack, player}) {
+function FooterView({currentTrack, player, user}) {
   
   const [value, setValue] = React.useState(30);
 
@@ -17,7 +21,7 @@ function FooterView({currentTrack, player}) {
     player.setVolume(value/100)
   };
 
-
+  
   return (  
   
     <div className="footer__play">
@@ -43,6 +47,13 @@ function FooterView({currentTrack, player}) {
        
         <PlayCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.resume()} /> 
         <PauseCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.pause()}/> 
+        
+        
+        <button onClick = {()=>{console.log("footerview", currentTrack.name, user);
+        Likes(currentTrack.name, user.id)}}></button>
+
+        <HeartCheckbox className="heartB" checked="true" />
+
       </div>
 
       <div className="footer__right">

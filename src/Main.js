@@ -4,7 +4,9 @@ import PopifySearch from "./PopifySearch";
 //import LyricsSearch from "./presenter/lyricsSearch"
 //import Footer from "./Footer"
 import Playback from "./playback"
+import { useDataLayerValue } from "./DataLayer";
 function Main({ spotify }) {
+  const [{ player, token, user }, dispatch] = useDataLayerValue();
   return (
     <div>
       <PopifySearch/>

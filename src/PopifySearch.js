@@ -10,7 +10,7 @@ import FooterView from "./FooterView"
 
 function PopifySearch(){
     
-    const [{ player, token, currentTrack }, dispatch] = useDataLayerValue();
+    const [{ player, token, currentTrack, user }, dispatch] = useDataLayerValue();
     
     function set_currentTrack(result) {
         
@@ -24,7 +24,7 @@ function PopifySearch(){
         })
 
     }
-    
+    console.log("här",user)
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
     React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "A", token})), [token]);
@@ -35,7 +35,8 @@ function PopifySearch(){
  />
             { promiseNoData(promise, data, error) || 
             <Fragment> 
-                (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack}/><FooterView currentTrack={currentTrack} player={player}/>) 
+                (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack}/>
+                <FooterView currentTrack={currentTrack} player={player} user={user}/>) 
             </Fragment>  }
         </Fragment> 
     )
