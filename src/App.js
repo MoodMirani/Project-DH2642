@@ -5,6 +5,7 @@ import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useDataLayerValue, dispatch } from "./DataLayer";
 import Main from "./Main";
+import ArtistInfo from "./artist"
 
 
 const spotify = new SpotifyWebApi();
@@ -12,7 +13,8 @@ const spotify = new SpotifyWebApi();
 
 
 function App() {
-  
+
+
   const [{ token }, dispatch] = useDataLayerValue();
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -55,9 +57,15 @@ function App() {
 
 
   return (
+  
+
     <div className="App">
+
       {token ? <Main /> : <Login />}
+    
     </div>
+
+
   );
 }
 

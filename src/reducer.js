@@ -6,6 +6,7 @@ export const initialState = {
   playing: false,
   item: null,
   currentTrack: null,
+  currentArtist: null,
   player: null,
   currentUser: null,
 };
@@ -38,11 +39,16 @@ const reducer = (state, action) => { //A special function called reducer is impl
         ...state,
         currentTrack: action.currentTrack,
       }
-      case "SET_PLAYER":
-        return {
-          ...state,
-          player: action.player,
-        };
+    case "SET_CURRENTARTIST":
+      return {
+        ...state,
+        currentArtist: action.currentArtist, 
+      }
+    case "SET_PLAYER":
+      return {
+        ...state,
+        player: action.player,
+      };
 
       case "SET_CURRENTUSER":
         return {

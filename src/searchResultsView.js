@@ -5,7 +5,10 @@ import "./searchResult.css"
 //import scrapeLyrics from "./presenter/lyricsScraper";
 import "./popify.css"
 import "./App.css"
-const SearchResultsView=({searchResult, set_currentTrack})=>{
+import {Link} from "react-router-dom";
+
+
+const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist})=>{
 
     return <div  className="searchMODE">{
         searchResult.map(result=>
@@ -14,18 +17,31 @@ const SearchResultsView=({searchResult, set_currentTrack})=>{
        
         <div className="searchName"><b>{result.name}</b> {result.artist} </div>
 
-            {result.type==="track" ?
+ 
+        
+            {result.type === "artist" ? 
+            <Link to="/artist">
+
+            <img className="searchPic" onClick = { () => { set_currentArtist(result) } } 
+    
+            src = { result.images[0]? result.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG" }  alt="" />
+            </Link>
+            :(
+            result.type==="track" ?
              
             <img className="searchPic" onClick = { () => { set_currentTrack(result)}}
                 // LyricsSource.findLyrics(result.artists[0].name, result.name) } } 
             src = { result.album.images[0] && result.album.images[0].url } alt="" />:
     
                             <img className="searchPic" src = {result.images[0]&&
-                                result.images[0].url } alt="" />
-                    }
-
-                </span>)
+                                result.images[0].url } alt="" />)
+            }
+        
+                   
+            </span>)
         
         } </div>
+ 
     }
+
 export default SearchResultsView;

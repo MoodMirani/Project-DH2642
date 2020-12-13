@@ -59,21 +59,34 @@ width: 85px;
 .logo{
 
 display: block;
-  margin-left: auto;
-  margin-right: auto;
+margin-left: auto;
+margin-right: auto;
+height: 120px;
 
-
-height: 140px;
 
 }
 
 .footer{
 
-  margin-top: 30px;
+  margin-top: 50px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   height: 50px;
   background: linear-gradient( rgb(40, 39, 46),rgb(11, 9, 9));
   color: white;
+}
+
+.button {
+  background-color: #061465;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  margin-top: 20px;
+  border-radius: 10px;
 }
