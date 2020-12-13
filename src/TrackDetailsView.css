@@ -31,14 +31,19 @@
 }
 
 .trackPic {
+  margin-top:150px;
   width: 350px;
   border-radius: 10px;
+  margin-left: 200px;
 }
 
 .lyricsContainer {
-  /*background-color: green;*/
-  height: 550px;
-  margin-left: 5px;
+  display: inline-block;
+  height: 500px;
+  overflow: scroll;
+  margin-right: 200px;
+  overflow: scroll;
+  margin-top: 50px;
 }
 
 .headingTitle {

@@ -12,7 +12,7 @@ import {
   VolumeDown,
   FavoriteBorder,
   LibraryMusic,
-  FormatQuote,
+  MusicNote,
 
 } from "@material-ui/icons";
 
@@ -50,7 +50,7 @@ function FooterView({currentTrack, player, user}) {
 
         <Link to="/lyrics">
           <Grid item>
-              <FormatQuote fontSize="large"/>
+              <MusicNote fontSize="large" className="footer__icon"/>
           </Grid>
         </Link>
 
