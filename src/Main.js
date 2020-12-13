@@ -26,7 +26,7 @@ function Main({ spotify }) {
           <Route path="/">
             <PopifySearch/>
           </Route>
-          <Route path="track">
+          <Route path="/track">
           <LyricsSearch/>
           </Route>
       </Switch>

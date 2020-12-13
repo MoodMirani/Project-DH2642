@@ -7,7 +7,6 @@ import "./popify.css"
 import "./App.css"
 import {Link} from "react-router-dom";
 
-
 const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist})=>{
 
     return <div  className="searchMODE">{
@@ -28,10 +27,10 @@ const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist})=>{
             </Link>
             :(
             result.type==="track" ?
-             
+             <Link to="/track">
             <img className="searchPic" onClick = { () => { set_currentTrack(result)}}
                 // LyricsSource.findLyrics(result.artists[0].name, result.name) } } 
-            src = { result.album.images[0] && result.album.images[0].url } alt="" />:
+            src = { result.album.images[0] && result.album.images[0].url } alt="" /></Link>:
     
                             <img className="searchPic" src = {result.images[0]&&
                                 result.images[0].url } alt="" />)
