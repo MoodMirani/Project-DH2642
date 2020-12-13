@@ -5,3 +5,12 @@ Man ska inte behöva logga in igen när vi refreshar sidan
 Man kan bara söka på ett ord (%20)
 
 popifysearch körs 6 ggr när programmet startar
+
+
+HEROKU länkar:
+https://stackoverflow.com/questions/39399804/updates-were-rejected-because-the-tip-of-your-current-branch-is-behind-its-remot
+https://stackoverflow.com/questions/26595874/i-want-make-push-and-get-error-src-refspec-master-does-not-match-any
+https://gist.github.com/randallreedjr/aa89e069371d07371882eea2df15fb4d
+
+https://www.youtube.com/watch?v=maNWl202vy4
+

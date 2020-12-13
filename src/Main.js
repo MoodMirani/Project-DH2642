@@ -1,7 +1,7 @@
 import React from "react";
 import PopifySearch from "./PopifySearch";
 //import LyricsSource from "./lyricsSource"
-//import LyricsSearch from "./presenter/lyricsSearch"
+import LyricsSearch from "./presenter/lyricsSearch"
 //import Footer from "./Footer"
 import Playback from "./playback"
 import ArtistInfo from "./artist"
@@ -12,6 +12,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+//import LyricsSearch from 
 
 
 function Main({ spotify }) {
@@ -22,9 +23,11 @@ function Main({ spotify }) {
           <Route path="/artist">
             <ArtistInfo/>
           </Route>
-
           <Route path="/">
             <PopifySearch/>
+          </Route>
+          <Route path="track">
+          <LyricsSearch/>
           </Route>
       </Switch>
       <Playback/>

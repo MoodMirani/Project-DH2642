@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
-import LyricsView from "../view/lyricsView";
+import TrackDetailsView from "../view/trackDetailsView";
+import TrackDetailsNoLyricsView from "../view/trackDetailsNoLyricsView";
 import LyricsSource from "../lyricsSource";
 import { useDataLayerValue } from "../DataLayer";
 import promiseNoData from '../promiseNoData'
@@ -8,18 +9,41 @@ import ShowLyrics from "../view/lyricsButton"
 
 function LyricsSearch(){
     const [{currentTrack}] = useDataLayerValue();
-    // console.log({currentTrack})
-    const [{token}] = useDataLayerValue();
-    const [promise, setPromise] = React.useState(null);
+    console.log("currentTrack: ", currentTrack);
+    const [promise, setPromise] = React.useState();
+
+    
+    React.useEffect(async() => {
+                if (currentTrack){
+                    const id = await LyricsSource.getId(currentTrack.artists[0].name, currentTrack.name)
+                    setPromise(LyricsSource.getLyrics(id))
+
+                }},[currentTrack]) 
+            
+
+    //const data = "testdata";
     const [data, error] = usePromise(promise);
-    React.useEffect(() => setPromise(LyricsSource.findLyrics()), []);
+    console.log("data", data)
+  
+  
 
     return (
         <Fragment>
-            <ShowLyrics onClick={() => setPromise(LyricsSource.findLyrics())}/>
-            {promiseNoData(promise, data, error) || <LyricsView lyrics={data}/>}
+            {(currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>)}
         </Fragment>
     )
 }
 
 export default LyricsSearch; 
+
+
+/*
+
+To FIX: some kind of alternte rendering pending on if data = defined eller undefined
+Update heroku path for cors handeling (need to mearch branches with main to do that)
+
+( (data === "undefined") && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> )
+            
+            
+            ||*/
+
