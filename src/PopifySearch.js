@@ -20,7 +20,7 @@ import {
 
 function PopifySearch(){
     
-    const [{ player, token, currentTrack, user, currentLyrics }, dispatch] = useDataLayerValue();
+    const [{ player, token, currentTrack, user }, dispatch] = useDataLayerValue();
     
     function set_currentTrack(result) {
 
@@ -42,14 +42,7 @@ function PopifySearch(){
         })
        }
 
-       function set_currentLyrics() {
-
-        dispatch({
-            type: "SET_CURRENTARTIST",
-            currentArtist: result,
-        })
-       }
-
+      
 
 
 
@@ -65,7 +58,7 @@ function PopifySearch(){
             { promiseNoData(promise, data, error) || 
             <Fragment> 
                 (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
-                set_currentArtist={set_currentArtist} set_currentLyrics={set_currentLyrics}/>
+                set_currentArtist={set_currentArtist}/>
                 <FooterView currentTrack={currentTrack} player={player} user={user}/>) 
             </Fragment>  }
         </Fragment> 
