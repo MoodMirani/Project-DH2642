@@ -6,8 +6,6 @@ import {
   VolumeDown,
 } from "@material-ui/icons";
 import { Grid, Slider } from "@material-ui/core";
-
-import Pause from "./pause"
 // import HeartButton from "./components/heart"
 import Likes from "./model/firebase-manager"
 import HeartCheckbox from 'react-heart-checkbox';
@@ -52,7 +50,7 @@ function FooterView({currentTrack, player, user}) {
         <button onClick = {()=>{console.log("footerview", currentTrack.name, user);
         Likes(currentTrack.name, user.id)}}></button>
 
-        <HeartCheckbox className="heartB" checked="true" />
+   
 
       </div>
 
