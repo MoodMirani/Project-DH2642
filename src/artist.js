@@ -1,7 +1,6 @@
 import React, {Fragment} from "react";
 import { useDataLayerValue } from "./DataLayer";
 import artistView from "./artistView";
-import { GeneratedIdentifierFlags } from "typescript";
 import "./artist.css"
 import "./searchResult.css"
 import {Link} from "react-router-dom";

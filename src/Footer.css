@@ -1,20 +1,20 @@
 .footer__play {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    bottom: 0;
-    height: 80px;
-    width: 97.2%;
-    background-color: #282828;
-    padding: 20px;
-  }
-  .footer__left {
-    flex: 0.3;
-    display: flex;
-    align-items: center;
-    color: white;
-    max-width: 300px;
-  }
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  height: 80px;
+  width: 97.2%;
+  background-color: #282828;
+  padding: 20px;
+}
+.footer__left {
+  flex: 0.3;
+  display: flex;
+  align-items: center;
+  color: white;
+  max-width: 300px;
+}
 
 .footer__right {
   flex: 0.3;
@@ -53,7 +53,7 @@
   color: grey;
 }
 
-.heart{
+.heart {
   height: 200px;
 }
 
