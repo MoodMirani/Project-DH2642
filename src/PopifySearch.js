@@ -20,10 +20,10 @@ import {
 
 function PopifySearch(){
     
-    const [{ player, token, currentTrack, user }, dispatch] = useDataLayerValue();
+    const [{ player, token, currentTrack, user, currentLyrics }, dispatch] = useDataLayerValue();
     
     function set_currentTrack(result) {
-        
+
         dispatch({
             type: "SET_CURRENTTRACK",
             currentTrack: result,
@@ -36,21 +36,23 @@ function PopifySearch(){
     }
 
     function set_currentArtist(result) {
- 
-       
         dispatch({
             type: "SET_CURRENTARTIST",
             currentArtist: result,
-            
         })
-        console.log(result);
-        <Switch> 
-        <Route path="/artist">
-            <ArtistInfo/>
-        </Route>
-        </Switch>
-        
        }
+
+       function set_currentLyrics() {
+
+        dispatch({
+            type: "SET_CURRENTARTIST",
+            currentArtist: result,
+        })
+       }
+
+
+
+
 
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
@@ -63,7 +65,7 @@ function PopifySearch(){
             { promiseNoData(promise, data, error) || 
             <Fragment> 
                 (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
-                set_currentArtist={set_currentArtist}/>
+                set_currentArtist={set_currentArtist} set_currentLyrics={set_currentLyrics}/>
                 <FooterView currentTrack={currentTrack} player={player} user={user}/>) 
             </Fragment>  }
         </Fragment> 

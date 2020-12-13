@@ -27,6 +27,18 @@ const LyricsSource = {
     //.then(res => res.replaceAll(/\\n/g, "<br />"))
    
     },
+    matchLyrics(artist, song){
+        //console.log("matchLyrics", artist, song);
+        return fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/matcher.track.get?q_artist=${encodeURI(artist)}&q_track=${encodeURI(song)}&apikey=${key}`, 
+        {
+            
+            "method": "GET",
+        })
+        .then(response => response.json())
+        .then(res => (res.message.body))
+        .catch(err => 
+            console.error(err))
+    },
    
 }
 

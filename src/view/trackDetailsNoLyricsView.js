@@ -1,5 +1,6 @@
 import React from "react";
 import "../TrackDetailsView.css"
+import {Link} from "react-router-dom"
 
 const TrackDetailsNoLyricsView =({spotifyObject})=>
    <div className="flexboxWrapper">
@@ -18,6 +19,9 @@ const TrackDetailsNoLyricsView =({spotifyObject})=>
                   <span className="artistTitle">{spotifyObject.artists[0].name}</span>
                   <span className="trackTitle">{spotifyObject.name}</span>
                </p>
+               <Link to="/">
+                  <button className ="button">Back to search</button>
+               </Link>
                <p className="lyricsStyle" style={{whiteSpace: 'pre-line'}}>There is no lyrics avaible for this track</p>
             </div>
          </div>

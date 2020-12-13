@@ -56,6 +56,8 @@ const reducer = (state, action) => { //A special function called reducer is impl
           currentUser: action.currentUser,
         };
 
+        
+
     default:
       return state;
   }

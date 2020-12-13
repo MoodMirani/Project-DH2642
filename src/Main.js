@@ -16,6 +16,7 @@ import {
 
 function Main({ spotify }) {
   const [{ player, token, user }, dispatch] = useDataLayerValue();
+ 
   return (
     <Router>
         <Switch>

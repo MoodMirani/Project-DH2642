@@ -52,7 +52,7 @@ function FooterView({currentTrack, player, user}) {
       </div>
 
       <Link to="/lyrics">
-        <button className ="button">LYRICS</button>
+        <button className ="lyricsButton" disabled={currentTrack === null}>LYRICS</button>
       </Link>
 
       
