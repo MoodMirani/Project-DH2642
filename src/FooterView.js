@@ -50,7 +50,7 @@ function FooterView({currentTrack, player, user}) {
 
         <Link to="/lyrics">
           <Grid item>
-              <MusicNote fontSize="large" className="footer__icon"/>
+              <MusicNote fontSize="large" className="footer__icon" style={{fill: "white"}}/>
           </Grid>
         </Link>
 
@@ -63,7 +63,7 @@ function FooterView({currentTrack, player, user}) {
 
         <Link to="/liked">
           <Grid item>
-            <LibraryMusic fontSize="large" className="footer__icon"/>
+            <LibraryMusic fontSize="large" className="footer__icon" style={{fill: "white"}}/>
           </Grid>
         </Link>
 
