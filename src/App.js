@@ -9,7 +9,6 @@ import Main from "./Main";
 const spotify = new SpotifyWebApi();
 
 
-
 function App() {
   
   const [{ token }, dispatch] = useDataLayerValue();

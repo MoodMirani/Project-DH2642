@@ -8,7 +8,8 @@ const SCOPES = [
     "streaming", 
     "user-read-email", 
     "user-read-private",
-    "user-modify-playback-state"
+    "user-modify-playback-state",
+    "user-read-currently-playing"
 ];
 
 export const BASE_URL = "https://api.spotify.com/v1";

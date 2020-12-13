@@ -17,8 +17,8 @@ function FooterView({currentTrack, player}) {
     player.setVolume(value/100)
   };
 
-
-  return (  
+  
+return (  
   
     <div className="footer__play">
       <div className="footer__left">
@@ -55,7 +55,6 @@ function FooterView({currentTrack, player}) {
           </Grid>
         </Grid>
       </div>
-     
     </div>
   );
 }

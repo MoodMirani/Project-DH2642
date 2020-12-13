@@ -9,7 +9,6 @@ function Main({ spotify }) {
     <div>
       <PopifySearch/>
       <Playback/>
-      {/* <Footer/> */}
       {/*console.log(LyricsSource.findLyrics())*/}
     </div>
  
