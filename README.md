@@ -1,6 +1,7 @@
 # 1. Getting Started with Popify
 
 You need a Spotify Premium account to get started with Popify. The App will ask you for authentification upon start.
+If you don't have a Spotify Premium account, you can create it in our app (or ask another TA to grade this project :))
 
 # 2. Download Node.js
 
