@@ -13,13 +13,8 @@ function ArtistInfo(){
    
     return (
         <Fragment>
-<<<<<<< HEAD
-            <ArtistView currentArtist={currentArtist}/>
-            <FooterView currentTrack={currentTrack} player={player} user={user}/>  
-=======
         <ArtistView currentArtist={currentArtist}/>
         <FooterView currentTrack={currentTrack} player={player} user={user}/>
->>>>>>> 56757ef047f203c25bbc5123cd8aedb1437bd0b1
         </Fragment> 
     )
 }
