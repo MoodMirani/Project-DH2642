@@ -24,8 +24,10 @@ export const getItinerary = (userName) => {
 */
 
 const getLikes = (user, dispatch)=>{
+  console.log(user)
+  const userID = user.id
   
-  return fire.database().ref('users/' + user.id).once("value", snapshot => {
+  return fire.database().ref('users/' + userID.replace(".", "/")).once("value", snapshot => {
     if (snapshot.val()) {
       const likedList = Object.values(snapshot.val())
       console.log("inside getlikes",likedList)
