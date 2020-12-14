@@ -9,7 +9,7 @@ export const initialState = {
   currentArtist: null,
   player: null,
   currentUser: null,
-  likedSongs: null,
+  likedSongs: [],
 };
 
 const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 

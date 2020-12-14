@@ -9,14 +9,20 @@ import Play from "./play"
 import Playback from "./playback"
 import FooterView from "./FooterView"
 import ArtistInfo from "./artist"
-
+import {getLikes, GetUserLikes} from "./model/firebase-manager"
 
 function PopifySearch(){
     const [{ player, token, currentTrack, user, likedSongs }, dispatch] = useDataLayerValue();
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
     
-   
+    useEffect(()=>{
+        if(user){
+        const likes = getLikes(user, dispatch)
+      
+}    
+    }, [user])
+    console.log("inside popifysearch",likedSongs)
     function set_currentTrack(result) {
 
         dispatch({
@@ -47,7 +53,7 @@ function PopifySearch(){
             <Fragment> 
                 (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
                 set_currentArtist={set_currentArtist}/>
-                <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs}/>) 
+                <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/>) 
             </Fragment>  }
         </Fragment> 
     )

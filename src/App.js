@@ -6,7 +6,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 import { useDataLayerValue, dispatch } from "./DataLayer";
 import Main from "./Main";
 import ArtistInfo from "./artist"
-import {GetUserLikes} from "./model/firebase-manager"
+import {getLikes, GetUserLikes} from "./model/firebase-manager"
 
 const spotify = new SpotifyWebApi();
 
@@ -25,13 +25,15 @@ function App() {
         type: "SET_TOKEN",
         token: _token,
       });
+
+
       spotify.setAccessToken(_token);
       spotify.getMe().then((user) => {
         dispatch({ // The wrap dispatch function recognizes that this is a promise and not an action so it waits for the 
                    // promise to resolve and passes it on
           type: "SET_USER",
           user,
-        });
+        })
       });
     
       spotify.getUserPlaylists().then((playlists) => {
@@ -46,7 +48,6 @@ function App() {
           discover_weekly: playlist,
         });
       });
-      
     }
   }, []);
   

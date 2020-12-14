@@ -1,19 +1,43 @@
 import React from "react";
 import fire from "../firebase-config"
 import { useDataLayerValue } from "../DataLayer";
+/*
+export const getItinerary = (userName) => {
+  const temp = []
+  return dispatch => {
+      dispatch(itineraryFetchRequest())
+      db.collection('itinerary').where('user', '==', userName.toLowerCase()).get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          temp.push(doc.data())
+        })
+      })
+        .then (itinerary => {
+          if(temp.length === 0) dispatch({type: FETCH_ITINERARIES_EMPTY})
+          else dispatch({type: FETCH_ITINERARIES_SUCCESS, payload: temp})
+            
+        })
+      .catch(err => {
+        console.log('Error getting documents', err);
+  })
+}}
+*/
 
-
-const getLikes = (user)=>{
+const getLikes = (user, dispatch)=>{
   
   return fire.database().ref('users/' + user.id).once("value", snapshot => {
     if (snapshot.val()) {
-      Object.values(snapshot.val())
-      
+      const likedList = Object.values(snapshot.val())
+      console.log("inside getlikes",likedList)
+      dispatch({
+        type: "SET_LIKEDSONGS",
+        likedSongs: likedList,
+    });
       //console.log("inside getuserlikes ",snapshot.val)
       } 
     })
-
 }
+
 /*
 function GetUserLikes(user, likedSongs){
   if(user && likedSongs===null) {
@@ -57,18 +81,28 @@ function GetUserLikes(){
 }
 
 */
-const Likes = (currentTrack, user) => {
-
+const Likes = (currentTrack, user, dispatch, likedSongs) => {
   
-    // const tracks = ["2aafaaa", "bb2fbbb", "ccf2ccc", "ddfddd"]
-
-    fire.database().ref('users/' + user).set({
-        Likes: currentTrack
+    if(!likedSongs.includes(currentTrack.name)){
+      const newLikeSongs = [currentTrack.name, ...likedSongs.flat()];
+      console.log("inside likes2", likedSongs)
+      dispatch({
+        type: "SET_LIKEDSONGS",
+        likedSongs: newLikeSongs,
       });
+      console.log("inside likes",newLikeSongs)
+
+      fire.database().ref('users/' + user.id).set({
+        Likes: newLikeSongs
+      });
+
+      console.log("its done")
+    }
+ 
     /*  
     let ref =  fire.database().ref("Steve");
     fire.database().ref("Steve").push({Likes: currentTrack});*/
-    console.log("its done")
+   
 }
 
 

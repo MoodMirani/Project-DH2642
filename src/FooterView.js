@@ -16,7 +16,7 @@ import {
 
 } from "@material-ui/icons";
 
-function FooterView({currentTrack, player, user, likedSongs, getUserLikes}) {
+function FooterView({currentTrack, player, user, likedSongs, getUserLikes, dispatch}) {
   const [value, setValue] = React.useState(30);
 
   const handleChange = (event, newValue) => {
@@ -45,7 +45,7 @@ function FooterView({currentTrack, player, user, likedSongs, getUserLikes}) {
 
         <Grid item>
           <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{console.log("footerview", currentTrack.name, user);
-          if(currentTrack){Likes(currentTrack.name, user.id)}}}></FavoriteBorder>
+          if(currentTrack){Likes(currentTrack, user, dispatch, likedSongs)}}}></FavoriteBorder>
         </Grid>
 
         <Link to="/lyrics">
@@ -68,7 +68,6 @@ function FooterView({currentTrack, player, user, likedSongs, getUserLikes}) {
           <Grid item>
             <LibraryMusic fontSize="large" className="footer__icon" style={{fill: "white"}}/>
           </Grid>
-          
         </Link>
 
       </div>
