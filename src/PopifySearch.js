@@ -12,8 +12,7 @@ import {getLikes, GetUserLikes} from "./model/firebase-manager"
 
 function PopifySearch(){
     const [{ player, token, currentTrack, user, likedSongs }, dispatch] = useDataLayerValue();
-    const [promise, setPromise] = React.useState(null);
-    const [data, error] = usePromise(promise);
+
     
     useEffect(()=>{
         if(user){
