@@ -2,7 +2,7 @@ import React from "react";
 import "../TrackDetailsView.css"
 import {Link} from "react-router-dom"
 
-const TrackDetailsNullView =({spotifyObject})=>
+const TrackDetailsNullView =({})=>
    <div className="flexboxWrapper" >
        <div className="nullButton">
       <Link to="/">

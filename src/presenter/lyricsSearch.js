@@ -6,19 +6,18 @@ import { useDataLayerValue } from "../DataLayer";
 import usePromise from '../usePromise'
 import FooterView from "../FooterView"
 import TrackDetailsNullView from "../view/trackDetailsNullView";
+import promiseNoData from '../promiseNoData'
 
 
 
 
 function LyricsSearch(){
     const [{currentTrack, player, user}, ] = useDataLayerValue();
-    //console.log(currentTrack.artists[0].name, currentTrack.name)
-
-
     const [promise, setPromise] = React.useState();
 
     
     React.useEffect(async() => {
+               
                 if (currentTrack){
                     const id = await LyricsSource.getId(currentTrack.artists[0].name, currentTrack.name)
                     setPromise(LyricsSource.getLyrics(id))
@@ -27,15 +26,19 @@ function LyricsSearch(){
 
 
     const [data, error] = usePromise(promise);
-    //console.log("result from lyricsSearch", data, error)
+   
       
 
-    return (
+    return ( 
+    
         <Fragment>
-            {currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>}
-            {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> }
-            {(data === null) && (currentTrack == null) && <TrackDetailsNullView spotifyObject={currentTrack} /> }
-            <FooterView currentTrack={currentTrack} player={player} user={user}/>
+            {promiseNoData(promise, data, error) || 
+            <Fragment>
+                {currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>}
+                {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> }
+                {(data === null) && (currentTrack == null) && <TrackDetailsNullView spotifyObject={currentTrack} /> }
+                <FooterView currentTrack={currentTrack} player={player} user={user}/>
+            </Fragment> }
         </Fragment>
     )
 }

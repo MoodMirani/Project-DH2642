@@ -5,6 +5,8 @@ import LyricsSearch from "./presenter/lyricsSearch"
 //import Footer from "./Footer"
 import Playback from "./playback"
 import ArtistInfo from "./artist"
+import AlbumInfo from "./album"
+
 import Liked from "./likedmusic.js"
 import { useDataLayerValue } from "./DataLayer";
 import {
@@ -30,6 +32,9 @@ function Main({ spotify }) {
           <Route path="/artist">
             <ArtistInfo/>
           </Route>
+          <Route path="/album">
+            <AlbumInfo/>
+          </Route>
           <Route path="/">
             <PopifySearch/>
           </Route>    
@@ -41,10 +46,3 @@ function Main({ spotify }) {
 
 export default Main;
 
-
-/*
-
-          <Route path="/track">
-          <LyricsSearch/>
-          </Route>
-          */
