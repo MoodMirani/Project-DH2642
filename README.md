@@ -21,11 +21,11 @@ If it's not initialized automatically in your browser, open [http://localhost:30
 
 Popify is an audio streaming service and lyrics provider. In the searchbar you can search for tracks, artists and almbums that are fetched from the Spotify API. Once you've chosen a song you can also look at the lyrics for it that are fetched from a lyrics API.
 
-# Artists:
+Artists:
 You can read information about artists such as number of followers and genre.
-# Albums: 
+Albums: 
 You can see the album cover and songs on it.
-# Track: 
+Track: 
 You can listen to a song, pause it and look at the lyrics by clicking the text symbol (next to the pause button).
 
 In the footer (next to the song name) there is a heart icon. This puts the chosen song to the users' favourites that are then saved into Firebase. You can see your favourite songs at any time by pressing the library icon next to the heart. This links to a view with the users' favourite songs that is currently WIP and only displays the name of your liked songs. We're working on this view! :)
