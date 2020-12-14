@@ -8,7 +8,6 @@ const TrackDetailsNoLyricsView =({spotifyObject})=>
 
          <div className="column">
             <div className="trackContainer"> 
-               {console.log("current;", spotifyObject.album.images[0])}
                <img className="trackPic" src = { spotifyObject.album.images[0] && spotifyObject.album.images[0].url } alt="" />
             </div>
          </div>

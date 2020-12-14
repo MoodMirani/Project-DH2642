@@ -9,7 +9,6 @@ const TrackDetailsView =({spotifyObject, lyricsData})=>
 
          <div className="column">
             <div className="trackContainer"> 
-               {/*console.log("current;", spotifyObject.album.images[0])*/}
                <img className="trackPic" src = { spotifyObject.album.images[0] && spotifyObject.album.images[0].url } alt="" />
             </div>
          </div>
@@ -26,9 +25,7 @@ const TrackDetailsView =({spotifyObject, lyricsData})=>
                   <button className ="button">Back to search</button>
                </Link>
                <p className="lyricsCopy" >{lyricsData.lyrics_copyright}</p>
-               {console.log(lyricsData.pixel_tracking_url)}
                <p className="lyricsStyle" style={{whiteSpace: 'pre-line'}}>{lyricsData.lyrics_body}</p>
-               <img className="lyrcsCopyPic" src = {lyricsData.pixel_tracking_url[0]}/>
               
                
             </div>

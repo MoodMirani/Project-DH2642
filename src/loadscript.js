@@ -1,6 +1,4 @@
 
-
-
 export default function loadScript(url, cb) {
 
       var scr = document.createElement('script');

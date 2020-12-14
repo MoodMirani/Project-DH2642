@@ -7,6 +7,7 @@
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   color: rgb(255, 255, 255);
+  text-align: left;
 }
 
 .row {
@@ -62,18 +63,13 @@
   margin-left: 10px;
 }
 
-.lyricsStyle {
-  margin-top: 10px;
-  font-size: medium;
+.albumSongList {
+  text-align: left;
+}
+.trackName {
+  text-align: left;
 }
 
-.lyricsCopy {
-  margin-top: 10px;
-  font-size: x-small;
-}
-
-.nullButton {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.button {
+  margin-bottom: 20px;
 }

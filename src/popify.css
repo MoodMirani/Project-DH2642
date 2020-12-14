@@ -1,5 +1,4 @@
-
-.searchbar{
+.searchbar {
   text-align: center;
   margin: 0px;
   margin-top: 0px;
@@ -12,70 +11,59 @@
   font-size: 15px;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
-  
-    
 }
 
-.searchbar:hover{
-box-shadow: 0px 2px 55px rgba(76, 108, 215, 0.5);
-
+.searchbar:hover {
+  box-shadow: 0px 2px 55px rgba(76, 108, 215, 0.5);
 }
 
-.options{
-
-height: 42px;
-margin: 20px;
-border-radius: 10px;
-width: 80px;
-font-size: 15px;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+.options {
+  height: 42px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 80px;
+  font-size: 15px;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
-
 }
 
-.options:hover{
-box-shadow: 0px 2px 20px rgba(255, 255, 255, 0.5);
-
+.options:hover {
+  box-shadow: 0px 2px 20px rgba(255, 255, 255, 0.5);
 }
 
-.btnSearch{
-background: black;
-height: 40px;
-width: 80px;
-font-size: 15px;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+.btnSearch {
+  background: black;
+  height: 40px;
+  width: 80px;
+  font-size: 15px;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
-color:white;
-border-radius: 10px;
-cursor: pointer;
-transition: 200ms color ease-in;
-
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms color ease-in;
 }
 
-.btnSearch:hover{
-box-shadow: 0px 2px 20px rgba(255, 255, 255, 0.5);
-height: 45px;
-width: 85px;
+.btnSearch:hover {
+  box-shadow: 0px 2px 20px rgba(255, 255, 255, 0.5);
+  height: 45px;
+  width: 85px;
 }
 
-.logo{
-
-display: block;
-margin-left: auto;
-margin-right: auto;
-height: 120px;
-
-
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 120px;
 }
 
-.footer{
-
+.footer {
   margin-top: 50px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   height: 80px;
-  background: linear-gradient( rgb(40, 39, 46),rgb(11, 9, 9));
+  background: linear-gradient(rgb(40, 39, 46), rgb(11, 9, 9));
   color: white;
 }
 
@@ -95,12 +83,13 @@ height: 120px;
   border-radius: 10px;
 }
 
-.centrePROM{
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 10%;
-height: 10%;
+.centrePROM {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  height: 10%;
+  padding-top: 200px;
 }
 
 h1 {

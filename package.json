@@ -20,6 +20,7 @@
     "react-spotify-web-playback": "^0.7.0",
     "spotify": "^0.3.0",
     "spotify-web-api-js": "^1.5.1",
+    "utils-strings": "^0.1.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

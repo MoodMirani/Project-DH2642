@@ -6,7 +6,6 @@ import promiseNoData from './promiseNoData'
 import SearchResultsView from './searchResultsView'
 import usePromise from './usePromise'
 import Play from "./play"
-import Playback from "./playback"
 import FooterView from "./FooterView"
 import ArtistInfo from "./artist"
 import {getLikes, GetUserLikes} from "./model/firebase-manager"
@@ -19,12 +18,9 @@ function PopifySearch(){
     useEffect(()=>{
         if(user){
         const likes = getLikes(user, dispatch)
-      
-}    
-    }, [user])
-    console.log("inside popifysearch",likedSongs)
+        }}, [user])
+    
     function set_currentTrack(result) {
-
         dispatch({
             type: "SET_CURRENTTRACK",
             currentTrack: result,
@@ -43,17 +39,26 @@ function PopifySearch(){
             currentArtist: result,
         })
        }
+    
+       function set_currentAlbum(result) {
+        dispatch({
+            type: "SET_CURRENTALBUM",
+            currentAlbum: result,
+        })
+       }
+
+
     React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "A", token})), [token]);
 
     return (
         <Fragment>
-            <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.search({type, text, token}))}
- />
+            <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.search({type, text, token}))}/>
             { promiseNoData(promise, data, error) || 
             <Fragment> 
-                (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
-                set_currentArtist={set_currentArtist}/>
-                <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/>) 
+                <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
+                set_currentArtist={set_currentArtist} set_currentAlbum={set_currentAlbum}/>
+                <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 
+               
             </Fragment>  }
         </Fragment> 
     )
