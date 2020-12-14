@@ -5,7 +5,7 @@ import LyricsSearch from "./presenter/lyricsSearch"
 //import Footer from "./Footer"
 import Playback from "./playback"
 import ArtistInfo from "./artist"
-import Liked from "./likedmusic.js"
+import Liked from "./likedmusic"
 import { useDataLayerValue } from "./DataLayer";
 import {
   BrowserRouter as Router,
@@ -26,7 +26,7 @@ function Main({ spotify }) {
             <LyricsSearch/>
           </Route>
           <Route path="/liked">
-            <Liked user={user}/>
+            <Liked/>
           </Route>
           <Route path="/artist">
             <ArtistInfo/>

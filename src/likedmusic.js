@@ -7,14 +7,16 @@ import {getLikes} from "./model/firebase-manager"
 import { useDataLayerValue } from "./DataLayer";
 import fire from "./firebase-config"
 import usePromise from './usePromise'
+import FooterView from "./FooterView";
+import LikedmusicView from "./likedmusicView";
+
 function Liked(){
-    const [{user, likedSongs}, dispatch] = useDataLayerValue();
+    const [{user, likedSongs, currentTrack, player, currentArtist}, dispatch] = useDataLayerValue();
 
     return (
         <Fragment>
-            <div><Link to="/"> <button className ="button">Back to search</button></Link>
-            <h1 className="loadedTrack" >{likedSongs}</h1>
-            </div>
+            <LikedmusicView currentArtist={currentArtist} likedSongs={likedSongs}/>
+            <FooterView currentTrack={currentTrack} player={player} user={user}/>
         </Fragment>
     )
 }

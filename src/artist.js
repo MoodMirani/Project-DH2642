@@ -13,9 +13,8 @@ function ArtistInfo(){
    
     return (
         <Fragment>
-        <ArtistView currentArtist={currentArtist}/>
-        <FooterView currentTrack={currentTrack} player={player} user={user}/>
-    
+            <ArtistView currentArtist={currentArtist}/>
+            <FooterView currentTrack={currentTrack} player={player} user={user}/>  
         </Fragment> 
     )
 }

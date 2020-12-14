@@ -12,7 +12,7 @@ import {
   VolumeDown,
   FavoriteBorder,
   LibraryMusic,
-  MusicNote,
+  FormatAlignLeft,
 
 } from "@material-ui/icons";
 
@@ -48,12 +48,9 @@ function FooterView({currentTrack, player, user, likedSongs, getUserLikes, dispa
           if(currentTrack){Likes(currentTrack, user, dispatch, likedSongs)}}}></FavoriteBorder>
         </Grid>
 
-        <Link to="/lyrics">
+        <Link to="/liked">
           <Grid item>
-          {(currentTrack === null)? 
-              <MusicNote  style={{fill: "gray"}} fontSize="large" className="footer__icon" /> :
-              <MusicNote  style={{fill: "white"}} fontSize="large" className="footer__icon" />}
-
+            <LibraryMusic fontSize="large" className="footer__icon" style={{fill: "white"}}/>
           </Grid>
         </Link>
 
@@ -63,12 +60,15 @@ function FooterView({currentTrack, player, user, likedSongs, getUserLikes, dispa
        
         <PlayCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.resume()} /> 
         <PauseCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.pause()}/> 
-
-        <Link to="/liked">
+        <Link to="/lyrics">
           <Grid item>
-            <LibraryMusic fontSize="large" className="footer__icon" style={{fill: "white"}}/>
+          {(currentTrack === null)? 
+              <FormatAlignLeft  style={{fill: "gray"}} fontSize="large" className="footer__icon" /> :
+              <FormatAlignLeft  style={{fill: "white"}} fontSize="large" className="footer__icon" />}
+
           </Grid>
         </Link>
+      
 
       </div>
       {/*
