@@ -13,19 +13,20 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import {GetUserLikes} from "./model/firebase-manager"
 
 function Main({ spotify }) {
-  const [{ player, token, user }, dispatch] = useDataLayerValue();
- 
+  const [{ player, token, user, likedSongs }, dispatch] = useDataLayerValue();
+
   return (
+    
     <Router>
         <Switch>
           <Route path="/lyrics">
             <LyricsSearch/>
           </Route>
           <Route path="/liked">
-            <Liked/>
+            <Liked user={user}/>
           </Route>
           <Route path="/artist">
             <ArtistInfo/>

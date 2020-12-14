@@ -1,6 +1,7 @@
 import { BASE_URL, requestHeader } from "./spotify"
 
 const MusicSource = {
+    
     search({type, text, token}) { 
         if(type==null){type=""} 
         if(text==null){text=""}

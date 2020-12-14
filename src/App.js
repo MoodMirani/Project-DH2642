@@ -6,7 +6,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 import { useDataLayerValue, dispatch } from "./DataLayer";
 import Main from "./Main";
 import ArtistInfo from "./artist"
-
+import {GetUserLikes} from "./model/firebase-manager"
 
 const spotify = new SpotifyWebApi();
 
@@ -15,7 +15,7 @@ const spotify = new SpotifyWebApi();
 function App() {
 
 
-  const [{ token }, dispatch] = useDataLayerValue();
+  const [{ token, user, likedSongs }, dispatch] = useDataLayerValue();
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
@@ -33,6 +33,7 @@ function App() {
           user,
         });
       });
+    
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
@@ -61,7 +62,7 @@ function App() {
 
     <div className="App">
 
-      {token ? <Main /> : <Login />}
+      {token ?  <Main /> : <Login />}
     
     </div>
 

@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useEffect} from "react";
 import PopifySearchView from "./PopifySearchView";
 import MusicSource from "./musicSource.js"
 import { useDataLayerValue } from "./DataLayer";
@@ -11,17 +11,12 @@ import FooterView from "./FooterView"
 import ArtistInfo from "./artist"
 
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
-
 function PopifySearch(){
+    const [{ player, token, currentTrack, user, likedSongs }, dispatch] = useDataLayerValue();
+    const [promise, setPromise] = React.useState(null);
+    const [data, error] = usePromise(promise);
     
-    const [{ player, token, currentTrack, user }, dispatch] = useDataLayerValue();
-    
+   
     function set_currentTrack(result) {
 
         dispatch({
@@ -31,6 +26,7 @@ function PopifySearch(){
         Play({ //calling playing-function after setting current object instead of using then in serachresultview
             playerInstance: player,
             spotify_uri: result.uri
+
         })
         
     }
@@ -41,14 +37,6 @@ function PopifySearch(){
             currentArtist: result,
         })
        }
-
-      
-
-
-
-
-    const [promise, setPromise] = React.useState(null);
-    const [data, error] = usePromise(promise);
     React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "A", token})), [token]);
 
     return (
@@ -59,7 +47,7 @@ function PopifySearch(){
             <Fragment> 
                 (<SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
                 set_currentArtist={set_currentArtist}/>
-                <FooterView currentTrack={currentTrack} player={player} user={user}/>) 
+                <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs}/>) 
             </Fragment>  }
         </Fragment> 
     )

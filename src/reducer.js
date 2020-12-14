@@ -9,6 +9,7 @@ export const initialState = {
   currentArtist: null,
   player: null,
   currentUser: null,
+  likedSongs: null,
 };
 
 const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
@@ -55,6 +56,12 @@ const reducer = (state, action) => { //A special function called reducer is impl
           ...state,
           currentUser: action.currentUser,
         };
+      
+      case "SET_LIKEDSONGS":
+          return {
+            ...state,
+            likedSongs:action.likedSongs,
+          }
 
         
 

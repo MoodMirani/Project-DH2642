@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Slider } from "@material-ui/core";
-import Likes from "./model/firebase-manager"
+import {Likes} from "./model/firebase-manager"
 import {Link} from "react-router-dom";
 
 import "./popify.css";
@@ -16,7 +16,7 @@ import {
 
 } from "@material-ui/icons";
 
-function FooterView({currentTrack, player, user}) {
+function FooterView({currentTrack, player, user, likedSongs, getUserLikes}) {
   const [value, setValue] = React.useState(30);
 
   const handleChange = (event, newValue) => {
@@ -45,7 +45,7 @@ function FooterView({currentTrack, player, user}) {
 
         <Grid item>
           <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{console.log("footerview", currentTrack.name, user);
-          Likes(currentTrack.name, user.id)}}></FavoriteBorder>
+          if(currentTrack){Likes(currentTrack.name, user.id)}}}></FavoriteBorder>
         </Grid>
 
         <Link to="/lyrics">
@@ -68,6 +68,7 @@ function FooterView({currentTrack, player, user}) {
           <Grid item>
             <LibraryMusic fontSize="large" className="footer__icon" style={{fill: "white"}}/>
           </Grid>
+          
         </Link>
 
       </div>
