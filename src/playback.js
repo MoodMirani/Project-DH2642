@@ -12,7 +12,7 @@ function Playback() {
     
     window.onSpotifyWebPlaybackSDKReady = () => {
       let player = new window.Spotify.Player({
-        name: 'Amandas player',
+        name: 'Popify player',
         getOAuthToken: callback => {
           callback(token);
         },

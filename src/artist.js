@@ -15,7 +15,6 @@ function ArtistInfo(){
         <Fragment>
         <ArtistView currentArtist={currentArtist}/>
         <FooterView currentTrack={currentTrack} player={player} user={user}/>
-    
         </Fragment> 
     )
 }

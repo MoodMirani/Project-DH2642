@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import "./artist.css"
 
 
-
 const ArtistView = ({currentArtist}) => {
     return(
 

@@ -7,13 +7,14 @@ export const initialState = {
   item: null,
   currentTrack: null,
   currentArtist: null,
+  currentAlbum: null,
   player: null,
   currentUser: null,
   likedSongs: [],
 };
 
 const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
-  //console.log("action: ", action)// to shoot out data whenever needed and to save data to the wall(data layer)
+   //console.log("action: ", action)// to shoot out data whenever needed and to save data to the wall(data layer)
   switch (action.type) { // switch is used to perform different actions based on different conditions
     case "SET_USER":
       return {
@@ -45,6 +46,12 @@ const reducer = (state, action) => { //A special function called reducer is impl
         ...state,
         currentArtist: action.currentArtist, 
       }
+      case "SET_CURRENTALBUM":
+        return {
+          ...state,
+          currentAlbum: action.currentAlbum, 
+        }
+    
     case "SET_PLAYER":
       return {
         ...state,
