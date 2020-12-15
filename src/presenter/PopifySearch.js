@@ -17,8 +17,8 @@ function PopifySearch(){
 
     useEffect(()=>{
         if(user){
-        const likes = getLikes(user, dispatch)
-        }}, [user])
+        getLikes(user, dispatch)
+        }}, [user, dispatch])
     
     function set_currentTrack(result) {
         dispatch({

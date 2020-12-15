@@ -5,7 +5,7 @@ import FooterView from "../view/FooterView";
 import LikedmusicView from "../view/likedmusicView";
 
 function Liked(){
-    const [{user, likedSongs, currentTrack, player, currentArtist}, dispatch] = useDataLayerValue();
+    const [{user, likedSongs, currentTrack, player, currentArtist}] = useDataLayerValue();
 
     return (
         <Fragment>

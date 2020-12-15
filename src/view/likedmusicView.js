@@ -4,14 +4,14 @@ import "../css/artist.css"
 import "../css/AlbumView.css";
 
 
-const LikedmusicView = ({likedSongs}) => {
+const LikedmusicView = ({currentArtist, likedSongs}) => {
     return(
-
-
     <div className="trackContainer">
         
          <div><Link to="/"> <button className ="button">Back to search</button></Link>
-            <h1 className="loadedTrack" >{likedSongs}</h1>
+            <div>
+                <h1 className="loadedTrack" >{likedSongs}</h1>
+            </div>
         </div>
     </div>
     )

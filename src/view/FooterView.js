@@ -62,7 +62,7 @@ function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
       <Link to="/lyrics">
         <Grid item>
         {(currentTrack === null)? 
-          <FormatAlignLeft  style={{fill: "gray"}} fontSize="large" className="footer__icon" /> :
+          <FormatAlignLeft style={{fill: "gray"}} fontSize="large" className="footer__icon" /> :
           <FormatAlignLeft  style={{fill: "white"}} fontSize="large" className="footer__icon" />}
         </Grid>
       </Link>

@@ -2,14 +2,11 @@
 export const initialState = {
   user: null,
   token: null,
-  playlists: [],
   playing: false,
-  item: null,
   currentTrack: null,
   currentArtist: null,
   currentAlbum: null,
   player: null,
-  currentUser: null,
   likedSongs: [],
 };
 
@@ -26,16 +23,6 @@ const reducer = (state, action) => { //A special function called reducer is impl
         ...state,
         token: action.token,
       };
-    case "SET_PLAYLISTS":
-      return {
-        ...state,
-        playlists: action.playlists,
-      };
-    case "SET_DISCOVER_WEEKLY":
-      return {
-        ...state,
-        discover_weekly: action.discover_weekly,
-      };
     case "SET_CURRENTTRACK":
       return {
         ...state,
@@ -46,32 +33,21 @@ const reducer = (state, action) => { //A special function called reducer is impl
         ...state,
         currentArtist: action.currentArtist, 
       }
-      case "SET_CURRENTALBUM":
-        return {
-          ...state,
-          currentAlbum: action.currentAlbum, 
-        }
-    
+    case "SET_CURRENTALBUM":
+      return {
+        ...state,
+        currentAlbum: action.currentAlbum, 
+      }
     case "SET_PLAYER":
       return {
         ...state,
         player: action.player,
       };
-
-      case "SET_CURRENTUSER":
+    case "SET_LIKEDSONGS":
         return {
           ...state,
-          currentUser: action.currentUser,
-        };
-      
-      case "SET_LIKEDSONGS":
-          return {
-            ...state,
-            likedSongs:action.likedSongs,
-          }
-
-        
-
+          likedSongs:action.likedSongs,
+        }
     default:
       return state;
   }
