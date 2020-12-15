@@ -1,10 +1,9 @@
 import React, {Fragment} from "react";
-import { useDataLayerValue } from "./DataLayer";
-import "./popify.css"
-import FooterView from "./FooterView";
-import AlbumView from "./albumView";
-import usePromise from './usePromise';
-import MusicSource from "./musicSource.js";
+import { useDataLayerValue } from "../DataLayer.js";
+import FooterView from "../view/FooterView";
+import AlbumView from "../view/albumView";
+import usePromise from '../usePromise';
+import MusicSource from "../musicSource";
 
 
 function AlbumInfo(){
@@ -18,8 +17,8 @@ function AlbumInfo(){
    
     return (
         <Fragment>
-        {data && <AlbumView currentAlbum={currentAlbum} albumTracks={data} />}
-        <FooterView currentTrack={currentTrack} player={player} user={user}/>
+            {data && <AlbumView currentAlbum={currentAlbum} albumTracks={data} />}
+            <FooterView currentTrack={currentTrack} player={player} user={user}/>
         </Fragment> 
     )
 }

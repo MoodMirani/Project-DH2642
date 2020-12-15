@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.css";
+import "./css/Login.css";
 import { loginUrl } from "./spotify"; //enable our users to Login through the app
 
 function Login() {

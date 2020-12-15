@@ -1,14 +1,13 @@
 import React, {Fragment, useEffect} from "react";
-import PopifySearchView from "./PopifySearchView";
-import MusicSource from "./musicSource.js"
-import { useDataLayerValue } from "./DataLayer";
-import promiseNoData from './promiseNoData'
-import SearchResultsView from './searchResultsView'
-import usePromise from './usePromise'
-import Play from "./play"
-import FooterView from "./FooterView"
-import ArtistInfo from "./artist"
-import {getLikes, GetUserLikes} from "./model/firebase-manager"
+import PopifySearchView from "../view/PopifySearchView";
+import MusicSource from "../musicSource.js"
+import { useDataLayerValue } from "../DataLayer";
+import promiseNoData from '../promiseNoData'
+import SearchResultsView from '../view/searchResultsView'
+import usePromise from '../usePromise'
+import Play from "../play"
+import FooterView from "../view/FooterView"
+import { getLikes } from "../model/firebase-manager"
 
 function PopifySearch(){
     const [{ player, token, currentTrack, user, likedSongs }, dispatch] = useDataLayerValue();

@@ -1,14 +1,8 @@
 
 import React, {Fragment} from "react";
-import {Link} from "react-router-dom";
-import "./popify.css"
-import "./searchResult.css"
-import {getLikes} from "./model/firebase-manager"
-import { useDataLayerValue } from "./DataLayer";
-import fire from "./firebase-config"
-import usePromise from './usePromise'
-import FooterView from "./FooterView";
-import LikedmusicView from "./likedmusicView";
+import { useDataLayerValue } from "../DataLayer";
+import FooterView from "../view/FooterView";
+import LikedmusicView from "../view/likedmusicView";
 
 function Liked(){
     const [{user, likedSongs, currentTrack, player, currentArtist}, dispatch] = useDataLayerValue();

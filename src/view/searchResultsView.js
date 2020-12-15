@@ -1,10 +1,7 @@
 import React from "react";
-import "./searchResult.css"
-//import LyricsSource from "./lyricsSource";
-//import scrapeLyrics from "./presenter/lyricsScraper";
-import "./popify.css"
-import "./App.css"
-import LyricsSearch from "./presenter/lyricsSearch"
+import "../css/searchResult.css"
+import "../css/popify.css"
+import "../css/App.css"
 import {Link} from "react-router-dom";
 
 

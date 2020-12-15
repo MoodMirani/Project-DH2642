@@ -1,7 +1,7 @@
 import React from "react";
-import "../TrackDetailsView.css"
+import "../css/TrackDetailsView.css"
 import {Link} from "react-router-dom";
-import "../popify.css";
+import "../css/popify.css";
 
 const TrackDetailsView =({spotifyObject, lyricsData})=>
    <div className="flexboxWrapper">

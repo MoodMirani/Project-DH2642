@@ -4,7 +4,7 @@ import TrackDetailsNoLyricsView from "../view/trackDetailsNoLyricsView";
 import LyricsSource from "../lyricsSource";
 import { useDataLayerValue } from "../DataLayer";
 import usePromise from '../usePromise'
-import FooterView from "../FooterView"
+import FooterView from "../view/FooterView"
 import TrackDetailsNullView from "../view/trackDetailsNullView";
 import promiseNoData from '../promiseNoData'
 

@@ -1,11 +1,7 @@
 import React, {Fragment} from "react";
-import { useDataLayerValue } from "./DataLayer";
-import "./artist.css"
-import "./searchResult.css"
-import {Link} from "react-router-dom";
-import "./popify.css"
-import FooterView from "./FooterView";
-import ArtistView from "./artistView";
+import { useDataLayerValue } from "../DataLayer";
+import FooterView from "../view/FooterView";
+import ArtistView from "../view/artistView";
 
 function ArtistInfo(){
     

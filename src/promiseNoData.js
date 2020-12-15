@@ -1,6 +1,6 @@
 import React from "react";
 import Loading from './assets/spinner-big.gif';
-import "./popify.css"
+import "./css/popify.css"
 
 function promiseNoData(promise, data, error){  
     return  (!promise && "no data")     // case "0"  

@@ -1,5 +1,5 @@
 import React from "react";
-import "../TrackDetailsView.css"
+import "../css/TrackDetailsView.css"
 import {Link} from "react-router-dom"
 
 const TrackDetailsNullView =({})=>

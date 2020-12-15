@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import "./artist.css"
-import "./AlbumView.css";
+import "../css/artist.css"
+import "../css/AlbumView.css";
 
 
 const LikedmusicView = ({likedSongs}) => {

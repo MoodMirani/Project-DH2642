@@ -1,24 +1,18 @@
 import React from "react";
-import PopifySearch from "./PopifySearch";
-//import LyricsSource from "./lyricsSource"
+import PopifySearch from "./presenter/PopifySearch";
 import LyricsSearch from "./presenter/lyricsSearch"
-//import Footer from "./Footer"
 import Playback from "./playback"
-import ArtistInfo from "./artist"
-import AlbumInfo from "./album"
+import ArtistInfo from "./presenter/artist"
+import AlbumInfo from "./presenter/album"
 
-import Liked from "./likedmusic.js"
-import { useDataLayerValue } from "./DataLayer";
+import Liked from "./presenter/likedmusic.js"
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
-import {GetUserLikes} from "./model/firebase-manager"
 
 function Main({ spotify }) {
-  const [{ player, token, user, likedSongs }, dispatch] = useDataLayerValue();
 
   return (
     

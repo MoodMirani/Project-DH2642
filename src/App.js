@@ -3,19 +3,15 @@ import React, { useEffect } from "react";
 import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
-import { useDataLayerValue, dispatch } from "./DataLayer";
+import { useDataLayerValue } from "./DataLayer";
 import Main from "./Main";
-import ArtistInfo from "./artist"
-import {getLikes, GetUserLikes} from "./model/firebase-manager"
 
 const spotify = new SpotifyWebApi();
-
-
 
 function App() {
 
 
-  const [{ token, user, likedSongs }, dispatch] = useDataLayerValue();
+  const [{ token }, dispatch] = useDataLayerValue();
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
@@ -51,13 +47,6 @@ function App() {
     }
   }, []);
   
-  // const [{user}] = useDataLayerValue();
-  // const currentUser = new User(user.id)
-
-
-//if user exists we want the user to see the website otherwise login page
-
-
   return (
   
 
