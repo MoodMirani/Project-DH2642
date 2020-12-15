@@ -17,10 +17,8 @@ function PopifySearch(){
     useEffect(()=>{
         if(user){
         const likes = getLikes(user, dispatch)
-      
-}    
-    }, [user])
-    console.log("inside popifysearch",likedSongs)
+        }}, [user])
+    
     function set_currentTrack(result) {
         dispatch({
             type: "SET_CURRENTTRACK",
@@ -49,8 +47,6 @@ function PopifySearch(){
        }
 
 
-    const [promise, setPromise] = React.useState(null);
-    const [data, error] = usePromise(promise);
     React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "A", token})), [token]);
 
     return (

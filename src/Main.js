@@ -28,7 +28,7 @@ function Main({ spotify }) {
             <LyricsSearch/>
           </Route>
           <Route path="/liked">
-            <Liked user={user}/>
+            <Liked/>
           </Route>
           <Route path="/artist">
             <ArtistInfo/>
