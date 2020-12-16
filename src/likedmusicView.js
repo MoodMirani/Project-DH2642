@@ -6,16 +6,13 @@ import "./AlbumView.css";
 
 const LikedmusicView = ({likedSongs}) => {
     return(
-
-
     <div className="trackContainer">
-        
          <div><Link to="/"> <button className ="button">Back to search</button></Link>
+            <h1>Your Liked Songs:</h1>
             <h1 className="loadedTrack" >{likedSongs}</h1>
         </div>
     </div>
     )
-
 }
 
 export default LikedmusicView 
