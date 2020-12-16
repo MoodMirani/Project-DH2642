@@ -16,10 +16,11 @@ Run `npm install` in your terminal to download all libraries necessary.
 
 To run the app in development mode, run `npm start` in your terminal.
 If it's not initialized automatically in your browser, open [http://localhost:3000]
+Or a quick start is to visit this site popify-dh2642.web.app
 
 # 5 Using the Popify App
 
-Popify is an audio streaming service and lyrics provider. In the searchbar you can search for tracks, artists and almbums that are fetched from the Spotify API. Once you've chosen a song you can also look at the lyrics for it that are fetched from a lyrics API.
+Popify is an audio streaming service and lyrics provider. In the searchbar you can search for tracks, artists and almbums that are fetched from the Spotify API. Once you've chosen a track in the dropdown you can also sin along by pushing the lyrics button that uses another lyrics API.
 
 Artists:
 You can read information about artists such as number of followers and genre.
