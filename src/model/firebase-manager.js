@@ -24,9 +24,20 @@ export const getItinerary = (userName) => {
 */
 
 const getLikes = (user, dispatch)=>{
-  const userID = user.id
+  //const userID = user.id
+
+  function encoder(userID) {
+    const newID = userID.replace(".", "1").replace("#", "2").replace("$", "3").replace("[", "4").replace("]", "5")
+    return newID}
+
+  function decoder(encodedID) {
+    const oldID = encodedID.replace("1",".").replace("2","#").replace("3","$").replace("4","[").replace("5","]")
+    return oldID}
+
+  console.log(encoder(user.id))
+  console.log(decoder(encoder(user.id)))
   
-  return fire.database().ref('users/' + userID.replace(".", "/")).once("value", snapshot => {
+  return fire.database().ref('users/' + encoder(user.id)).once("value", snapshot => {
     if (snapshot.val()) {
       const likedList = Object.values(snapshot.val())
       //console.log("inside getlikes",likedList)

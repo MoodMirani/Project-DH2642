@@ -16,13 +16,18 @@ function LyricsSearch(){
     const [promise, setPromise] = React.useState();
 
     
-    React.useEffect(async() => {
-               
-                if (currentTrack){
-                    const id = await LyricsSource.getId(currentTrack.artists[0].name, currentTrack.name)
-                    setPromise(LyricsSource.getLyrics(id))
+    React.useEffect(() => {
+                async function fetchLyrics(currentTrack){
+                    if (currentTrack){
+                        const id = await LyricsSource.getId(currentTrack.artists[0].name, currentTrack.name)
+                        setPromise(LyricsSource.getLyrics(id))
+    
+                    }
 
-                }},[currentTrack]) 
+                }
+                fetchLyrics(currentTrack)
+               
+                },[currentTrack]) 
 
 
     const [data, error] = usePromise(promise);

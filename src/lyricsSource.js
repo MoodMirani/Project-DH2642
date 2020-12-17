@@ -30,7 +30,8 @@ const LyricsSource = {
             "method": "GET",
         })
         .then(response => response.json())
-        .then(res => (res.message.body))
+        .then(res => res.message.body)
+       
         
     },
    
