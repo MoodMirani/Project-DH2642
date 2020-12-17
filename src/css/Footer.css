@@ -40,9 +40,7 @@
   margin-right: 20px;
   object-fit: contain;
 }
-.footer__green {
-  color: #1ed15e;
-}
+
 .footer__songInfo > h4 {
   margin-bottom: 5px;
 }
@@ -57,11 +55,20 @@
   height: 200px;
 }
 
-.footer__icon:hover,
-.footer__green:hover {
+.footer__icon:hover {
   transition: transform 0.2 ease-in;
   transform: scale(1.2) !important;
 }
+
+.footer__icon__disabled {
+  pointer-events: none;
+}
+
+.footer__icon__disabled:hover {
+  transition: transform 0.2 ease-in;
+  transform: scale(1.2) !important;
+}
+
 .footer__right * .MuiSlider-root {
   color: #4d30dc;
 }
