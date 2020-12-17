@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Slider } from "@material-ui/core";
-import { Likes } from "../model/firebase-manager.js"
+import { Likes, unLike } from "../model/firebase-manager.js"
 import { Link } from "react-router-dom";
 
 import "../css/popify.css";
