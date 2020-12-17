@@ -7,13 +7,19 @@ import usePromise from '../usePromise'
 import FooterView from "../FooterView"
 import TrackDetailsNullView from "../view/trackDetailsNullView";
 import promiseNoData from '../promiseNoData'
+import {getLikes, GetUserLikes} from "../model/firebase-manager"
 
 
 
 
 function LyricsSearch(){
-    const [{currentTrack, player, user}, ] = useDataLayerValue();
+    const [{currentTrack, player, user, likedSongs}, dispatch] = useDataLayerValue();
     const [promise, setPromise] = React.useState();
+
+    React.useEffect(()=>{
+        if(user){
+        getLikes(user, dispatch)
+        }}, [user])
 
     
     React.useEffect(() => {
@@ -37,13 +43,12 @@ function LyricsSearch(){
     return ( 
     
         <Fragment>
-            {promiseNoData(promise, data, error) || 
-            <Fragment>
-                {currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>}
-                {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> }
-                {(data === null) && (currentTrack == null) && <TrackDetailsNullView spotifyObject={currentTrack} /> }
-                <FooterView currentTrack={currentTrack} player={player} user={user}/>
-            </Fragment> }
+            {promiseNoData(promise, data, error)}
+            {(data === null) && (currentTrack == null) && <TrackDetailsNullView spotifyObject={currentTrack} /> }
+            {currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>}
+            {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> }
+            <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 
+           
         </Fragment>
     )
 }
