@@ -20,10 +20,14 @@ web: node server/server.js
 scrpits:
 "postinstall": "npm run build"
 
-// https://medium.com/@cjab/some-things-to-consider-when-deploying-your-react-app-to-heroku-b8a81fa02e82
+
 
 // https://stackoverflow.com/questions/46337471/how-to-allow-cors-in-react-js
 // https://stackoverflow.com/questions/23751914/how-can-i-set-response-header-on-express-js-assets
+
+// https://medium.com/@cjab/some-things-to-consider-when-deploying-your-react-app-to-heroku-b8a81fa02e82
+
+https://firebase.google.com/docs/hosting/functions?fbclid=IwAR3X5hM5HJDITa6kIxVkV2aAbkWbOreOcHrySft1-7KTDHpLHU00tiyOVb4
 
 // some other clue on how to solve
 
