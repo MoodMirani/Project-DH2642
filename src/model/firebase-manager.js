@@ -63,7 +63,7 @@ const unLike = (currentTrack, user, dispatch, likedSongs) => {
 }
 
 const updateDatabase = (user, data)=>{
-  fire.database().ref('users/' + enconder(user.id)).set({
+  fire.database().ref('users/' + encoder(user.id)).set({
     Likes: data
   });
 }
