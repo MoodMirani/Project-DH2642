@@ -6,10 +6,9 @@ const getLikes = (user, dispatch)=>{
   return fire.database().ref('users/' + userID.replace(".", "/")).once("value", snapshot => {
     if (snapshot.val()) {
       const likedList = Object.values(snapshot.val())
-      //    console.log("inside getlikes",likedList)
       dispatch({
         type: "SET_LIKEDSONGS",
-        likedSongs: likedList,
+        likedSongs: likedList[0],
     });
       //console.log("inside getuserlikes ",snapshot.val)
       } 
@@ -28,6 +27,7 @@ const songIncluded = (likedSongs, currentTrack) => {
 }
 
 const Likes = (currentTrack, user, dispatch, likedSongs) => {
+
     if(!songIncluded(likedSongs, currentTrack)){
       const data = [currentTrack, ...likedSongs.flat()];
       //console.log("inside likes2", likedSongs)
@@ -42,6 +42,7 @@ const Likes = (currentTrack, user, dispatch, likedSongs) => {
 }
 
 const unLike = (currentTrack, user, dispatch, likedSongs) => {
+
   if(songIncluded(likedSongs, currentTrack)){
     const data = likedSongs.filter(track => track.id !== currentTrack.id);
     dispatch({
@@ -49,7 +50,7 @@ const unLike = (currentTrack, user, dispatch, likedSongs) => {
       likedSongs: data,
     });
     updateDatabase(user, data)
-
+    console.log(currentTrack, "was unliked")
   }
 }
 

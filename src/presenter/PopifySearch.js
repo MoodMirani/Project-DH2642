@@ -33,6 +33,7 @@ function PopifySearch(){
         
     }
 
+
     function set_currentArtist(result) {
         dispatch({
             type: "SET_CURRENTARTIST",

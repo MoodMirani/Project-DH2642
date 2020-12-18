@@ -19,7 +19,7 @@ import {
 
 function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
   const [value, setValue] = React.useState(30);
-
+  console.log("FOOTER",likedSongs)
   const handleChange = (event, newValue) => { // this is for the volume slider
     setValue(newValue);
     player.setVolume(value/100)
@@ -47,10 +47,11 @@ function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
       {(currentTrack === null)? 
       <FavoriteBorder disabled style={{fill: "gray"}} fontSize="large"/> :
       <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{
-          if(likedSongs){Likes(currentTrack, user, dispatch, likedSongs)}}}/> /*&& 
+          Likes(currentTrack, user, dispatch, likedSongs)}}/> /*&& 
           <Alert severity="success">
           <AlertTitle>You have liked the song!</AlertTitle>
       </Alert>*/}
+      
       </Grid>
 
       <Link to="/liked">
