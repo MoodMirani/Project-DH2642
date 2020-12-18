@@ -1,3 +1,5 @@
 node_modules
 Files_not_used
 *.log
+build
+.firebase

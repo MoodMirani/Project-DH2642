@@ -1,13 +1,13 @@
 .flexboxWrapper {
-  margin: 20px;
   /*background-color: red;*/
   display: flex;
   flex-direction: row;
   height: 100%;
-  margin-bottom: 20px;
+
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   color: rgb(255, 255, 255);
+  text-align: left;
 }
 
 .row {
@@ -17,6 +17,7 @@
   width: 100%;
   height: 100%;
   margin: 20px;
+  margin-top: 20px;
 }
 
 .column {
@@ -27,18 +28,22 @@
 
 .trackContainer {
   /*background-color: blue;*/
-  height: 350px;
+  height: 450px;
 }
 
 .trackPic {
+  margin-top: 150px;
   width: 350px;
   border-radius: 10px;
+  margin-left: 200px;
+  align-items: center;
 }
 
 .lyricsContainer {
-  /*background-color: green;*/
-  height: 550px;
-  margin-left: 5px;
+  display: inline-block;
+  height: 700px;
+  overflow: scroll;
+  margin-top: 50px;
 }
 
 .headingTitle {
@@ -53,12 +58,18 @@
 
 .trackTitle {
   font-size: x-large;
-  font-weight: 100;
+  font-weight: 150;
   font-variant: normal;
   margin-left: 10px;
 }
 
-.lyricsStyle {
-  margin-top: 10px;
-  font-size: medium;
+.albumSongList {
+  text-align: left;
+}
+.trackName {
+  text-align: left;
+}
+
+.button {
+  margin-bottom: 20px;
 }

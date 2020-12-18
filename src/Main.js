@@ -1,36 +1,42 @@
 import React from "react";
-import PopifySearch from "./PopifySearch";
-//import LyricsSource from "./lyricsSource"
+import PopifySearch from "./presenter/PopifySearch";
 import LyricsSearch from "./presenter/lyricsSearch"
-//import Footer from "./Footer"
 import Playback from "./playback"
-import ArtistInfo from "./artist"
-import { useDataLayerValue } from "./DataLayer";
+import ArtistInfo from "./presenter/artist"
+import AlbumInfo from "./presenter/album"
+
+import Liked from "./presenter/likedmusic.js"
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-//import LyricsSearch from 
-
 
 function Main({ spotify }) {
   return (
+    
     <Router>
         <Switch>
+          <Route path="/lyrics">
+            <LyricsSearch/>
+          </Route>
+          <Route path="/liked">
+            <Liked/>
+          </Route>
           <Route path="/artist">
             <ArtistInfo/>
           </Route>
+          <Route path="/album">
+            <AlbumInfo/>
+          </Route>
           <Route path="/">
             <PopifySearch/>
-          </Route>
-          <Route path="/track">
-          <LyricsSearch/>
-          </Route>
-      </Switch>
+          </Route>    
+        </Switch>
       <Playback/>
-  </Router>
+   </Router>
   );
 }
 
 export default Main;
+

@@ -1,8 +1,10 @@
 import React from "react";
-import Loading from './assets/loading.gif';
-function promiseNoData(promise, data, error, h){  
-    return  (!promise && "no data")  
-          || (error && <h1>error</h1>)   //HÄR KAN MAN HA ETT ALERT MEDDELANDE ISTÄLLET alert("Please choose a category!")
-          || (!data && <img src={Loading} alt=""/>)
+import Loading from './assets/spinner-big.gif';
+import "./css/popify.css"
+
+function promiseNoData(promise, data, error){  
+    return  (!promise && "no data")     // case "0"  
+          || (error && <h1>error</h1>)   // case 3 
+          || (!data && <img className="centrePROM" src={Loading} alt=""/>)  // case 1
 }
 export default promiseNoData;

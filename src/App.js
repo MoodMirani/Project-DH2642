@@ -3,14 +3,10 @@ import React, { useEffect } from "react";
 import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
-import { useDataLayerValue, dispatch } from "./DataLayer";
+import { useDataLayerValue } from "./DataLayer";
 import Main from "./Main";
-import ArtistInfo from "./artist"
-
 
 const spotify = new SpotifyWebApi();
-
-
 
 function App() {
 
@@ -25,43 +21,38 @@ function App() {
         type: "SET_TOKEN",
         token: _token,
       });
+
+
       spotify.setAccessToken(_token);
       spotify.getMe().then((user) => {
         dispatch({ // The wrap dispatch function recognizes that this is a promise and not an action so it waits for the 
                    // promise to resolve and passes it on
           type: "SET_USER",
           user,
-        });
+        })
       });
-      spotify.getUserPlaylists().then((playlists) => {
-        dispatch({
-          type: "SET_PLAYLISTS",
-          playlists,
-        });
-      });
-      spotify.getPlaylist("37i9dQZF1E34Ucml4HHx1w").then((playlist) => {
-        dispatch({
-          type: "SET_DISCOVER_WEEKLY",
-          discover_weekly: playlist,
-        });
-      });
-      
+    
+      // spotify.getUserPlaylists().then((playlists) => {
+      //   dispatch({
+      //     type: "SET_PLAYLISTS",
+      //     playlists,
+      //   });
+      // });
+      // spotify.getPlaylist("37i9dQZF1E34Ucml4HHx1w").then((playlist) => {
+      //   dispatch({
+      //     type: "SET_DISCOVER_WEEKLY",
+      //     discover_weekly: playlist,
+      //   });
+      // });
     }
-  }, []);
+  }); // removed the dependency array []
   
-  // const [{user}] = useDataLayerValue();
-  // const currentUser = new User(user.id)
-
-
-//if user exists we want the user to see the website otherwise login page
-
-
   return (
   
 
     <div className="App">
 
-      {token ? <Main /> : <Login />}
+      {token ?  <Main /> : <Login />}
     
     </div>
 

@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# 1. Getting Started with Popify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You need a Spotify Premium account to get started with Popify. The App will ask you for authentification upon start.
+If you don't have a Spotify Premium account, you can create it in our app (or ask another TA to grade this project :))
 
-## Available Scripts
+# 2. Download Node.js
 
-In the project directory, you can run:
+You need to download Node.js in order to run Popfify.
+You can get Node.js here: https://nodejs.org/en/
 
-### `npm start`
+# 3. Npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run `npm install` in your terminal to download all libraries necessary.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# 4. Npm start
 
-### `npm test`
+To run the app in development mode, run `npm start` in your terminal.
+If it's not initialized automatically in your browser, open [http://localhost:3000]
+Or a quick start is to visit this site popify-dh2642.web.app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 5 Using the Popify App
 
-### `npm run build`
+Popify is an audio streaming service and lyrics provider. In the searchbar you can search for tracks, artists and almbums that are fetched from the Spotify API. Once you've chosen a track in the dropdown you can also sin along by pushing the lyrics button that uses another lyrics API.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Artists:
+You can read information about artists such as number of followers and genre.
+Albums: 
+You can see the album cover and songs on it.
+Track: 
+You can listen to a song, pause it and look at the lyrics by clicking the text symbol (next to the pause button).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the footer (next to the song name) there is a heart icon. This puts the chosen song to the users' favourites that are then saved into Firebase. You can see your favourite songs at any time by pressing the library icon next to the heart. This links to a view with the users' favourite songs that is currently WIP and only displays the name of your liked songs. We're working on this view! :)

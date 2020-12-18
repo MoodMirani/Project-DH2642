@@ -2,18 +2,17 @@
 export const initialState = {
   user: null,
   token: null,
-  playlists: [],
   playing: false,
-  item: null,
   currentTrack: null,
   currentArtist: null,
+  currentAlbum: null,
   player: null,
-  currentUser: null,
+  likedSongs: [],
 };
 
 const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
-  //console.log("action: ", action)// to shoot out data whenever needed and to save data to the wall(data layer)
-  switch (action.type) { // switch is used to perform different actions based on different conditions
+                                    // to shoot out data whenever needed and to save data to the wall(data layer)
+  switch (action.type) {            // switch is used to perform different actions based on different conditions
     case "SET_USER":
       return {
         ...state,
@@ -23,16 +22,6 @@ const reducer = (state, action) => { //A special function called reducer is impl
       return {
         ...state,
         token: action.token,
-      };
-    case "SET_PLAYLISTS":
-      return {
-        ...state,
-        playlists: action.playlists,
-      };
-    case "SET_DISCOVER_WEEKLY":
-      return {
-        ...state,
-        discover_weekly: action.discover_weekly,
       };
     case "SET_CURRENTTRACK":
       return {
@@ -44,18 +33,21 @@ const reducer = (state, action) => { //A special function called reducer is impl
         ...state,
         currentArtist: action.currentArtist, 
       }
+    case "SET_CURRENTALBUM":
+      return {
+        ...state,
+        currentAlbum: action.currentAlbum, 
+      }
     case "SET_PLAYER":
       return {
         ...state,
         player: action.player,
       };
-
-      case "SET_CURRENTUSER":
+    case "SET_LIKEDSONGS":
         return {
           ...state,
-          currentUser: action.currentUser,
-        };
-
+          likedSongs:action.likedSongs,
+        }
     default:
       return state;
   }

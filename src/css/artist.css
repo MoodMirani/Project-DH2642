@@ -1,14 +1,16 @@
+
+
 .style{
 display:inline-block;
-background-color: rgb(50, 50, 50);
+background-color: rgb(58, 52, 80);
 margin-left: auto;
 margin-right: auto;
-
 display: grid;
 height:  88vh;
 width: 700px;
 border-radius: 20px;
 }
+
 
 
 .artistPic{
