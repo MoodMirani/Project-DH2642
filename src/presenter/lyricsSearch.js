@@ -7,22 +7,33 @@ import usePromise from '../usePromise'
 import FooterView from "../view/FooterView"
 import TrackDetailsNullView from "../view/trackDetailsNullView";
 import promiseNoData from '../promiseNoData'
+import {getLikes, GetUserLikes} from "../model/firebase-manager"
 
 
 
 
 function LyricsSearch(){
-    const [{currentTrack, player, user}, ] = useDataLayerValue();
+    const [{currentTrack, player, user, likedSongs}, dispatch] = useDataLayerValue();
     const [promise, setPromise] = React.useState();
 
-    
-    React.useEffect(async() => {
-               
-                if (currentTrack){
-                    const id = await LyricsSource.getId(currentTrack.artists[0].name, currentTrack.name)
-                    setPromise(LyricsSource.getLyrics(id))
+    React.useEffect(()=>{
+        if(user){
+        getLikes(user, dispatch)
+        }}, [user])
 
-                }},[currentTrack]) 
+    
+    React.useEffect(() => {
+                async function fetchLyrics(currentTrack){
+                    if (currentTrack){
+                        const id = await LyricsSource.getId(currentTrack.artists[0].name, currentTrack.name)
+                        setPromise(LyricsSource.getLyrics(id))
+    
+                    }
+
+                }
+                fetchLyrics(currentTrack)
+               
+                },[currentTrack]) 
 
 
     const [data, error] = usePromise(promise);
@@ -32,13 +43,12 @@ function LyricsSearch(){
     return ( 
     
         <Fragment>
-            {promiseNoData(promise, data, error) || 
-            <Fragment>
-                {currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>}
-                {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> }
-                {(data === null) && (currentTrack == null) && <TrackDetailsNullView spotifyObject={currentTrack} /> }
-                <FooterView currentTrack={currentTrack} player={player} user={user}/>
-            </Fragment> }
+            {promiseNoData(promise, data, error)}
+            {(data === null) && (currentTrack == null) && <TrackDetailsNullView spotifyObject={currentTrack} /> }
+            {currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>}
+            {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> }
+            <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 
+           
         </Fragment>
     )
 }
