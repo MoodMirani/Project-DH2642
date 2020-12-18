@@ -6,7 +6,7 @@ const getLikes = (user, dispatch)=>{
   return fire.database().ref('users/' + userID.replace(".", "/")).once("value", snapshot => {
     if (snapshot.val()) {
       const likedList = Object.values(snapshot.val())
-      //console.log("inside getlikes",likedList)
+      //    console.log("inside getlikes",likedList)
       dispatch({
         type: "SET_LIKEDSONGS",
         likedSongs: likedList,
@@ -16,22 +16,45 @@ const getLikes = (user, dispatch)=>{
     })
 }
 
+const songIncluded = (likedSongs, currentTrack) => {
+  for (let index = 0; index < likedSongs.length; index++) {
+    if(likedSongs[index].id === currentTrack.id){
+      return true;
+    }
+  }
+  return false;
+}
+
 const Likes = (currentTrack, user, dispatch, likedSongs) => {
-  
-    if(!likedSongs.includes(currentTrack.name)){
-      const newLikeSongs = [currentTrack.name, ...likedSongs.flat()];
+    if(!songIncluded(likedSongs, currentTrack)){
+      const data = [currentTrack, ...likedSongs.flat()];
       //console.log("inside likes2", likedSongs)
       dispatch({
         type: "SET_LIKEDSONGS",
-        likedSongs: newLikeSongs,
+        likedSongs: data,
       });
+      updateDatabase(user, data)
       //console.log("inside likes",newLikeSongs)
-
-      fire.database().ref('users/' + user.id).set({
-        Likes: newLikeSongs
-      });
     }
-   
 }
 
-export {Likes, getLikes}
+const unLike = (currentTrack, user, dispatch, likedSongs) => {
+  if(songIncluded(likedSongs, currentTrack)){
+    const data = likedSongs.filter(track => track.id !== currentTrack.id);
+    dispatch({
+      type: "SET_LIKEDSONGS",
+      likedSongs: data,
+    });
+    updateDatabase(user, data)
+
+  }
+}
+
+const updateDatabase = (user, data)=>{
+  fire.database().ref('users/' + user.id).set({
+    Likes: data
+  });
+}
+
+
+export {Likes, unLike, getLikes}
