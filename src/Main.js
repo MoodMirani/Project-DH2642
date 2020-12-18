@@ -10,13 +10,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 //import LyricsSearch from 
 
 
 function Main({ spotify }) {
-  const [{ player, token, user }, dispatch] = useDataLayerValue();
   return (
     <Router>
         <Switch>
