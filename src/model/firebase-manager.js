@@ -33,6 +33,7 @@ const Likes = (currentTrack, user, dispatch, likedSongs) => {
         type: "SET_LIKEDSONGS",
         likedSongs: data,
       });
+      console.log("Data från firebase manager", data)
       updateDatabase(user, data)
       //console.log("inside likes",newLikeSongs)
     }

@@ -6,13 +6,15 @@ import { Link } from "react-router-dom";
 import "../css/popify.css";
 import "../css/Footer.css";
 
+import { Alert,
+         AlertTitle } from '@material-ui/lab';
 import {
   PauseCircleOutline,
   PlayCircleOutline,
   VolumeDown,
   FavoriteBorder,
   LibraryMusic,
-  FormatAlignLeft,
+  FormatAlignLeft
 } from "@material-ui/icons";
 
 function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
@@ -45,7 +47,10 @@ function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
       {(currentTrack === null)? 
       <FavoriteBorder disabled style={{fill: "gray"}} fontSize="large"/> :
       <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{
-          Likes(currentTrack, user, dispatch, likedSongs)}}/>}
+          Likes(currentTrack, user, dispatch, likedSongs)}}/> && 
+          <Alert severity="success">
+          <AlertTitle>You have liked the song!</AlertTitle>
+          </Alert>}
       </Grid>
 
       <Link to="/liked">
