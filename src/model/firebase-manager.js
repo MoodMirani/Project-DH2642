@@ -15,19 +15,19 @@ const getLikes = (user, dispatch)=>{
   return fire.database().ref('users/' + encoder(user.id)).once("value", snapshot => {
     if (snapshot.val()) {
       const likedList = Object.values(snapshot.val())
-      console.log("inside getlikes",likedList)
+      //console.log("inside getlikes",likedList)
       dispatch({
         type: "SET_LIKEDSONGS",
         likedSongs: likedList,
     });
-      console.log("inside getuserlikes ",snapshot.val)
+      //console.log("inside getuserlikes ",snapshot.val)
       } 
     })
 }
 
 const Likes = (currentTrack, user, dispatch, likedSongs) => {
-  console.log(encoder(user.id))
-  console.log(decoder(encoder(user.id)))
+  //console.log(encoder(user.id))
+  //console.log(decoder(encoder(user.id)))
  
   
     if(!likedSongs.includes(currentTrack.name)){

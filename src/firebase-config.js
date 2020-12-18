@@ -1,9 +1,9 @@
 import firebase from "firebase/app";
-
 import 'firebase/storage';     // for storage
 import 'firebase/database';    // for realtime database
 
-var firebaseConfig = {
+
+const firebaseConfig = {
     apiKey: "AIzaSyAz-PmJus3p1-JkkwjHniXXGCOGRCKcJdI",
     authDomain: "popify-dh2642.firebaseapp.com",
     databaseURL: "https://popify-dh2642-default-rtdb.firebaseio.com/",
@@ -14,10 +14,10 @@ var firebaseConfig = {
     measurementId: "G-ZVQZ20ZBXF"
   };
   // Initialize Firebase
-  var fire = firebase.initializeApp(firebaseConfig);
+  const firebaseApp = firebase.initializeApp(firebaseConfig);
   // firebase.analytics();
 /*
   export const auth = firebase.auth;
   export const db = firebase.database;
 */
-  export default fire;
+  export default firebaseApp;
