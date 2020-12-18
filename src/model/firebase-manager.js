@@ -1,9 +1,20 @@
 import fire from "../firebase-config"
 
+// Encoder for spotify user.id since there are some carachters that are not allowed in firebase
+function encoder(userID) {
+  const newID = userID.replace(".", "1").replace("#", "2").replace("$", "3").replace("[", "4").replace("]", "5").replace("&", "6")
+  return newID}
+
+function decoder(encodedID) {
+  const oldID = encodedID.replace("1",".").replace("2","#").replace("3","$").replace("4","[").replace("5","]").replace("6", "&")
+  return oldID}
+
+
+
 const getLikes = (user, dispatch)=>{
   const userID = user.id
   
-  return fire.database().ref('users/' + userID.replace(".", "/")).once("value", snapshot => {
+  return fire.database().ref('users/' + encoder(userID)).once("value", snapshot => {
     if (snapshot.val()) {
       const likedList = Object.values(snapshot.val())
       //    console.log("inside getlikes",likedList)
@@ -52,7 +63,7 @@ const unLike = (currentTrack, user, dispatch, likedSongs) => {
 }
 
 const updateDatabase = (user, data)=>{
-  fire.database().ref('users/' + user.id).set({
+  fire.database().ref('users/' + enconder(user.id)).set({
     Likes: data
   });
 }
