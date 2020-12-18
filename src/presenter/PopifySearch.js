@@ -48,7 +48,7 @@ function PopifySearch(){
        }
 
 
-    React.useEffect(() => setPromise(MusicSource.search({type: "artist", text: "A", token})), [token]);
+    React.useEffect(() => setPromise(MusicSource.search({type: "track", text: "santa", token})), [token]);
 
     return (
         <Fragment>

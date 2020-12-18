@@ -59,15 +59,16 @@ function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
        
       <PlayCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.resume()} /> 
       <PauseCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.pause()}/> 
-      <Link to="/lyrics">
-        <Grid item>
-        {(currentTrack === null)? 
-          <FormatAlignLeft style={{fill: "gray"}} fontSize="large" className="footer__icon" /> :
-          <FormatAlignLeft  style={{fill: "white"}} fontSize="large" className="footer__icon" />}
-        </Grid>
-      </Link>
+    
+      <Grid item>
+      {(currentTrack === null)?  
+        <FormatAlignLeft disabled style={{fill: "gray"}} fontSize="large"/> :   
+        <Link to="/lyrics">
+            <FormatAlignLeft  style={{fill: "white"}} fontSize="large" className="footer__icon" />
+        </Link> }
+      </Grid>
       
-
+  
       </div>
 
       <div className="footer__right">

@@ -12,7 +12,6 @@ const LyricsSource = {
         .catch(err => 
             console.error(err)
         )
-     
     },
     getLyrics(id){ 
         return fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${id}&apikey=${key}`, {
@@ -20,7 +19,6 @@ const LyricsSource = {
         })
     .then(res => res.json())
     .then(res => (res.message.body.lyrics))
-    
     
    
     },
