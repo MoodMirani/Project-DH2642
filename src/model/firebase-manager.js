@@ -17,10 +17,12 @@ const getLikes = (user, dispatch)=>{
 }
 
 const songIncluded = (likedSongs, currentTrack) => {
+  if(likedSongs) {
   for (let index = 0; index < likedSongs.length; index++) {
     if(likedSongs[index].id === currentTrack.id){
       return true;
     }
+  }
   }
   return false;
 }

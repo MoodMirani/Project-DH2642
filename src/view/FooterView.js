@@ -47,10 +47,10 @@ function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
       {(currentTrack === null)? 
       <FavoriteBorder disabled style={{fill: "gray"}} fontSize="large"/> :
       <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{
-          Likes(currentTrack, user, dispatch, likedSongs)}}/> && 
+          if(likedSongs){Likes(currentTrack, user, dispatch, likedSongs)}}}/> /*&& 
           <Alert severity="success">
           <AlertTitle>You have liked the song!</AlertTitle>
-          </Alert>}
+      </Alert>*/}
       </Grid>
 
       <Link to="/liked">
