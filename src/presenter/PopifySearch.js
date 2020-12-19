@@ -86,7 +86,7 @@ function PopifySearch(){
             { promiseNoData(promise, data, error) || 
             
             <Fragment> 
-                 {(!Array.isArray(data) || !data.length) && <h1>Unvalid search term, try again!</h1> }
+                 
                 <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
                 set_currentArtist={set_currentArtist} set_currentAlbum={set_currentAlbum}/>
                
