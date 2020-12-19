@@ -6,12 +6,10 @@ const getLikes = (user, dispatch)=>{
   return fire.database().ref('users/' + userID.replace(".", "/")).once("value", snapshot => {
     if (snapshot.val()) {
       const likedList = Object.values(snapshot.val())
-      //    console.log("inside getlikes",likedList)
       dispatch({
         type: "SET_LIKEDSONGS",
-        likedSongs: likedList,
+        likedSongs: likedList[0],
     });
-      //console.log("inside getuserlikes ",snapshot.val)
       } 
     })
 }
@@ -60,4 +58,4 @@ const updateDatabase = (user, data)=>{
 }
 
 
-export {Likes, unLike, getLikes}
+export {Likes, unLike, getLikes, songIncluded}

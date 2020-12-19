@@ -40,6 +40,11 @@
   margin-right: 20px;
   object-fit: contain;
 }
+
+.border {
+  border: 1px solid black;
+}
+
 .footer__green {
   color: #1ed15e;
 }

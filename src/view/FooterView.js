@@ -1,12 +1,11 @@
 import React from "react";
-import { Grid, Slider } from "@material-ui/core";
-import { Likes, /*unLike*/ } from "../model/firebase-manager.js"
+import { Grid, Slider, Box } from "@material-ui/core";
+import { Likes, songIncluded  /*unLike*/ } from "../model/firebase-manager.js"
 import { Link } from "react-router-dom";
 
 import "../css/popify.css";
 import "../css/Footer.css";
-
-import { Popover } from '@material-ui/core';
+import "../css/popup.css"
 
 import {
   PauseCircleOutline,
@@ -19,11 +18,17 @@ import {
 
 function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
   const [value, setValue] = React.useState(30);
-
   const handleChange = (event, newValue) => { // this is for the volume slider
     setValue(newValue);
     player.setVolume(value/100)
   };
+
+  function Popup() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+    if(popup.classList.contains("show")){ // Check if the popup is shown
+     setTimeout(() => popup.classList.remove("show"), 2000)}
+  }
 
   return (  
   
@@ -43,30 +48,35 @@ function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
           </div>
       </div>
 
+      {/* LIKE-button */}
+      <Grid className="footer__left">
       <Grid item>
       {(currentTrack === null)? 
       <FavoriteBorder disabled style={{fill: "gray"}} fontSize="large"/> :
-      <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{
-          if(likedSongs){Likes(currentTrack, user, dispatch, likedSongs)} 
-          <Popover 
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'center',
-          }}
-          transformOrigin={{
-            vertical: 'center',
-            horizontal: 'center',
-          }}>
-          You have liked the song!
-        </Popover>}}/>
-          }
+      
+      <div  className="popup"> 
+        {!songIncluded(likedSongs, currentTrack) ?
+        <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{Popup()
+          if(likedSongs){
+            Likes(currentTrack, user, dispatch, likedSongs)
+            }}}/> : 
+        <FavoriteBorder disabled style={{fill: "gray"}} fontSize="large"/>}
+            
+        <span className="popuptext" id="myPopup">You have liked the song!</span>
+      </div>
+      } Like
+      </Grid>
       </Grid>
 
+      {/* LIKED SONGS LIST */}
+      <Grid className="footer__right">
       <Link to="/liked">
         <Grid item>
           <LibraryMusic fontSize="large" className="footer__icon" style={{fill: "white"}}/>
         </Grid>
       </Link>
+      Liked songs
+      </Grid>
 
       </div>
       
@@ -74,13 +84,17 @@ function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
        
       <PlayCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.resume()} /> 
       <PauseCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.pause()}/> 
-    
+      
+      {/* LYRICS-button */}
+      <Grid>
       <Grid item>
       {(currentTrack === null)?  
         <FormatAlignLeft disabled style={{fill: "gray"}} fontSize="large"/> :   
         <Link to="/lyrics">
             <FormatAlignLeft  style={{fill: "white"}} fontSize="large" className="footer__icon" />
         </Link> }
+        Lyrics
+      </Grid>
       </Grid>
       
   

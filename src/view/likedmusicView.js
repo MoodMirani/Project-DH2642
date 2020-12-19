@@ -10,8 +10,8 @@ const LikedmusicView = ({likedSongs}) => {
     return <div className="trackContainer">
                 <Link to="/"><button className ="button">Back to search</button></Link>
                 {likedSongs.map(track =>
-                <div> {console.log(track.name)}
-                        <h1 key={track.id} className="loadedTrack" >{track.name + " - " + track.artists[0].name}</h1>
+                <div key={track.id}> {console.log(track.name)}
+                        <h1 className="loadedTrack" >{track.name + " - " + track.artists[0].name}</h1>
                     </div>
                     )}
             </div>
