@@ -7,7 +7,9 @@ const MusicSource = {
        
           
         if(type==null){type="track"} 
-        if(text==null){text=""}
+        if(text==null){text=""} 
+
+        
        
 
         let index = type + "s"

@@ -48,6 +48,7 @@ function PopifySearch(){
         })
        }
 
+    console.log("data", data, error)
 
     React.useEffect(() => setPromise(MusicSource.search({type: "track", text: "santa", token})), [token]);
 
@@ -55,7 +56,9 @@ function PopifySearch(){
         <Fragment>
             <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.search({type, text, token}))}/>
             { promiseNoData(promise, data, error) || 
+            
             <Fragment> 
+                 {(!Array.isArray(data) || !data.length) && <h1>Unvalid search term, try again!</h1> }
                 <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
                 set_currentArtist={set_currentArtist} set_currentAlbum={set_currentAlbum}/>
                 <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 

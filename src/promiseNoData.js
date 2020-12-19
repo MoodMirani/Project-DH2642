@@ -6,5 +6,6 @@ function promiseNoData(promise, data, error){
     return  (!promise && "no data")     // case "0"  
           || (error && <h1>You need to type something in the searchbar</h1>)   // case 3 
           || (!data && <img className="centrePROM" src={Loading} alt=""/>)  // case 1
+         
 }
 export default promiseNoData;
