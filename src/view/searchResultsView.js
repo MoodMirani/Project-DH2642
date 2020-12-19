@@ -25,12 +25,12 @@ const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist, set
 
             result.type==="track" ?
             <Link to="/track">
-            <div class="container">
+            <div className="container">
             <img className="searchPic"
             src = { result.album.images[0] && result.album.images[0].url } alt="" />
             
-            <div class="middle">
-            <img class="play_symbol" alt="play" onClick = { () => { set_currentTrack(result)}} 
+            <div className="middle">
+            <img className="play_symbol" alt="play" onClick = { () => { set_currentTrack(result)}} 
             src={"http://clipart-library.com/images_k/video-play-button-transparent/video-play-button-transparent-18.png"}/>
             </div>
             </div>
