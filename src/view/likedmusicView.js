@@ -5,7 +5,7 @@ import "../css/AlbumView.css";
 
 
 const LikedmusicView = ({likedSongs}) => {
-    console.log("liked songs: ", likedSongs)
+    // console.log("liked songs: ", likedSongs)
     //console.log("track.artist: ", track.artists)
     likedSongs = likedSongs.flat()
     return <div className="trackContainer">

@@ -8,11 +8,9 @@ const MusicSource = {
           
         //if(type==null){type="track"} 
         //if(text==null){text=""} 
-        console.log("type", type, "text", text)
+        // console.log("type", type, "text", text)
 
-        
-       
-
+    
         let index = type + "s"
         return fetch(BASE_URL+ "/search?q="+text+"&type="+type, requestHeader(token))
             .then(data => data.json())

@@ -59,7 +59,7 @@ function PopifySearch(){
             type: "SET_SEARCHTEXT",
             searchText: result,
         })
-        console.log("searchText",searchText)
+        // console.log("searchText",searchText)
        }
 
        function set_searchType(result) {
@@ -67,7 +67,7 @@ function PopifySearch(){
             type: "SET_SEARCHTYPE",
             searchType: result,
         })
-        console.log("seacrhTYPE", searchType)
+        // console.log("seacrhTYPE", searchType)
        }
 
     //console.log("data", data, error)
@@ -80,8 +80,8 @@ function PopifySearch(){
             onSearch={(searchType, searchText) => {
                 set_searchText(searchText)
                 set_searchType(searchType)
-                console.log(searchText)
-                console.log(searchType)
+                // console.log(searchText)
+                // console.log(searchType)
                 setPromise(MusicSource.search({type: searchType, text: searchText, token}))}}/>
             { promiseNoData(promise, data, error) || 
             

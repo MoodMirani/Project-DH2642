@@ -38,8 +38,8 @@ function LyricsSearch(){
 
 
     const [data, error] = usePromise(promise);
-    console.log(currentTrack)
-    console.log("data from fetch lyrics: ", data, error)
+    // console.log(currentTrack)
+    // console.log("data from fetch lyrics: ", data, error)
    
       
 

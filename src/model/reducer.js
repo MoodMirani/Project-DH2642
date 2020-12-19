@@ -12,8 +12,7 @@ export const initialState = {
   searchType: "track",
 };
 
-const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
-  console.log(state)                                  // to shoot out data whenever needed and to save data to the wall(data layer)
+const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun                              // to shoot out data whenever needed and to save data to the wall(data layer)
   switch (action.type) {            // switch is used to perform different actions based on different conditions
     case "SET_USER":
       return {
