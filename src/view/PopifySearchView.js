@@ -12,12 +12,12 @@ function PopifySearchView({onSearch, searchText, set_searchText ,searchType, set
         alt="Popify logo"
         height="100px"/>
             <input className="searchbar" id="searchbar_id" placeholder= {message}  onChange={(e) => set_searchText(e.target.value)}/>
-            <button className= "btnSearch" id="searchbtn_id" onClick ={() => onSearch(searchType, searchText)}>Search!</button>
 
                 <div className="categoryButtons">
                     <button className= "categories" onClick ={() => set_searchType("track")}>Tracks</button>
                     <button className= "categories" onClick ={() => set_searchType("album")}>Albums</button>
                     <button className= "categories" onClick ={() => set_searchType("artist")}>Artists</button>
+                    <button className= "btnSearch" id="searchbtn_id" onClick ={() => onSearch(searchType, searchText)}>Search!</button>
                 </div>
                 {/*
                 <select className="options" onChange={(e) => set_searchType(e.target.value)} >
