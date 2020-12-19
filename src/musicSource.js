@@ -1,12 +1,14 @@
 import { BASE_URL, requestHeader } from "./spotify"
+import { searchErrorHandler } from "./searchErrorHandler";
 
 const MusicSource = {
     
     search({type, text, token}) { 
-        if(type==null){type=""} 
+       
+          
+        if(type==null){type="track"} 
         if(text==null){text=""}
-
-        
+       
 
         let index = type + "s"
         return fetch(BASE_URL+ "/search?q="+text+"&type="+type, requestHeader(token))
