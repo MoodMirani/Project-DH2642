@@ -9,8 +9,6 @@ function decoder(encodedID) {
   const oldID = encodedID.replace("1",".").replace("2","#").replace("3","$").replace("4","[").replace("5","]").replace("6", "&")
   return oldID}
 
-
-
 const getLikes = (user, dispatch)=>{
   const userID = user.id
   
