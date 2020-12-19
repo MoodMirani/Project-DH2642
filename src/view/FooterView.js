@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Slider, Box } from "@material-ui/core";
-import { Likes, songIncluded  /*unLike*/ } from "../model/firebase-manager.js"
+import { Grid, Slider } from "@material-ui/core";
+import { Likes, songIncluded,  unLike } from "../model/firebase-manager.js"
 import { Link } from "react-router-dom";
 
 import "../css/popify.css";
@@ -60,7 +60,10 @@ function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
           if(likedSongs){
             Likes(currentTrack, user, dispatch, likedSongs)
             }}}/> : 
-        <FavoriteBorder disabled style={{fill: "gray"}} fontSize="large"/>}
+        <FavoriteBorder style={{fill: "red"}} fontSize="large" onClick = {()=>{
+          if(likedSongs){
+            unLike(currentTrack, user, dispatch, likedSongs)
+            }}}/>}
             
         <span className="popuptext" id="myPopup">You have liked the song!</span>
       </div>
@@ -97,7 +100,6 @@ function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
       </Grid>
       </Grid>
       
-  
       </div>
 
       <div className="footer__right">

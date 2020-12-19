@@ -31,7 +31,7 @@ const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist, set
             
             <div className="middle">
             <img className="play_symbol" alt="play" onClick = { () => { set_currentTrack(result)}} 
-            src={"http://clipart-library.com/images_k/video-play-button-transparent/video-play-button-transparent-18.png"}/>
+            src={"http://clipart-library.com/images_k/video-play-button-transparent/video-play-button-transparent-6.png"}/>
             </div>
             </div>
             </Link>

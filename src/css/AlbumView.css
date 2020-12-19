@@ -28,7 +28,8 @@
 
 .trackContainer {
   /*background-color: blue;*/
-  height: 450px;
+  height: 100%;
+  overflow: scroll;
 }
 
 .trackPic {
