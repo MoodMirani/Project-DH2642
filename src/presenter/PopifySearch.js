@@ -61,9 +61,10 @@ function PopifySearch(){
                  {(!Array.isArray(data) || !data.length) && <h1>Unvalid search term, try again!</h1> }
                 <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
                 set_currentArtist={set_currentArtist} set_currentAlbum={set_currentAlbum}/>
-                <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 
+               
                
             </Fragment>  }
+            <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 
         </Fragment> 
     )
 }

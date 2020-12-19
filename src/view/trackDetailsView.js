@@ -2,6 +2,7 @@ import React from "react";
 import "../css/TrackDetailsView.css"
 import {Link} from "react-router-dom";
 import "../css/popify.css";
+import { Fragment } from "react";
 
 const TrackDetailsView =({spotifyObject, lyricsData})=>
    <div className="flexboxWrapper">
@@ -24,10 +25,14 @@ const TrackDetailsView =({spotifyObject, lyricsData})=>
                <Link to="/">
                   <button className ="button">Back to search</button>
                </Link>
+               
+               {(lyricsData.lyrics_body === "") ? 
+               <p className="lyricsStyle" style={{whiteSpace: 'pre-line'}}>There is no lyrics avaible for this track</p>:
+               <Fragment>
                <p className="lyricsCopy" >{lyricsData.lyrics_copyright}</p>
                <p className="lyricsStyle" style={{whiteSpace: 'pre-line'}}>{lyricsData.lyrics_body}</p>
-              
-               
+               </Fragment>}
+         
             </div>
          </div>
 
