@@ -10,7 +10,7 @@ import FooterView from "../view/FooterView"
 import { getLikes } from "../model/firebase-manager"
 
 function PopifySearch(){
-    const [{ player, token, currentTrack, user, likedSongs }, dispatch] = useDataLayerValue();
+    const [{ player, token, currentTrack, user, likedSongs, searchType, searchText}, dispatch] = useDataLayerValue();
 
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
@@ -30,7 +30,6 @@ function PopifySearch(){
             spotify_uri: result.uri
 
         })
-        
     }
 
 
@@ -48,13 +47,42 @@ function PopifySearch(){
         })
        }
 
-    console.log("data", data, error)
+       function set_currentAlbum(result) {
+        dispatch({
+            type: "SET_CURRENTALBUM",
+            currentAlbum: result,
+        })
+       }
 
-    React.useEffect(() => setPromise(MusicSource.search({type: "track", text: "santa", token})), [token]);
+       function set_searchText(result) {
+        dispatch({
+            type: "SET_SEARCHTEXT",
+            searchText: result,
+        })
+        console.log("searchText",searchText)
+       }
+
+       function set_searchType(result) {
+        dispatch({
+            type: "SET_SEARCHTYPE",
+            searchType: result,
+        })
+        console.log("seacrhTYPE", searchType)
+       }
+
+    //console.log("data", data, error)
+
+    React.useEffect(() => setPromise(MusicSource.search({type: searchType, text: searchText, token})), [token]);
 
     return (
         <Fragment>
-            <PopifySearchView onSearch={(type, text) => setPromise(MusicSource.search({type, text, token}))}/>
+            <PopifySearchView set_searchText={set_searchText} set_searchType={set_searchType} searchText={searchText} searchType={searchType}
+            onSearch={(searchType, searchText) => {
+                set_searchText(searchText)
+                set_searchType(searchType)
+                console.log(searchText)
+                console.log(searchType)
+                setPromise(MusicSource.search({type: searchType, text: searchText, token}))}}/>
             { promiseNoData(promise, data, error) || 
             
             <Fragment> 

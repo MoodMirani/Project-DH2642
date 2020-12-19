@@ -6,8 +6,9 @@ const MusicSource = {
     search({type, text, token}) { 
        
           
-        if(type==null){type="track"} 
-        if(text==null){text=""} 
+        //if(type==null){type="track"} 
+        //if(text==null){text=""} 
+        console.log("type", type, "text", text)
 
         
        

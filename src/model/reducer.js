@@ -8,10 +8,12 @@ export const initialState = {
   currentAlbum: null,
   player: null,
   likedSongs: [],
+  searchText: "santa",
+  searchType: "track",
 };
 
 const reducer = (state, action) => { //A special function called reducer is implemented here to act as a dispatch gun 
-                                    // to shoot out data whenever needed and to save data to the wall(data layer)
+  console.log(state)                                  // to shoot out data whenever needed and to save data to the wall(data layer)
   switch (action.type) {            // switch is used to perform different actions based on different conditions
     case "SET_USER":
       return {
@@ -48,6 +50,17 @@ const reducer = (state, action) => { //A special function called reducer is impl
           ...state,
           likedSongs:action.likedSongs,
         }
+      case "SET_SEARCHTEXT":
+          return {
+            ...state,
+            searchText:action.searchText,
+          }
+      case "SET_SEARCHTYPE":
+        return {
+          ...state,
+          searchType:action.searchType,
+        }
+
     default:
       return state;
   }

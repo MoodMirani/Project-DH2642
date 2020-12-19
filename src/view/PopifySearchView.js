@@ -3,11 +3,11 @@ import "../css/popify.css";
 
 
 
-function PopifySearchView({onSearch}){
+function PopifySearchView({onSearch, searchText, set_searchText ,searchType, set_searchType}){
 
-    const [text, setText]= React.useState(null);
-    const [type, setType]= React.useState(null);
+  
 
+    console.log("searchType", searchType, "searchText", searchText)
     const message = `What do you want to listen to?`;
    
     return(
@@ -20,12 +20,12 @@ function PopifySearchView({onSearch}){
         alt="Popify logo"
         height="100px"/>
 
-            <input className="searchbar" id="searchbar_id" placeholder= {message}  onChange={(e) => setText(e.target.value)}/>
-                <select className="options" onChange={(e) => setType(e.target.value)}>
+            <input className="searchbar" id="searchbar_id" placeholder= {message}  onChange={(e) => set_searchText(e.target.value)}/>
+                <select className="options" onChange={(e) => set_searchType(e.target.value)} >
                
                     {["track","album", "artist"].map(k=> <option key={k} value={k}>{k}</option>) }
                 </select>    
-            <button className= "btnSearch" id="searchbtn_id" onClick ={(e) => onSearch(type, text)}>Search!</button>
+            <button className= "btnSearch" id="searchbtn_id" onClick ={() => onSearch(searchType, searchText)}>Search!</button>
             <script>
             
             {document.getElementById("searchbar_id") !== null ? document.getElementById("searchbar_id")
