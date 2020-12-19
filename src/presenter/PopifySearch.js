@@ -80,8 +80,8 @@ function PopifySearch(){
             onSearch={(searchType, searchText) => {
                 set_searchText(searchText)
                 set_searchType(searchType)
-                console.log(searchText)
-                console.log(searchType)
+                // console.log(searchText)
+                // console.log(searchType)
                 setPromise(MusicSource.search({type: searchType, text: searchText, token}))}}/>
             { promiseNoData(promise, data, error) || 
             

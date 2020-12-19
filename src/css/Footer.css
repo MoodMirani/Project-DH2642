@@ -8,6 +8,7 @@
   background-color: #282828;
   padding: 20px;
 }
+
 .footer__left {
   flex: 0.3;
   display: flex;
@@ -40,15 +41,19 @@
   margin-right: 20px;
   object-fit: contain;
 }
+
 .footer__green {
   color: #1ed15e;
 }
+
 .footer__songInfo > h4 {
   margin-bottom: 5px;
 }
+
 .footer__songInfo > p {
   font-size: 12px;
 }
+
 .grey_name {
   color: grey;
 }
@@ -62,6 +67,7 @@
   transition: transform 0.2 ease-in;
   transform: scale(1.2) !important;
 }
+
 .footer__right * .MuiSlider-root {
   color: #4d30dc;
 }

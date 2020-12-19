@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import "../css/popify.css";
 import "../css/Footer.css";
 
-import { Alert,
-         AlertTitle } from '@material-ui/lab';
+
 import {
   PauseCircleOutline,
   PlayCircleOutline,
