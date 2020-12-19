@@ -8,7 +8,7 @@ import MusicSource from "../musicSource";
 
 function AlbumInfo(){
     
-    const [{player, user, currentTrack, currentAlbum, token}] = useDataLayerValue();
+    const [{player, user, currentTrack, currentAlbum, token, likedSongs}, dispatch] = useDataLayerValue();
 
     const [promise, setPromise] = React.useState(null);
     React.useEffect(() => setPromise(currentAlbum && MusicSource.searchAlbum({id: currentAlbum.id, token})), [currentAlbum, token]);
@@ -18,7 +18,7 @@ function AlbumInfo(){
     return (
         <Fragment>
             {data && <AlbumView currentAlbum={currentAlbum} albumTracks={data} />}
-            <FooterView currentTrack={currentTrack} player={player} user={user}/>
+            <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/>
         </Fragment> 
     )
 }

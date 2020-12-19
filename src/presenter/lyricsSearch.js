@@ -12,7 +12,7 @@ import promiseNoData from '../promiseNoData'
 
 
 function LyricsSearch(){
-    const [{currentTrack, player, user}, ] = useDataLayerValue();
+    const [{currentTrack, player, user, likedSongs}, dispatch ] = useDataLayerValue();
     const [promise, setPromise] = React.useState();
 
     
@@ -37,7 +37,7 @@ function LyricsSearch(){
                 {currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>}
                 {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> }
                 {(data === null) && (currentTrack == null) && <TrackDetailsNullView spotifyObject={currentTrack} /> }
-                <FooterView currentTrack={currentTrack} player={player} user={user}/>
+                <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/>
             </Fragment> }
         </Fragment>
     )

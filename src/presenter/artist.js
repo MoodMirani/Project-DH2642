@@ -5,12 +5,12 @@ import ArtistView from "../view/artistView";
 
 function ArtistInfo(){
     
-    const [{currentArtist, player, user, currentTrack}] = useDataLayerValue();
+    const [{currentArtist, player, user, currentTrack, likedSongs}, dispatch] = useDataLayerValue();
    
     return (
         <Fragment>
         <ArtistView currentArtist={currentArtist}/>
-        <FooterView currentTrack={currentTrack} player={player} user={user}/>
+        <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/>
         </Fragment> 
     )
 }

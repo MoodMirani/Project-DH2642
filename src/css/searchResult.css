@@ -18,7 +18,7 @@ transition: 200ms color ease-in;
 }
 
 .searchName {
-text-align: center;
+text-align: left;
 height:50px;
 color: rgb(255, 255, 255);
 font-size: 20px;

@@ -28,13 +28,11 @@ const songIncluded = (likedSongs, currentTrack) => {
 const Likes = (currentTrack, user, dispatch, likedSongs) => {
     if(!songIncluded(likedSongs, currentTrack)){
       const data = [currentTrack, ...likedSongs.flat()];
-      //console.log("inside likes2", likedSongs)
       dispatch({
         type: "SET_LIKEDSONGS",
         likedSongs: data,
       });
       updateDatabase(user, data)
-      //console.log("inside likes",newLikeSongs)
     }
 }
 
