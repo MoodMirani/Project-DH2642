@@ -10,7 +10,7 @@ const LyricsSource = {
             if (response.ok) { 
                 return response.json()
             } else {
-                throw new Error ("Something went wrong when trying to load the lyrics")
+                throw new Error ("Something went wrong when trying to load the lyrics", response.statusText)
             }})
         .then(res => (res.message.body.track_list[0]).track.track_id)
         .catch(err => 
@@ -25,7 +25,7 @@ const LyricsSource = {
             if (response.ok) { 
                 return response.json()
             } else {
-                throw new Error ("Something went wrong when trying to load the lyrics")
+                throw new Error ("Something went wrong when trying to load the lyrics", response.statusText)
             }})
     .then(res => (res.message.body.lyrics))
     .catch(err => 

@@ -27,3 +27,12 @@ const MusicSource = {
 };
 
 export default MusicSource; 
+
+
+function handleHTTPError(response) {
+    // test error: DishSource.searchDishes({type:"undefined", query:"pizza"}).then(console.log).catch(console.error)
+    if(response.ok)
+    return response;
+    throw Error(response.statusText);
+}
+
