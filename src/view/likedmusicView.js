@@ -8,12 +8,10 @@ import { Grid } from "@material-ui/core";
 
 
 const LikedmusicView = ({ likedSongs, set_currentTrack, currentTrack, user, dispatch }) => {
-
     return <div className="trackContainer">
         <Link to="/">
             <img className="logo" src="https://i.ibb.co/283SGvS/popi-Trans.png" alt="Popify logo" height="100px" />
         </Link>
-
         <Link to="/"><button className="button">Back to search</button></Link>
 
         <div>

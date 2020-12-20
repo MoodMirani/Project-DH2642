@@ -37,16 +37,14 @@ const songIncluded = (likedSongs, currentTrack) => {
 }
 
 const Likes = (currentTrack, user, dispatch, likedSongs) => {
-
-  if (!songIncluded(likedSongs, currentTrack)) {
-    const data = [currentTrack, ...likedSongs.flat()];
-
-    dispatch({
-      type: "SET_LIKEDSONGS",
-      likedSongs: data,
-    });
-    updateDatabase(user, data)
-  }
+    if(!songIncluded(likedSongs, currentTrack)){
+      const data = [currentTrack, ...likedSongs.flat()];
+      dispatch({
+        type: "SET_LIKEDSONGS",
+        likedSongs: data,
+      });
+      updateDatabase(user, data)
+    }
 }
 
 const unLike = (currentTrack, user, dispatch, likedSongs) => {
@@ -68,4 +66,4 @@ const updateDatabase = (user, data) => {
 }
 
 
-export { Likes, unLike, getLikes }
+export {Likes, unLike, getLikes, songIncluded}

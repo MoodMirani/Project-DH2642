@@ -28,10 +28,8 @@
 
 .trackContainer {
   /*background-color: blue;*/
-  display: inline-block;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
+  height: 100%;
+  overflow: scroll;
 }
 
 .trackPic {

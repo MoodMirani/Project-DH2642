@@ -1,15 +1,12 @@
 import React from "react";
-import { Grid, Slider } from "@material-ui/core";
-import { Likes, unLike } from "../model/firebase-manager.js"
+import { Grid, Slider} from "@material-ui/core";
+import { Likes, songIncluded, unLike } from "../model/firebase-manager.js"
 import { Link } from "react-router-dom";
 
 import "../css/popify.css";
 import "../css/Footer.css";
+import "../css/popup.css"
 
-import {
-  Alert,
-  AlertTitle
-} from '@material-ui/lab';
 import {
   PauseCircleOutline,
   PlayCircleOutline,
@@ -26,8 +23,15 @@ function FooterView({ currentTrack, currentAlbum, player, user, likedSongs, disp
     player.setVolume(value / 100)
   };
 
-  return (
+  function Popup() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+    if(popup.classList.contains("show")){ // Check if the popup is shown
+     setTimeout(() => popup.classList.remove("show"), 2000)}
+  }
 
+  return (  
+  
     <div className="footer__play">
       <div className="footer__left">
         {currentTrack === null ? <img alt="" /> :
@@ -40,7 +44,34 @@ function FooterView({ currentTrack, currentAlbum, player, user, likedSongs, disp
           <div className="grey_name" >
             <h5>{currentTrack !== null ? currentTrack.artists[0].name : ""}</h5>
           </div>
-        </div>
+      </div>
+
+      {/* LIKE-button */}
+      <Grid className="footer__left">
+      <Grid item>
+      {(currentTrack === null)? 
+      <FavoriteBorder disabled style={{fill: "gray"}} fontSize="large"/> :
+      
+      <div  className="popup"> 
+        {!songIncluded(likedSongs, currentTrack) ?
+        <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{Popup()
+          if(likedSongs){
+            Likes(currentTrack, user, dispatch, likedSongs)
+            }}}/> : 
+        <FavoriteBorder style={{fill: "red"}} fontSize="large" onClick = {()=>{
+          if(likedSongs){
+            unLike(currentTrack, user, dispatch, likedSongs)
+            }}}/>}
+            
+        <span className="popuptext" id="myPopup">You have liked the song!</span>
+      </div>
+      } Like
+      </Grid>
+      </Grid>
+
+      {/* LIKED SONGS LIST */}
+      <Grid className="footer__right">
+      <Link to="/liked">
         <Grid item>
           {(currentTrack === null) ?
             <FavoriteBorder disabled style={{ fill: "gray" }} fontSize="large" /> :
@@ -48,23 +79,29 @@ function FooterView({ currentTrack, currentAlbum, player, user, likedSongs, disp
               Likes(currentTrack, user, dispatch, likedSongs)
             }} />}
         </Grid>
-        <Link to="/liked">
-          <Grid item>
-            <LibraryMusic fontSize="large" className="footer__icon" style={{ fill: "white" }} />
-          </Grid>
-        </Link>
+      </Link>
+      Liked songs
+      </Grid>
+
       </div>
 
       <div className="footer__center">
-        <PlayCircleOutline fontSize="large" className="footer__icon" onClick={() => player.resume()} />
-        <PauseCircleOutline fontSize="large" className="footer__icon" onClick={() => player.pause()} />
-        <Grid item>
-          {(currentTrack === null) ?
-            <FormatAlignLeft disabled style={{ fill: "gray" }} fontSize="large" /> :
-            <Link to="/lyrics">
-              <FormatAlignLeft style={{ fill: "white" }} fontSize="large" className="footer__icon" />
-            </Link>}
-        </Grid>
+       
+      <PlayCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.resume()} /> 
+      <PauseCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.pause()}/> 
+      
+      {/* LYRICS-button */}
+      <Grid>
+      <Grid item>
+      {(currentTrack === null)?  
+        <FormatAlignLeft disabled style={{fill: "gray"}} fontSize="large"/> :   
+        <Link to="/lyrics">
+            <FormatAlignLeft  style={{fill: "white"}} fontSize="large" className="footer__icon" />
+        </Link> }
+        Lyrics
+      </Grid>
+      </Grid>
+      
       </div>
 
       <div className="footer__right">
