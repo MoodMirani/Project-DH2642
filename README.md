@@ -30,3 +30,5 @@ Track:
 You can listen to a song, pause it and look at the lyrics by clicking the text symbol (next to the pause button).
 
 In the footer (next to the song name) there is a heart icon. This puts the chosen song to the users' favourites that are then saved into Firebase. You can see your favourite songs at any time by pressing the library icon next to the heart. This links to a view with the users' favourite songs that is currently WIP and only displays the name of your liked songs. We're working on this view! :)
+
+Heads up! The website works best without any plugins in ypur browser, such as addblocker.
