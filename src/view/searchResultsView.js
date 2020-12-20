@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 import playButton from "../assets/play-button.png"
 
 
-const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, set_currentAlbum }) => {
+const SearchResultsView = ({ searchType, searchResult, set_currentTrack, set_currentArtist, set_currentAlbum }) => {
 
     return <div className="searchMODE">{
 
         searchResult.map(result =>
             <span key={result.id} className="searchResult" >
                 
-
+                
                 {
                     result.type === "artist" ?
                         <Link to="/artist">
@@ -42,8 +42,9 @@ const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, 
                                 <img className="searchPic" onClick={() => { set_currentAlbum(result) }}
                                     src={result.images[0] ? result.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG"} alt="" />
                             </Link>)}
-                    <p className="searchName-artist">{result.artists[0].name}</p>
-                <div className="searchName">{result.name}</div>
+                    {searchType === "artist" ? <p className="searchName-artist">{result.name}</p>  : <p className="searchName-artist">{result.artists[0].name}</p>}
+                    {searchType === "artist" ? <div className="searchName"></div>: <div className="searchName">{result.name}</div>}
+               
             </span>
         )
     }

@@ -67,8 +67,8 @@ function PopifySearch(){
        }
 
     React.useEffect(() => setPromise(MusicSource.search({type: searchType, text: searchText, token})), [token]);
-    //console.log("searchType", searchType, "searchText", searchText)
-    //console.log("data", data, "error", error)
+    console.log("searchType", searchType, "searchText", searchText)
+    console.log("data", data, "error", error)
 
     return (
         <Fragment>
@@ -82,7 +82,7 @@ function PopifySearch(){
             <Fragment> 
                 
                 <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
-                set_currentArtist={set_currentArtist} set_currentAlbum={set_currentAlbum}/>
+                set_currentArtist={set_currentArtist} set_currentAlbum={set_currentAlbum} searchType={searchType}/>
             </Fragment>  }
             <FooterView currentTrack={currentTrack} currentAlbum = {currentAlbum} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 
         </Fragment> 
