@@ -5,12 +5,15 @@ const LyricsSource = {
 
         return fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_artist=${encodeURI(artist)}&q_track=${encodeURI(song)}&apikey=${key}`, {
             "method": "GET",
+            "headers": new Headers({"Access-Control-Allow-Origin": "https://popify-dh2642.web.app/"}),
+
         })
             .then(response => {
+        
                 if (response.ok) {
                     return response.json()
                 } else {
-                    throw new Error("Something went wrong when trying to load the lyrics", response.statusText)
+                    throw new Error("Something went wrong when trying to load the lyrics")
                 }
             })
             .then(res => (res.message.body.track_list[0]).track.track_id)
@@ -21,12 +24,13 @@ const LyricsSource = {
     getLyrics(id) {
         return fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${id}&apikey=${key}`, {
             "method": "GET",
+            "headers": new Headers({"Access-Control-Allow-Origin": "https://popify-dh2642.web.app/"}),
         })
             .then(response => {
                 if (response.ok) {
                     return response.json()
                 } else {
-                    throw new Error("Something went wrong when trying to load the lyrics", response.statusText)
+                    throw new Error("Something went wrong when trying to load the lyrics")
                 }
             })
             .then(res => (res.message.body.lyrics))
