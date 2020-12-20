@@ -1,8 +1,6 @@
+.App{
 
-
-body{
-    background: linear-gradient(rgb(0, 0, 0), rgb(119, 114, 150));
-    text-align:center; 
-    height: 100%;
-
+background: linear-gradient(rgb(0, 0, 0), rgb(119, 114, 150));
+text-align:center;
+height: 220vh;
 }
