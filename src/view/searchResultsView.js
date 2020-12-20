@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import playButton from "../assets/play-button.png"
 
 
-const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, set_currentAlbum }) => {
+const SearchResultsView = ({ searchType, searchResult, set_currentTrack, set_currentArtist, set_currentAlbum }) => {
 
     return <div className="searchMODE">{
 
@@ -46,7 +46,6 @@ const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, 
                                 <p className="searchName-artist">{result.artists[0].name}</p>
                                 <div className="searchName">{result.name}</div>
                             </Link>)}
-
             </span>
         )
     }
