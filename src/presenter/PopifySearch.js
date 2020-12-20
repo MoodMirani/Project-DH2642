@@ -10,7 +10,7 @@ import FooterView from "../view/FooterView"
 import { getLikes } from "../model/firebase-manager"
 
 function PopifySearch(){
-    const [{ player, token, currentTrack, user, likedSongs, searchType, searchText}, dispatch] = useDataLayerValue();
+    const [{ player, token, currentTrack, user, likedSongs, searchType, searchText, currentAlbum}, dispatch] = useDataLayerValue();
 
     const [promise, setPromise] = React.useState(null);
     const [data, error] = usePromise(promise);
@@ -92,7 +92,7 @@ function PopifySearch(){
                
                
             </Fragment>  }
-            <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 
+            <FooterView currentTrack={currentTrack} currentAlbum = {currentAlbum} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 
         </Fragment> 
     )
 }

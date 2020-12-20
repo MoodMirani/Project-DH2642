@@ -14,7 +14,7 @@ import promiseNoLyrics from "../promiseNoLyrics"
 
 
 function LyricsSearch(){
-    const [{currentTrack, player, user, likedSongs}, dispatch] = useDataLayerValue();
+    const [{currentTrack, player, user, likedSongs, currentAlbum}, dispatch] = useDataLayerValue();
     const [promise, setPromise] = React.useState();
 
     React.useEffect(()=>{
@@ -51,11 +51,11 @@ function LyricsSearch(){
             <Fragment> 
                 
             {(data === null) && (currentTrack == null) && <TrackDetailsNullView spotifyObject={currentTrack} /> } 
-            {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView spotifyObject={currentTrack} /> } 
-            {currentTrack && data && <TrackDetailsView spotifyObject={currentTrack} lyricsData={data}/>}
+            {(data === undefined) && currentTrack && <TrackDetailsNoLyricsView currentTrack={currentTrack} currentAlbum={currentAlbum}/> } 
+            {currentTrack && data && <TrackDetailsView currentTrack={currentTrack} currentAlbum={currentAlbum} lyricsData={data}/>}
         
             </Fragment>
-        <FooterView currentTrack={currentTrack} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/>     
+        <FooterView currentTrack={currentTrack} currentAlbum = {currentAlbum} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/>     
         </Fragment>
     )
 }

@@ -2,7 +2,7 @@ import React from "react";
 import "../css/AlbumView.css";
 import {Link} from "react-router-dom"
 
-const AlbumView =({currentAlbum, albumTracks})=>{
+const AlbumView =({currentAlbum, currentTrack, albumTracks, set_currentTrack})=>{
     return(
     <div className="flexboxWrapper" >
        <div className="row">
@@ -33,7 +33,7 @@ const AlbumView =({currentAlbum, albumTracks})=>{
                         {albumTracks.items.map(item => 
                             <tr key={item.id}>
                                 <td>{item.track_number}</td>
-                                <td className="trackName">{item.name}</td>
+                                <td className="trackName"onClick ={() => set_currentTrack(item)}>{item.name}</td>
                             </tr>)}
                         </tbody>
                     </table>

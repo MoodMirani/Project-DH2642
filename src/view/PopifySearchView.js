@@ -19,6 +19,7 @@ function PopifySearchView({onSearch, searchText, set_searchText ,searchType, set
                     <button className= "categories" onClick ={() => set_searchType("artist")}>Artists</button>
                     <button className= "btnSearch" id="searchbtn_id" onClick ={() => onSearch(searchType, searchText)}>Search!</button>
                 </div>
+                
                 {/*
                 <select className="options" onChange={(e) => set_searchType(e.target.value)} >
                     {["track","album", "artist"].map(k=> <option key={k} value={k}>{k}</option>) }

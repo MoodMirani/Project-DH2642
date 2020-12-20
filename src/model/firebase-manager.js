@@ -25,6 +25,7 @@ const getLikes = (user, dispatch)=>{
 }
 
 const songIncluded = (likedSongs, currentTrack) => {
+  console.log(currentTrack)
   if(likedSongs) {
   for (let index = 0; index < likedSongs.length; index++) {
     if(likedSongs[index].id === currentTrack.id){
@@ -37,6 +38,7 @@ const songIncluded = (likedSongs, currentTrack) => {
 
 const Likes = (currentTrack, user, dispatch, likedSongs) => {
 
+
     if(!songIncluded(likedSongs, currentTrack)){
       const data = [currentTrack, ...likedSongs.flat()];
       //console.log("inside likes2", likedSongs)
@@ -44,7 +46,7 @@ const Likes = (currentTrack, user, dispatch, likedSongs) => {
         type: "SET_LIKEDSONGS",
         likedSongs: data,
       });
-      console.log("Data från firebase manager", data)
+      //console.log("Data från firebase manager", data)
       updateDatabase(user, data)
       //console.log("inside likes",newLikeSongs)
     }

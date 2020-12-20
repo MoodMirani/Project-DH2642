@@ -17,23 +17,23 @@ import {
   FormatAlignLeft
 } from "@material-ui/icons";
 
-function FooterView({currentTrack, player, user, likedSongs, dispatch}) {
+function FooterView({currentTrack, currentAlbum, player, user, likedSongs, dispatch}) {
   const [value, setValue] = React.useState(30);
-  /*console.log("FOOTER",likedSongs)*/
   const handleChange = (event, newValue) => { // this is for the volume slider
     setValue(newValue);
     player.setVolume(value/100)
   };
 
   return (  
-  
+   
     <div className="footer__play">
+       {console.log(currentTrack, likedSongs)}
       <div className="footer__left">
 
       {currentTrack === null ? <img alt=""/> :
         <img alt=""
         className="footer__albumLogo"
-        src= {currentTrack.type === "track" ? currentTrack.album.images[0].url : "" } />  
+        src= {currentTrack.type === "track" && currentTrack.album ? currentTrack.album.images[0].url : currentAlbum.images[0] && currentAlbum.images[0].url ? currentAlbum.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG" } />  
       }
 
       <div className="footer__songInfo">

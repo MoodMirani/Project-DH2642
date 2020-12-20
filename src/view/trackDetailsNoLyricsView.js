@@ -2,21 +2,21 @@ import React from "react";
 import "../css/TrackDetailsView.css"
 import {Link} from "react-router-dom"
 
-const TrackDetailsNoLyricsView =({spotifyObject})=>
+const TrackDetailsNoLyricsView =({currentTrack, currentAlbum})=>
    <div className="flexboxWrapper">
       <div className="row">
 
          <div className="column">
             <div className="trackContainer"> 
-               <img className="trackPic" src = { spotifyObject.album.images[0] && spotifyObject.album.images[0].url } alt="" />
+               <img className="trackPic" src = { currentTrack.type === "track" && currentTrack.album ? currentTrack.album.images[0].url : currentAlbum.images[0] && currentAlbum.images[0].url ? currentAlbum.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG" } alt="" />
             </div>
          </div>
 
          <div className="column">
             <div className="lyricsContainer">
                <p className="headingTitle">
-                  <span className="artistTitle">{spotifyObject.artists[0].name}</span>
-                  <span className="trackTitle">{spotifyObject.name}</span>
+                  <span className="artistTitle">{currentTrack.artists[0].name}</span>
+                  <span className="trackTitle">{currentTrack.name}</span>
                </p>
                <Link to="/">
                   <button className ="button">Back to search</button>
