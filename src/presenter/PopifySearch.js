@@ -28,10 +28,8 @@ function PopifySearch(){
         Play({ //calling playing-function after setting current object instead of using then in serachresultview
             playerInstance: player,
             spotify_uri: result.uri
-
         })
     }
-
 
     function set_currentArtist(result) {
         dispatch({
@@ -59,7 +57,6 @@ function PopifySearch(){
             type: "SET_SEARCHTEXT",
             searchText: result,
         })
-        // console.log("searchText",searchText)
        }
 
        function set_searchType(result) {
@@ -67,10 +64,7 @@ function PopifySearch(){
             type: "SET_SEARCHTYPE",
             searchType: result,
         })
-        // console.log("seacrhTYPE", searchType)
        }
-
-    //console.log("data", data, error)
 
     React.useEffect(() => setPromise(MusicSource.search({type: searchType, text: searchText, token})), [token]);
 
@@ -80,8 +74,6 @@ function PopifySearch(){
             onSearch={(searchType, searchText) => {
                 set_searchText(searchText)
                 set_searchType(searchType)
-                // console.log(searchText)
-                // console.log(searchType)
                 setPromise(MusicSource.search({type: searchType, text: searchText, token}))}}/>
             { promiseNoData(promise, data, error) || 
             
@@ -89,8 +81,6 @@ function PopifySearch(){
                  {(!Array.isArray(data) || !data.length) && <h1>Unvalid search term, try again!</h1> }
                 <SearchResultsView searchResult={data} set_currentTrack={set_currentTrack} 
                 set_currentArtist={set_currentArtist} set_currentAlbum={set_currentAlbum}/>
-               
-               
             </Fragment>  }
             <FooterView currentTrack={currentTrack} currentAlbum = {currentAlbum} player={player} user={user} likedSongs={likedSongs} dispatch={dispatch}/> 
         </Fragment> 

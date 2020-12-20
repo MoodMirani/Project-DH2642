@@ -20,7 +20,6 @@ function Playback() {
       })
       // Called when connected to the player created beforehand successfully
       player.addListener('ready', ({ device_id }) => {
-        console.log('Ready with Device ID', device_id);
       });
 
       dispatch({
