@@ -33,6 +33,8 @@ function LyricsSearch() {
     }, [currentTrack])
 
     const [data, error] = usePromise(promise);
+    //console.log(currentTrack)
+    //console.log(data,error)
 
     return (
 
