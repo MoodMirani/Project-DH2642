@@ -13,9 +13,18 @@ function PopifySearchView({ onSearch, searchText, set_searchText, searchType, se
             <input className="searchbar" id="searchbar_id" placeholder={message} onChange={(e) => set_searchText(e.target.value)} />
 
             <div className="categoryButtons">
-                <button className="categories" onClick={() => set_searchType("track")}>Tracks</button>
+                {searchType === "track" ? <button className="categories" disabled style={{fill: "grey"}}>Tracks</button> :
+                <button className="categories" onClick={() => set_searchType("track")}>Tracks</button> }
+                
+                {searchType === "album" ? <button className="categories" disabled style={{fill: "grey"}}>Albums</button> :
+                <button className="categories" onClick={() => set_searchType("album")}>Albums</button>}
+
+                {searchType === "artist" ? <button className="categories" disabled style={{fill: "grey"}}>Artists</button> :
+                <button className="categories" onClick={() => set_searchType("artist")}>Artists</button>}
+
+                {/* <button className="categories" onClick={() => set_searchType("track")}>Tracks</button>
                 <button className="categories" onClick={() => set_searchType("album")}>Albums</button>
-                <button className="categories" onClick={() => set_searchType("artist")}>Artists</button>
+                <button className="categories" onClick={() => set_searchType("artist")}>Artists</button> */}
                 <button className="btnSearch" id="searchbtn_id" onClick={() => onSearch(searchType, searchText)}>Search!</button>
             </div>
 
