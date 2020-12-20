@@ -1,12 +1,12 @@
 import React from "react";
 import "./css/Login.css";
-import { loginUrl } from "./spotify"; //enable our users to Login through the app
+import { loginUrl } from "./spotify";
 
 function Login() {
   return (
     <div className="login">
       <img
-        src="https://i.ibb.co/rsCJb8L/popify-Logo.png" 
+        src="https://i.ibb.co/rsCJb8L/popify-Logo.png"
         alt="Popify logo"
         border="0"
       />

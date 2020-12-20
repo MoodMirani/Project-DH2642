@@ -1,12 +1,12 @@
 
 
-class User{
-    constructor(name="Steve", liked=[], disliked=[]) {
+class User {
+    constructor(name = "Steve", liked = [], disliked = []) {
         this.name = name;
         this.liked = [].concat(liked)
         this.disliked = [].concat(disliked)
     }
-    
+
     setName(x) {
         this.name = x;
     }
@@ -15,20 +15,20 @@ class User{
         const songLiked = this.liked.includes(song);
         if (songLiked) {
 
-        throw console.error("Song already liked");
+            throw console.error("Song already liked");
         }
-        else{
-        this.liked=[song, ...this.liked]
+        else {
+            this.liked = [song, ...this.liked]
+        }
     }
-}
-    dislikes(song){
+    dislikes(song) {
         const songDisliked = this.disliked.includes(song);
         if (songDisliked) {
-        throw console.error("Song already disliked");
+            throw console.error("Song already disliked");
         }
-        else{
-        this.disliked=[song, ...this.disliked]
-    }
+        else {
+            this.disliked = [song, ...this.disliked]
+        }
     }
 }
 

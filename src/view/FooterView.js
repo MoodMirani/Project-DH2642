@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 import "../css/popify.css";
 import "../css/Footer.css";
 
-import { Alert,
-         AlertTitle } from '@material-ui/lab';
+import {
+  Alert,
+  AlertTitle
+} from '@material-ui/lab';
 import {
   PauseCircleOutline,
   PlayCircleOutline,
@@ -17,64 +19,52 @@ import {
   FormatAlignLeft
 } from "@material-ui/icons";
 
-function FooterView({currentTrack, currentAlbum, player, user, likedSongs, dispatch}) {
+function FooterView({ currentTrack, currentAlbum, player, user, likedSongs, dispatch }) {
   const [value, setValue] = React.useState(30);
   const handleChange = (event, newValue) => { // this is for the volume slider
     setValue(newValue);
-    player.setVolume(value/100)
+    player.setVolume(value / 100)
   };
 
-  return (  
-   
+  return (
+
     <div className="footer__play">
       <div className="footer__left">
-
-      {currentTrack === null ? <img alt=""/> :
-        <img alt=""
-        className="footer__albumLogo"
-        src= {currentTrack.type === "track" && currentTrack.album ? currentTrack.album.images[0].url : currentAlbum.images[0] && currentAlbum.images[0].url ? currentAlbum.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG" } />  
-      }
-
-      <div className="footer__songInfo">
-        <h4>{ currentTrack !== null ? currentTrack.name : "Welcome!"}</h4>
+        {currentTrack === null ? <img alt="" /> :
+          <img alt=""
+            className="footer__albumLogo"
+            src={currentTrack.type === "track" && currentTrack.album ? currentTrack.album.images[0].url : currentAlbum.images[0] && currentAlbum.images[0].url ? currentAlbum.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG"} />
+        }
+        <div className="footer__songInfo">
+          <h4>{currentTrack !== null ? currentTrack.name : "Welcome!"}</h4>
           <div className="grey_name" >
-          <h5>{ currentTrack !== null ? currentTrack.artists[0].name : ""}</h5>
+            <h5>{currentTrack !== null ? currentTrack.artists[0].name : ""}</h5>
           </div>
-      </div>
-
-      <Grid item>
-      {(currentTrack === null)? 
-      <FavoriteBorder disabled style={{fill: "gray"}} fontSize="large"/> :
-      <FavoriteBorder fontSize="large" className="footer__icon" onClick = {()=>{
-          Likes(currentTrack, user, dispatch, likedSongs)}}/> /*&& 
-          <Alert severity="success">
-          <AlertTitle>You have liked the song!</AlertTitle>
-      </Alert>*/}
-      
-      </Grid>
-
-      <Link to="/liked">
+        </div>
         <Grid item>
-          <LibraryMusic fontSize="large" className="footer__icon" style={{fill: "white"}}/>
+          {(currentTrack === null) ?
+            <FavoriteBorder disabled style={{ fill: "gray" }} fontSize="large" /> :
+            <FavoriteBorder fontSize="large" className="footer__icon" onClick={() => {
+              Likes(currentTrack, user, dispatch, likedSongs)
+            }} />}
         </Grid>
-      </Link>
-
+        <Link to="/liked">
+          <Grid item>
+            <LibraryMusic fontSize="large" className="footer__icon" style={{ fill: "white" }} />
+          </Grid>
+        </Link>
       </div>
-      
+
       <div className="footer__center">
-       
-      <PlayCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.resume()} /> 
-      <PauseCircleOutline fontSize="large" className="footer__icon" onClick = {() => player.pause()}/> 
-    
-      <Grid item>
-      {(currentTrack === null)?  
-        <FormatAlignLeft disabled style={{fill: "gray"}} fontSize="large"/> :   
-        <Link to="/lyrics">
-            <FormatAlignLeft  style={{fill: "white"}} fontSize="large" className="footer__icon" />
-        </Link> }
-      </Grid>
-      
-  
+        <PlayCircleOutline fontSize="large" className="footer__icon" onClick={() => player.resume()} />
+        <PauseCircleOutline fontSize="large" className="footer__icon" onClick={() => player.pause()} />
+        <Grid item>
+          {(currentTrack === null) ?
+            <FormatAlignLeft disabled style={{ fill: "gray" }} fontSize="large" /> :
+            <Link to="/lyrics">
+              <FormatAlignLeft style={{ fill: "white" }} fontSize="large" className="footer__icon" />
+            </Link>}
+        </Grid>
       </div>
 
       <div className="footer__right">
@@ -83,11 +73,11 @@ function FooterView({currentTrack, currentAlbum, player, user, likedSongs, dispa
             <VolumeDown />
           </Grid>
           <Grid item xs>
-            <Slider value={value} onChange={handleChange} valueLabelDisplay="auto"/>
+            <Slider value={value} onChange={handleChange} valueLabelDisplay="auto" />
           </Grid>
         </Grid>
       </div>
-     
+
     </div>
   );
 }

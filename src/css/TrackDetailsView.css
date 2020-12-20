@@ -64,11 +64,15 @@
 .lyricsStyle {
   margin-top: 10px;
   font-size: medium;
+  display: inline-block;
+  overflow: scroll;
 }
 
 .lyricsCopy {
   margin-top: 10px;
   font-size: x-small;
+  display: inline-block;
+  overflow: scroll;
 }
 
 .nullButton {

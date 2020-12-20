@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./css/index.css";
 import App from "./App";
 import { DataLayer } from './DataLayer';
-import reducer,{ initialState } from './model/reducer.js';
+import reducer, { initialState } from './model/reducer.js';
 
 ReactDOM.render(
   <React.StrictMode>

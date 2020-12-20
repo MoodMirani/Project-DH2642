@@ -1,14 +1,15 @@
 import React from "react";
 import "../css/popify.css";
+import { Link } from "react-router-dom";
 
 function PopifySearchView({ onSearch, searchText, set_searchText, searchType, set_searchType }) {
     const message = `What do you want to listen to?`;
     return (
         <React.Fragment>
-            <img className="logo"
-                src="https://i.ibb.co/283SGvS/popi-Trans.png"
-                alt="Popify logo"
-                height="100px" />
+            <Link to="/">
+                <img className="logo" src="https://i.ibb.co/283SGvS/popi-Trans.png" alt="Popify logo" height="100px" />
+            </Link>
+
             <input className="searchbar" id="searchbar_id" placeholder={message} onChange={(e) => set_searchText(e.target.value)} />
 
             <div className="categoryButtons">
@@ -27,7 +28,7 @@ function PopifySearchView({ onSearch, searchText, set_searchText, searchType, se
                         }
                     }) : ""}
             </script>
-            
+
         </React.Fragment>
     )
 }
