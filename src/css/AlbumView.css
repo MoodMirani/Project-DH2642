@@ -76,6 +76,7 @@
 .trackName:hover {
   color:rgb(218, 96, 218);
   font-size: 20px;
+  cursor: default;
 }
 
 .button {
