@@ -5,6 +5,7 @@ import "../css/AlbumView.css";
 import { Likes, unLike } from "../model/firebase-manager.js"
 import { FavoriteBorder } from "@material-ui/icons";
 import { Grid } from "@material-ui/core";
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 const LikedmusicView = ({ likedSongs, set_currentTrack, currentTrack, user, dispatch }) => {
@@ -18,7 +19,7 @@ const LikedmusicView = ({ likedSongs, set_currentTrack, currentTrack, user, disp
             <table className="albumSongList">
                 <thead>
                     <tr>
-                        <th>Like</th>
+                        <th></th>
                         <th>Artist</th>
                         <th>Track</th>
                     </tr>
@@ -29,13 +30,11 @@ const LikedmusicView = ({ likedSongs, set_currentTrack, currentTrack, user, disp
                         <tr key={track.id}>
                             <td>
                                 <Grid item>
-                                    {<FavoriteBorder fontSize="large" className="footer__icon" onClick={() => {
-                                        Likes(currentTrack, user, dispatch, likedSongs)
-                                    }} />}
+                                    {<FavoriteIcon fontSize="small" />}
                                 </Grid>
                             </td>
                             <td>{track.artists[0].name}</td>
-                            <td className="trackName">{track.name}</td>
+                            <td className="trackNameLIKED">{track.name}</td>
                         </tr>)}
                 </tbody>
             </table>

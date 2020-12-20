@@ -44,11 +44,6 @@ overflow: hidden;
   
   }
 
-.searchName:hover {
-    color: rgb(103, 103, 103);
-    font-size: 20px;
-  }
-
 .searchPic{
   height: 190px;  
   border-radius: 10px;
