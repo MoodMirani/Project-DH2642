@@ -1,24 +1,24 @@
 .footer__play {
   position: fixed;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
   bottom: 0;
-  height: 80px;
-  width: 100%;
+  height:fit-content;
+  width: 97.2%;
   background-color: #282828;
   padding: 20px;
 }
 .footer__left {
-  flex: 1;
+  flex: 0.3;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   color: white;
-  max-width: 300px;
+  max-width: 50%;
 }
 
 .footer__right {
-  flex: 1;
+  flex: 0.3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,7 +27,7 @@
 }
 
 .footer__center {
-  flex: 1;
+  flex: 0.4;
   padding: 0 100px;
   color: white;
   display: flex;
@@ -49,12 +49,9 @@
 .footer__green {
   color: #1ed15e;
 }
-
-.footer__songInfo{
-  width: 100%;
-}
 .footer__songInfo > h4 {
   margin-bottom: 5px;
+  
 }
 .footer__songInfo > p {
   font-size: 12px;

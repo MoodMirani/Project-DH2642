@@ -29,9 +29,10 @@
 .trackContainer {
    /*background-color: blue;*/
   display: inline-block;
-  color: white;
+  color: rgb(255, 255, 255);
   margin-left: auto;
   margin-right: auto;
+  height: 100vh;
 }
 
 .trackPic {

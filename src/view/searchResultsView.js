@@ -12,14 +12,14 @@ const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, 
 
         searchResult.map(result =>
             <span key={result.id} className="searchResult" >
-                
-
-                {
-                    result.type === "artist" ?
+                {result.type === "artist" ?
                         <Link to="/artist">
                             <img className="searchPic" onClick={() => { set_currentArtist(result) }}
                                 src={result.images[0] ? result.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG"} alt="" />
+                        <p className="searchName-artist">{result.name}</p>
                         </Link>
+                        
+                        
                         :
 
                         result.type === "track" ?
@@ -33,6 +33,8 @@ const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, 
                                             src={playButton} />
                                     </div>
                                 </div>
+                                <p className="searchName-artist">{result.artists[0].name}</p>
+                                <div className="searchName">{result.name}</div>
                             </Link>
                             :
 
@@ -41,9 +43,10 @@ const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, 
                             (<Link to="/album">
                                 <img className="searchPic" onClick={() => { set_currentAlbum(result) }}
                                     src={result.images[0] ? result.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG"} alt="" />
+                                <p className="searchName-artist">{result.artists[0].name}</p>
+                                <div className="searchName">{result.name}</div>
                             </Link>)}
-                    <p className="searchName-artist">{result.artists[0].name}</p>
-                <div className="searchName">{result.name}</div>
+
             </span>
         )
     }
