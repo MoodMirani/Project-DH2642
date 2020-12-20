@@ -28,7 +28,10 @@
 
 .trackContainer {
   /*background-color: blue;*/
-  height: 450px;
+  display: inline-block;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .trackPic {
@@ -68,6 +71,11 @@
 }
 .trackName {
   text-align: left;
+}
+
+.trackName:hover {
+  color:rgb(218, 96, 218);
+  font-size: 20px;
 }
 
 .button {

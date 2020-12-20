@@ -27,7 +27,6 @@ function FooterView({currentTrack, currentAlbum, player, user, likedSongs, dispa
   return (  
    
     <div className="footer__play">
-       {console.log(currentTrack, likedSongs)}
       <div className="footer__left">
 
       {currentTrack === null ? <img alt=""/> :

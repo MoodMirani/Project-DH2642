@@ -1,8 +1,9 @@
 import React from "react";
 import "../css/AlbumView.css";
+import "../css/searchResult.css"
 import {Link} from "react-router-dom"
 
-const AlbumView =({currentAlbum, currentTrack, albumTracks, set_currentTrack})=>{
+const AlbumView =({currentAlbum, albumTracks, set_currentTrack})=>{
     return(
     <div className="flexboxWrapper" >
        <div className="row">
@@ -40,7 +41,6 @@ const AlbumView =({currentAlbum, currentTrack, albumTracks, set_currentTrack})=>
                 </div>
             </div>
         </div>
-
         </div>
         
            

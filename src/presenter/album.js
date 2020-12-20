@@ -26,7 +26,6 @@ function AlbumInfo(){
 
         })
     }
-  
    
     return (
         <Fragment>
