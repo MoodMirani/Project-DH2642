@@ -117,8 +117,10 @@ transition: 200ms color ease-in;
 }
 
 .container {
-  position: center;
+  position: relative;
   width: 75%;
+  margin: auto;
+
 }
 
 
