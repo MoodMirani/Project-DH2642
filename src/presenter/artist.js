@@ -6,7 +6,7 @@ import ArtistView from "../view/artistView";
 function ArtistInfo(){
     
     const [{currentArtist, player, user, currentTrack, likedSongs,currentAlbum}, dispatch] = useDataLayerValue();
-   
+    console.log(currentArtist)
     return (
         <Fragment>
         <ArtistView currentArtist={currentArtist}/>

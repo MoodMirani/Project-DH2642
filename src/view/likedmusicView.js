@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/artist.css"
 import "../css/AlbumView.css";
-import { Likes, unLike } from "../model/firebase-manager.js"
-import { FavoriteBorder } from "@material-ui/icons";
 import { Grid } from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
