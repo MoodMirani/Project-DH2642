@@ -3,6 +3,7 @@ import "../css/searchResult.css"
 import "../css/popify.css"
 import "../css/App.css"
 import {Link} from "react-router-dom";
+import playButton from "../assets/play-button.png"
 
 
 const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist, set_currentAlbum})=>{
@@ -31,7 +32,7 @@ const SearchResultsView=({searchResult, set_currentTrack, set_currentArtist, set
             
             <div className="middle">
             <img className="play_symbol" alt="play" onClick = { () => { set_currentTrack(result)}} 
-            src={"http://clipart-library.com/images_k/video-play-button-transparent/video-play-button-transparent-6.png"}/>
+            src={playButton}/>
             </div>
             </div>
             </Link>

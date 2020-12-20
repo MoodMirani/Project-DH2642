@@ -27,9 +27,11 @@
 }
 
 .trackContainer {
-  /*background-color: blue;*/
-  height: 100%;
-  overflow: scroll;
+   /*background-color: blue;*/
+  display: inline-block;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .trackPic {
@@ -43,7 +45,6 @@
 .lyricsContainer {
   display: inline-block;
   height: 700px;
-  overflow: scroll;
   margin-top: 50px;
 }
 

@@ -73,11 +73,7 @@ function FooterView({ currentTrack, currentAlbum, player, user, likedSongs, disp
       <Grid className="footer__right">
       <Link to="/liked">
         <Grid item>
-          {(currentTrack === null) ?
-            <FavoriteBorder disabled style={{ fill: "gray" }} fontSize="large" /> :
-            <FavoriteBorder fontSize="large" className="footer__icon" onClick={() => {
-              Likes(currentTrack, user, dispatch, likedSongs)
-            }} />}
+          <LibraryMusic fontSize="large" className="footer__icon" style={{fill: "white"}}/>
         </Grid>
       </Link>
       Liked songs
