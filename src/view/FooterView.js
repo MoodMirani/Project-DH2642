@@ -69,7 +69,7 @@ function FooterView({ currentTrack, currentAlbum, player, user, likedSongs, disp
       </Grid>
       </Grid>
 
-      {/* LIKED SONGS LIST */}
+        {/* LIKED SONGS LIST */}
       <Grid className="footer__right">
       <Link to="/liked">
         <Grid item>

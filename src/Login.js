@@ -3,6 +3,7 @@ import "./css/Login.css";
 import { loginUrl } from "./spotify";
 
 function Login() {
+  window.scrollTo(0,0); 
   return (
     <div className="login">
       <img

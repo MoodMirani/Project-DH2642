@@ -1,11 +1,8 @@
 .searchbar {
   text-align: center;
-  margin: 0px;
-  margin-top: 0px;
-  margin-left: 50px;
-  margin-bottom: 5px;
+  margin: 5px;
   height: 40px;
-  width: 700px;
+  width: 70%;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(119, 106, 154, 0.5);
   font-size: 15px;
@@ -62,11 +59,10 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 120px;
+  
 }
 
 .footer {
-  margin-top: 50px;
   display: block;
   margin-left: auto;
   margin-right: auto;

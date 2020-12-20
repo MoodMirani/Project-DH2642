@@ -1,10 +1,23 @@
 
 .searchMODE{
-  overflow:scroll;
-  height: 100%;
+    position: relative;
+    /*
+    min-height: -webkit-fill-available;
+    min-height: calc(100vh - var(--shared-navbar-height));
+    */
+    width: 80%;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 100px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    background-size: cover;
+    justify-content: space-evenly;
 }
 .searchResult {
-
+/*
 text-align:center;
 display:inline-block;
 height: 250px;
@@ -12,23 +25,29 @@ width:250px;
 padding: 20px;
 vertical-align: top;
 align-items: center;
+*/
+text-align: center;
+vertical-align: top;
+display: inline-block;
 cursor: pointer;
 transition: 200ms color ease-in;
-
+margin: 20px;
 }
 
 .searchName {
+width: 200px;
 text-align: left;
-height:50px;
 color: rgb(255, 255, 255);
-font-size: 20px;
-font:  small-caps bold 22px/50px Georgia, serif;
-margin-bottom: 10px;
-margin-top: 10px;
+font:  small-caps bold 16px/15px Georgia;
 cursor: default;
 transition: 200ms color ease-in;
-overflow: hidden;
+}
 
+.searchName-artist{
+  color: rgb(190, 190, 190);
+  font:  small-caps bold 14px/15px Georgia;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .likedMusicText {
@@ -67,7 +86,7 @@ overflow: hidden;
 .searchPic:hover {
 
   box-shadow: 0 19px 25px rgba(191, 23, 191, 0.808);
-  height: 197px;
+  height: 200px;
   width: 200px;
 
 }
@@ -75,7 +94,7 @@ overflow: hidden;
 .play_symbol {
   height: 100px;  
   border-radius: 10px;
-  display: flex;
+  
 }
 
 .middle {

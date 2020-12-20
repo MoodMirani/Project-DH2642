@@ -12,9 +12,7 @@ const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, 
 
         searchResult.map(result =>
             <span key={result.id} className="searchResult" >
-
-
-                <div className="searchName"><b>{result.name}</b> {result.artist} </div>
+                
 
                 {
                     result.type === "artist" ?
@@ -44,6 +42,8 @@ const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, 
                                 <img className="searchPic" onClick={() => { set_currentAlbum(result) }}
                                     src={result.images[0] ? result.images[0].url : "https://suitabletech.com/images/HelpCenter/errors/Lenovo-Camera-Error.JPG"} alt="" />
                             </Link>)}
+                    <p className="searchName-artist">{result.artists[0].name}</p>
+                <div className="searchName">{result.name}</div>
             </span>
         )
     }
