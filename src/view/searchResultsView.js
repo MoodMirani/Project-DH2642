@@ -27,7 +27,7 @@ const SearchResultsView = ({ searchResult, set_currentTrack, set_currentArtist, 
                         result.type === "track" ?
                             <Link to="/track">
                                 <div className="container">
-                                    <img className="searchPic"
+                                    <img className="searchPicT"
                                         src={result.album.images[0] && result.album.images[0].url} alt="" />
 
                                     <div className="middle">
