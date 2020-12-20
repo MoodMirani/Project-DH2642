@@ -71,6 +71,9 @@
 .trackName {
   text-align: left;
 }
+.trackNameLIKED {
+  text-align: left;
+}
 
 .trackName:hover {
   color:rgb(218, 96, 218);

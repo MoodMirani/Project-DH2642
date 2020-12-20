@@ -17,7 +17,7 @@ const ArtistView = ({ currentArtist }) => {
         </div>
     )
 
-    
+
 }
 
 export default ArtistView 

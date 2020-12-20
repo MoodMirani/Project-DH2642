@@ -44,10 +44,15 @@ overflow: hidden;
   
   }
 
-.searchName:hover {
-    color: rgb(103, 103, 103);
-    font-size: 20px;
-  }
+.searchPicT{
+  height: 190px;  
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(91, 143, 220, 0.5);
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
 
 .searchPic{
   height: 190px;  
@@ -57,6 +62,14 @@ overflow: hidden;
   display: block;
   transition: .5s ease;
   backface-visibility: hidden;
+}
+
+.searchPic:hover {
+
+  box-shadow: 0 19px 25px rgba(191, 23, 191, 0.808);
+  height: 197px;
+  width: 200px;
+
 }
 
 .play_symbol {
