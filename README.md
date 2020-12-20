@@ -3,6 +3,8 @@
 You need a Spotify Premium account to get started with Popify. The App will ask you for authentification upon start.
 If you don't have a Spotify Premium account, you can create it in our app (or ask another TA to grade this project :))
 
+Heads up! The website works best without any plugins in your browser, such as addblocker.
+
 # 2. Download Node.js
 
 You need to download Node.js in order to run Popfify.
@@ -31,4 +33,4 @@ You can listen to a song, pause it and look at the lyrics by clicking the text s
 
 In the footer (next to the song name) there is a heart icon. This puts the chosen song to the users' favourites that are then saved into Firebase. You can see your favourite songs at any time by pressing the library icon next to the heart. This links to a view with the users' favourite songs that is currently WIP and only displays the name of your liked songs. We're working on this view! :)
 
-Heads up! The website works best without any plugins in ypur browser, such as addblocker.
+
