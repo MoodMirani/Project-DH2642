@@ -68,9 +68,8 @@ transition: 200ms color ease-in;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(91, 143, 220, 0.5);
   opacity: 1;
-  display: block;
   transition: .5s ease;
-  backface-visibility: hidden;
+  
 }
 
 .searchPic{
@@ -118,8 +117,8 @@ transition: 200ms color ease-in;
 
 .container {
   position: relative;
-  width: 75%;
-  margin: auto;
+  
+
 
 }
 
