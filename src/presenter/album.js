@@ -16,6 +16,8 @@ function AlbumInfo(){
     const [data] = usePromise(promise);
 
     function set_currentTrack(result) {
+        console.log(result)
+
         dispatch({
             type: "SET_CURRENTTRACK",
             currentTrack: result,
